@@ -7,20 +7,10 @@
     <load-on-startup>1</load-on-startup>
   </servlet>
   
-  <filter>
- 	<filter-name> csrfFilter</filter-name>
- 	<filter-class>.com.techelevator.city.security.CSRFFilter</filter-class>
- </filter>
-  
   <servlet-mapping>
     <servlet-name>springmvc</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
-  
-  <filter-mapping> 
- 	<filter-name>csrfFilter></filter-name>
-	<servlet-name>springmvc</servlet-name> 
- </filter-mapping> 
   
   <servlet-mapping>
     <servlet-name>default</servlet-name>

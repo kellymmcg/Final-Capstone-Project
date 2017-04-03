@@ -23,6 +23,11 @@ package com.techelevator.city.controller;
 		public HomeController(UserDAO userDAO) {
 			this.userDAO = userDAO;
 		}
+		
+		@RequestMapping(path="/")
+		public String showHomePage() {
+			return "homePage";
+		}
 
 		@RequestMapping(path="/users/new", method=RequestMethod.GET)
 		public String displayNewUserForm() {
