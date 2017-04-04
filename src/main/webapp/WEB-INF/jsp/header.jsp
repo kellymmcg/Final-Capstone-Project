@@ -48,7 +48,7 @@
 														id="exampleInputPassword2" placeholder="Password" required>
 												</div>
 												<div class="form-group">
-													<button type="submit" class="btn btn-primary btn-block">Sign in</button>
+													<button type="submit" class="btn btn-primary btn-block"><a class="signin" href="#">Sign in</a></button>
 												</div>
 												<div class="checkbox">
 													<label> <input type="checkbox"> Remember me</label>

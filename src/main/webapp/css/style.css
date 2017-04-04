@@ -2,3 +2,12 @@ footer {
 	font-size: 12px;
 	text-align: center;
 }
+
+.signin {
+	color: white;
+}
+
+.signin:hover {
+	font-weight: bold;
+	color: white;
+}

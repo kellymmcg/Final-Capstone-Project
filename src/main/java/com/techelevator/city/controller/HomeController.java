@@ -28,10 +28,5 @@ package com.techelevator.city.controller;
 		public String showHomePage() {
 			return "homePage";
 		}
-
-		@RequestMapping(path="/", method=RequestMethod.POST)
-		public String displayNewUserForm() {
-			return "homePage";
-		}
 		
 }

@@ -28,4 +28,9 @@ public class UserController {
 		return "registration";
 	}
 	
+	@RequestMapping(path="/", method=RequestMethod.POST)
+	public String displayDashboard() {
+		return "redirect:/homePage";
+	}
+	
 }
