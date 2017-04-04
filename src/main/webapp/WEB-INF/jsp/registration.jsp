@@ -5,7 +5,7 @@
 <div>
 	<h1>Registration</h1>
 	<div>
-		<h2>Search, Discover, and Explore a different city.</h2>
+		<h2>Search, discover, and explore a different city.</h2>
 		<h3>Create daily itineraries.</h3>
 		<h3>Add and save landmarks.</h3>
 	</div>
