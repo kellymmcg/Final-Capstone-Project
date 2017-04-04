@@ -5,7 +5,9 @@
 BEGIN;
 
 DROP TABLE IF EXISTS app_user;
-DROP SEQUENCE IF EXISTS seq_app_user_id;
+DROP SEQUENCE IF EXISTS seq_app_user_id;	
+DROP TABLE IF EXISTS landmark;
+DROP SEQUENCE IF EXISTS seq_landmark_id;	
 
 CREATE SEQUENCE seq_app_user_id;
 
@@ -15,9 +17,26 @@ CREATE TABLE app_user (
 	password VARCHAR(128) NOT NULL
 );
 
+CREATE SEQUENCE seq_landmark_id;
+
+CREATE TABLE landmark (
+id INTEGER PRIMARY KEY DEFAULT NEXTVAL('seq_landmark_id'),
+reviewid INTEGER NOT NULL,
+name VARCHAR(128) NOT NULL,
+longitude FLOAT NOT NULL,
+latitude FLOAT NOT NULL,
+address VARCHAR(256) NOT NULL,
+website VARCHAR(256) NOT NULL,
+open_time INTEGER NOT NULL,
+close_time INTEGER NOT NULL,
+phone VARCHAR (32) NOT NULL
+
+);
+
 INSERT INTO app_user(user_name, password) VALUES ('KevinC', 'BravoAdmin');
 INSERT INTO app_user(user_name, password) VALUES ('AlexisT', 'BravoAdmin');
 INSERT INTO app_user(user_name, password) VALUES ('KellyM', 'BravoAdmin');
 INSERT INTO app_user(user_name, password) VALUES ('AdamG', 'BravoAdmin');
+
 
 COMMIT;
