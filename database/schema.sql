@@ -38,5 +38,6 @@ INSERT INTO app_user(user_name, password) VALUES ('AlexisT', 'BravoAdmin');
 INSERT INTO app_user(user_name, password) VALUES ('KellyM', 'BravoAdmin');
 INSERT INTO app_user(user_name, password) VALUES ('AdamG', 'BravoAdmin');
 
-
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone)
+VALUES ('1','1','Tower City','41.4972', '81.6940', '230 W Huron Rd, Cleveland, OH 44113','www.towercitycenter.com/', '10', '7', '(216) 623-4750');
 COMMIT;

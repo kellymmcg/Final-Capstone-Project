@@ -31,10 +31,21 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 	}
 
 	@Override
-	public Landmark searchLandmarkById(int landmarkId) {
+	public Landmark searchLandmarkById(long landmarkId) {
 		Landmark landmark = null;
 		String sqlSelectLandmarkById ="SELECT * FROM landmark WHERE id = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectLandmarkById, landmarkId);
+		if(results.next()) {
+			landmark = mapRowToLandmark(results);
+		}
+		return landmark;
+	}
+	
+	@Override
+	public Landmark searchLandmarkByName(String landmarkName) {
+		Landmark landmark = null;
+		String sqlSelectLandmarkById ="SELECT * FROM landmark WHERE name = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectLandmarkById, landmarkName);
 		if(results.next()) {
 			landmark = mapRowToLandmark(results);
 		}
