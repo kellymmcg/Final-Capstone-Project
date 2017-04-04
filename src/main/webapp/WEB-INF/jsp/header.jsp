@@ -26,10 +26,13 @@
 							class="icon-bar"></span>
 					</button>
 				</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
+				
 				<div class="collapse navbar-collapse"
 					id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-left">
+						<c:url var="login" value="/"/>
+						<li><a href="${login}">Home</a></li>
+					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
 							data-toggle="dropdown"><b>Login | Signup</b> <span class="caret"></span></a>
