@@ -31,7 +31,7 @@
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left">
 						<c:url var="home" value="/"/>
-						<li><a href="${login}">Home</a></li>
+						<li><a href="${home}">Home</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li class="dropdown"><a href="#" class="dropdown-toggle"
