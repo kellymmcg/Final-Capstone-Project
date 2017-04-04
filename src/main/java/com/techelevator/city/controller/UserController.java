@@ -15,40 +15,5 @@ import com.techelevator.city.model.UserDAO;
 @Transactional
 @Controller
 public class UserController {
-	private UserDAO userDAO;
-
-	@Autowired
-	public UserController(UserDAO userDAO) {
-		this.userDAO = userDAO;
 	
-	}
-
-	@RequestMapping(path="/users/new", method=RequestMethod.GET)
-	public String displayNewUserForm() {
-		return "newUser";
-	}
-	
-	@RequestMapping(path="/users", method=RequestMethod.POST)
-	public String createUser(@RequestParam String userName, @RequestParam String password) {
-		userDAO.saveUser(userName, password);
-		return "redirect:/login";
-	}
-	
-	@RequestMapping(path="/users/{userName}", method=RequestMethod.GET)
-	public String displayDashboard(Map<String, Object> model, @PathVariable String userName) {
-		return "userDashboard";
-
-	}
-	
-	@RequestMapping(path="/users/{userName}/changePassword", method=RequestMethod.GET)
-	public String displayChangePasswordForm(Map<String, Object> model, @PathVariable String userName) {
-		model.put("userName", userName);
-		return "changePassword";
-	}
-	
-	@RequestMapping(path="/users/{userName}/changePassword", method=RequestMethod.POST)
-	public String changePassword(@PathVariable String userName, @RequestParam String password) {
-		userDAO.updatePassword(userName, password);
-		return "userDashboard";
-	}
 }
