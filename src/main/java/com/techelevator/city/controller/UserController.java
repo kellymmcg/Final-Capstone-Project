@@ -28,9 +28,9 @@ public class UserController {
 		return "registration";
 	}
 	
-	@RequestMapping(path="/", method=RequestMethod.POST)
-	public String displayDashboard() {
-		return "redirect:/homePage";
+	@RequestMapping(path="/users/{userName}", method=RequestMethod.GET)
+	public String displayUserDashboard() {
+		return "homePage";
 	}
 	
 }
