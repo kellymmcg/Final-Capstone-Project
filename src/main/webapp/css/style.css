@@ -17,16 +17,16 @@ footer {
 	font-size: 12px;
 	color: white;
 	text-align: center;
-	padding-bottom: 10%;
-	background-color: #736f72;	
+	padding-top: 15px;
+	padding-bottom: 70px;
+	background-color: #736f72;
+	
 }
-.footertext.a:link {
+.footertext a {
 	text-decoration: none;
-	color: white;
+	color: white !important ;
 }
-.footertext.a:hover {
-	color: white;
-}
+
 #signupbutton {
 	width: 50%;
 	height: 34px;
