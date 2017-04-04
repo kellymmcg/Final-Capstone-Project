@@ -2,13 +2,14 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<div>
+<div class="registrationpage">
 	<form class="form-horizontal" action='' method="POST">
 		<fieldset>
 			<div id="legend">
-				<legend class="">Registration</legend>
+				<h2>Registration</h2>
 			</div>
-			
+			<hr>
+		<div class="registrationbox">
 			<div class="control-group">
 				<!-- Username -->
 				<label class="control-label" for="username">Username</label>
@@ -17,16 +18,6 @@
 						class="input-xlarge">
 					<p class="help-block">Username can contain any letters or
 						numbers, without spaces</p>
-				</div>
-			</div>
-
-			<div class="control-group">
-				<!-- E-mail -->
-				<label class="control-label" for="email">E-mail</label>
-				<div class="controls">
-					<input type="text" id="email" name="email" placeholder=""
-						class="input-xlarge">
-					<p class="help-block">Please provide your E-mail</p>
 				</div>
 			</div>
 
@@ -59,6 +50,7 @@
 			</div>
 		</fieldset>
 	</form>
+	</div>
 </div>
 
 

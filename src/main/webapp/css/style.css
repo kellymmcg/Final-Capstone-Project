@@ -1,6 +1,7 @@
 footer {
 	font-size: 12px;
 	text-align: center;
+	padding-top: 10%;
 }
 #signupbutton {
 	width: 50%;
@@ -14,4 +15,13 @@ footer {
 .signin:hover {
 	font-weight: bold;
 	color: white;
+}
+
+.registrationbox{
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.registrationpage h2 {
+	padding-left: 5%;
 }
