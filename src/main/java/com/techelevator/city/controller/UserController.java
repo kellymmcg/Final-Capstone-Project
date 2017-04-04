@@ -16,4 +16,16 @@ import com.techelevator.city.model.UserDAO;
 @Controller
 public class UserController {
 	
+	private UserDAO userDAO;
+	
+	@Autowired
+	public UserController(UserDAO userDAO) {
+		this.userDAO = userDAO;
+	}
+	
+	@RequestMapping(path="/registration", method=RequestMethod.GET)
+	public String displayRegistrationForm() {
+		return "/registration";
+	}
+	
 }

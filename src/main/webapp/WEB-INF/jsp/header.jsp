@@ -56,7 +56,8 @@
 											</form>
 										</div>
 										<div class="bottom text-center">
-											New here ? <a href="#"><b>Join Us</b></a>
+											<c:url var="registration" value="/registration" />
+											New here ? <a href="${registration}"><b>Join Us</b></a>
 										</div>
 									</div>
 								</li>
