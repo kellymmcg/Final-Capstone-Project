@@ -3,30 +3,61 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 <div>
-	<h1>Registration</h1>
-	<div>
-		<h2>Search, discover, and explore a different city.</h2>
-		<h3>Create daily itineraries.</h3>
-		<h3>Add and save landmarks.</h3>
-	</div>
+	<form class="form-horizontal" action='' method="POST">
+		<fieldset>
+			<div id="legend">
+				<legend class="">Registration</legend>
+			</div>
+			<div class="control-group">
+				<!-- Username -->
+				<label class="control-label" for="username">Username</label>
+				<div class="controls">
+					<input type="text" id="username" name="username" placeholder=""
+						class="input-xlarge">
+					<p class="help-block">Username can contain any letters or
+						numbers, without spaces</p>
+				</div>
+			</div>
 
-	<div class = "registration">
-			<c:url var="formAction" value="/registration" />
-			<form method="POST" action="${formAction}">
-				<div class="user">
-					<label for="user">Username: </label> <input type="text" name="user"
-						id="user" />
+			<div class="control-group">
+				<!-- E-mail -->
+				<label class="control-label" for="email">E-mail</label>
+				<div class="controls">
+					<input type="text" id="email" name="email" placeholder=""
+						class="input-xlarge">
+					<p class="help-block">Please provide your E-mail</p>
 				</div>
-				<br>
-				<div class="password">
-					<label for="password">Password: </label> <input
-						type="text" name="password" id="password" />
-				<br>
-					<label for="verifypassword">Verify Password:</label> <input type="text" name="verifypassword" id="verifypassword" />
+			</div>
+
+			<div class="control-group">
+				<!-- Password-->
+				<label class="control-label" for="password">Password</label>
+				<div class="controls">
+					<input type="password" id="password" name="password" placeholder=""
+						class="input-xlarge">
+					<p class="help-block">Password should be at least 4 characters</p>
 				</div>
-				<input class="formSubmitButton" type="submit" value="Submit" />
-			</form>
-	</div>
+			</div>
+
+			<div class="control-group">
+				<!-- Password -->
+				<label class="control-label" for="password_confirm">Password
+					(Confirm)</label>
+				<div class="controls">
+					<input type="password" id="password_confirm"
+						name="password_confirm" placeholder="" class="input-xlarge">
+					<p class="help-block">Please confirm password</p>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<!-- Button -->
+				<div class="controls">
+					<button class="btn btn-success">Register</button>
+				</div>
+			</div>
+		</fieldset>
+	</form>
 </div>
 
 
