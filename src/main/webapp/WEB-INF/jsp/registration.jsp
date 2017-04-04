@@ -8,6 +8,7 @@
 			<div id="legend">
 				<legend class="">Registration</legend>
 			</div>
+			
 			<div class="control-group">
 				<!-- Username -->
 				<label class="control-label" for="username">Username</label>
