@@ -1,5 +1,5 @@
 		<footer>
-		<ul style="list-style: none;">
+		<ul class="footertext" style="list-style: none;">
 			<li><a href="#">About Us</a></li>
 			<li><a href="#">Contact Us</a></li>
 		</ul>
