@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<p> Hello, world! </p>
+
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
 
