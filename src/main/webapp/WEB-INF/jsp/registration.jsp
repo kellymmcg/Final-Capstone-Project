@@ -3,8 +3,8 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
 <div class="registrationpage">
-		<h3>Registration</h3>
 			<div class="registrationbox">
+				<h3>Registration</h3>
 				<form class="form-horizontal" action='' method="POST">
 					<fieldset>
 						<div class="control-group">
@@ -49,8 +49,6 @@
 				</form>
 			</div>
 		</div>
-	</div>
-</div>
 
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
