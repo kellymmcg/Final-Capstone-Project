@@ -25,7 +25,7 @@ public class UserController {
 	
 	@RequestMapping(path="/registration", method=RequestMethod.GET)
 	public String displayRegistrationForm() {
-		return "/registration";
+		return "registration";
 	}
 	
 }
