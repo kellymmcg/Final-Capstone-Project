@@ -1,8 +1,9 @@
 		<footer>
-		<ul>
+		<ul style="list-style: none;">
+			<li><a href="#">About Us</a></li>
 			<li><a href="#">Contact Us</a></li>
 		</ul>
-			© Copyright 2017 Tour du City.
+			<p>© Copyright 2017 Tour du City.</p>
 		</footer>
 	</body>
 </html>

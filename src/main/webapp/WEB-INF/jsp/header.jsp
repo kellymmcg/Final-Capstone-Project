@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +10,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<c:url var="cssHref" value="css/style.css" />
+<link rel="stylesheet" type="text/css" href="${cssHref}">
 </head>
 <body>
 	<header>
@@ -52,7 +56,8 @@
 											</form>
 										</div>
 										<div class="bottom text-center">
-											New here ? <a href="#"><b>Join Us</b></a>
+											<c:url var="registration" value="/registration" />
+											New here ? <a href="${registration}"><b>Join Us</b></a>
 										</div>
 									</div>
 								</li>

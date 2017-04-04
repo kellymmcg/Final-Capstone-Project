@@ -24,13 +24,14 @@ package com.techelevator.city.controller;
 			this.userDAO = userDAO;
 		}
 		
-		@RequestMapping(path="/")
+		@RequestMapping(path="/", method=RequestMethod.GET)
 		public String showHomePage() {
 			return "homePage";
 		}
 
-		@RequestMapping(path="/users/new", method=RequestMethod.GET)
+		@RequestMapping(path="/", method=RequestMethod.POST)
 		public String displayNewUserForm() {
 			return "homePage";
 		}
+		
 }
