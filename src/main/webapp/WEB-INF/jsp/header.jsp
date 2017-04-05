@@ -11,6 +11,8 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <c:url var="cssHref" value="css/style.css" />
+<c:url value="js/script.js" var="jsHref" />
+<script src="${jsHref}"></script>
 <link rel="stylesheet" type="text/css" href="${cssHref}">
 </head>
 <body>
@@ -44,9 +46,9 @@
 													<c:url var="logoutAction" value="/logout" />
 													<form id="logoutForm" action="${logoutAction}" method="POST">
 														<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
-														<button type="submit">Logout</button>
 													</form>
-													<li>Add Landmark</li>
+													<li><a href="#" id="logoutLink">Log out</a></li>
+													<li>Add Landmark</li> <!-- Place holder until page is in working order... -->
 													
 												</div>
 											</div>
@@ -64,6 +66,7 @@
 													<p id="lHeader">&bull; Login &bull;</p> 
 													<c:url var="formAction" value="/"/>
 													<form class="form" role="form" method="POST" action="${formAction}" id="login-nav">
+														<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 														<div class="form-group">
 															<input type="text" class="form-control" name="userName" id="userName" placeholder="Username" required>
 														</div>
