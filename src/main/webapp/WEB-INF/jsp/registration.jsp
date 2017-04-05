@@ -70,7 +70,7 @@
 					<div class="controls">
 						<input type="password" id="confirmPassword"
 							name="confirmPassword" placeholder="Re-Type Password"
-							class="input-xlarge regBox"><br><br>
+							class="input-xlarge regBox"><br>
 					</div>
 				</div>
 
