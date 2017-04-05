@@ -20,7 +20,7 @@
 	<label for ="phone">Phone</label>
 	<input type="text" name="landmarkPhone" id="landmarkPhone"/><br/>
 	<label for ="review">ReviewId</label>
-	<input type="text" name="landmarkPhone" id="landmarkPhone"/><br/>
+	<input type="text" name="landmarkReview" id="landmarkReview"/><br/>
 	<textarea rows="5" cols="20">Describe your experience</textarea><br/>
 	<input type="submit" value="Submit"/>
 	

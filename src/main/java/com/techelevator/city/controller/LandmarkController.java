@@ -33,9 +33,14 @@ public class LandmarkController {
 	}
 	
 	@RequestMapping(path="/suggestions", method=RequestMethod.POST)
-	public String submitLandmarkSuggestion(ModelMap model) {
-		
+	public String submitLandmarkSuggestion(@RequestParam Landmark landmark, ModelMap model) {
+		landDAO.addLandmark(landmark);
 		return"redirect:/submitSuggestion";
+	}
+	
+	@RequestMapping(path="submitSuggestion", method=RequestMethod.GET)
+	public String suggestionConfirmation() {
+		return "submitSuggestion";
 	}
 	@RequestMapping(path="/landmarkSearch", method=RequestMethod.GET)
 	public String searchLandmarks() {
