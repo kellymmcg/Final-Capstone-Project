@@ -12,6 +12,7 @@ public class Landmark {
 	private int closeTime;
 	private String phone;
 	private int reviewId;
+	private String image;
 
 	public Long getId() {
 		return id;
@@ -91,6 +92,14 @@ public class Landmark {
 
 	public void setReviewId(int reviewId) {
 		this.reviewId = reviewId;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 }
