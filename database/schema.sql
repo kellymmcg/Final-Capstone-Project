@@ -30,7 +30,8 @@ address VARCHAR(256) NOT NULL,
 website VARCHAR(256) NOT NULL,
 open_time INTEGER NOT NULL,
 close_time INTEGER NOT NULL,
-phone VARCHAR (32) NOT NULL
+phone VARCHAR(32) NOT NULL,
+image VARCHAR(256) NOT NULL
 
 );
 
@@ -40,5 +41,5 @@ INSERT INTO app_user(user_name, password, salt) VALUES ('KellyM', 'abCu2Z/ss3lg1
 INSERT INTO app_user(user_name, password, salt) VALUES ('AdamG', 'QAHQxJ5fL70bj4KA1XqOEQ==', 'Kl9CB9BA1QQHdSBpDhafg8rdyWkhlf5s7jxbCKFURNQB26/OROT+K714NBADlkJBj009M+37PlPe+2y50I+yJbD8x0ZlonRHuRYJ9ewnHLaWrUJJLWICqCoTXOLfOuIl8jcXNH2Zov2mF1vKIEsdvBGOqC1txkLHUTjtidOcVCo=');
 
 INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone)
-VALUES ('1','1','Tower City','41.4972', '81.6940', '230 W Huron Rd, Cleveland, OH 44113','www.towercitycenter.com/', '10', '7', '(216) 623-4750');
+VALUES ('1','1','Tower City','41.4972', '81.6940', '230 W Huron Rd, Cleveland, OH 44113','www.towercitycenter.com/', '10', '7', '(216) 623-4750','https://devaulphotography.files.wordpress.com/2012/08/tower-city-center.jpg');
 COMMIT;
