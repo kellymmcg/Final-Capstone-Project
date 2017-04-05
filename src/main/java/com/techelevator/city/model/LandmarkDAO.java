@@ -4,6 +4,8 @@ public interface LandmarkDAO {
 
 	public void addLandmark(Landmark newLandmark);
 	
-	public Landmark searchLandmarkById(int landmarkId);
+	public Landmark searchLandmarkById(long landmarkId);
+
+	public Landmark searchLandmarkByName(String landmarkName);
 	
 }
