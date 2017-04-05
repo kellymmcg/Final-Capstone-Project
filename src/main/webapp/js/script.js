@@ -4,4 +4,8 @@ $(document).ready(function() {
 		$("#logoutForm").submit();
 	});
 	
+	$("#addLink").click(function(event){
+		$("#addForm").submit();
+	});
+	
 });	

@@ -48,7 +48,12 @@
 														<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 													</form>
 													<li><a href="#" id="logoutLink">Log out</a></li>
-													<li>Add Landmark</li> <!-- Place holder until page is in working order... -->
+													
+													<c:url var="addLandmarkAction" value="/addLandmark" />
+													<form id="addForm" action="${addLandmarkAction}" method="GET">
+														
+													</form>
+													<li><a href="#" id="addLink">Add Landmark</a></li> <!-- Place holder until page is in working order... -->
 													
 												</div>
 											</div>
