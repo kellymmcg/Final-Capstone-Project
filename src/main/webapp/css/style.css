@@ -97,8 +97,27 @@ footer {
 	color: white;
 }
 
-.landmarkdetails {
-	padding-left: 10px;
+.spLink {
+	color: white;
+	text-weight: bold;
+	text-decoration: none;
+}
+
+.sBox {
+	background-color: #378D3D;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 20px;
+}
+
+#landmarkName {
+	text-align: center;
+	color: black;
+	margin-bottom: 10px;
+}
+
+.bullet {
+	padding-left: 20px;
 }
 
 

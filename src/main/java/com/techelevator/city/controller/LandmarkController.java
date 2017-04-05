@@ -42,6 +42,7 @@ public class LandmarkController {
 	public String suggestionConfirmation() {
 		return "submitSuggestion";
 	}
+	
 	@RequestMapping(path="/landmarkSearch", method=RequestMethod.GET)
 	public String searchLandmarks() {
 		return "landmarkSearch";
