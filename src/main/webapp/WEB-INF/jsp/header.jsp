@@ -61,6 +61,7 @@
 										<li class="loginTab">
 											<div class="row">
 												<div class="col-md-12">
+													<p id="lHeader">&bull; Login &bull;</p> 
 													<c:url var="formAction" value="/"/>
 													<form class="form" role="form" method="POST" action="${formAction}" id="login-nav">
 														<div class="form-group">
@@ -88,5 +89,14 @@
 				</div>
 			</div>
 		</nav>
-		
+		<div id="noticeBar">
+			<c:choose>
+				<c:when test="${not empty currentUser}">
+					<p id="wHeader">Welcome, ${currentUser}!</p>
+				</c:when>
+				<c:otherwise>
+					<p id="fHeader">${loginFailure}</p>
+				</c:otherwise>
+			</c:choose>		
+		</div>
 	</header>
