@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<c:url var="pwValidationSrc" value="js/script.js" />
+<c:url var="pwValidationSrc" value="js/password.js" />
 <script src="${pwValidationSrc}"></script>
 
 <script type="text/javascript">
