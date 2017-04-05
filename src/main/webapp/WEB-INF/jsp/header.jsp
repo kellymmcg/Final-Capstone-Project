@@ -50,10 +50,7 @@
 													<li><a href="#" id="logoutLink">Log out</a></li>
 													
 													<c:url var="addLandmarkAction" value="/addLandmark" />
-													<form id="addForm" action="${addLandmarkAction}" method="GET">
-														
-													</form>
-													<li><a href="#" id="addLink">Add Landmark</a></li> <!-- Place holder until page is in working order... -->
+													<li><a href="${addLandmarkAction}" id="addLink">Add Landmark</a></li> <!-- Place holder until page is in working order... -->
 													
 												</div>
 											</div>
