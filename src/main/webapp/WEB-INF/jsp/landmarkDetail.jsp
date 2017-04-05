@@ -9,7 +9,4 @@ ${landmark.getLatitude()} <br/>
 ${landmark.getAddress()} <br/>
 <p> ${landmark.getOpenTime()} A.M. to ${landmark.getCloseTime()} P.M </p> <br/>
 
- 
-
-
 <c:import url="/WEB-INF/jsp/footer.jsp" />
