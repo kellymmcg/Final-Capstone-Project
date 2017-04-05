@@ -97,6 +97,10 @@ footer {
 	color: white;
 }
 
+.landmarkdetails {
+	padding-left: 10px;
+}
+
 
 
 /* Text colors */
@@ -298,5 +302,69 @@ footer {
 .registrationbox h3{
 	font-style: strong;
 	color: #736f72;
+}
+
+bs-calltoaction{
+    position: relative;
+    width:auto;
+    padding: 15px 25px;
+    border: 1px solid black;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+    .bs-calltoaction > .row{
+        display:table;
+        width: calc(100% + 30px);
+    }
+     
+        .bs-calltoaction > .row > [class^="col-"],
+        .bs-calltoaction > .row > [class*=" col-"]{
+            float:none;
+            display:table-cell;
+            vertical-align:middle;
+        }
+
+            .cta-contents{
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+                .cta-title{
+                    margin: 0 auto 15px;
+                    padding: 0;
+                }
+
+                .cta-desc{
+                    padding: 0;
+                }
+
+                .cta-desc p:last-child{
+                    margin-bottom: 0;
+                }
+
+            .cta-button{
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+@media (max-width: 991px){
+    .bs-calltoaction > .row{
+        display:block;
+        width: auto;
+    }
+
+        .bs-calltoaction > .row > [class^="col-"],
+        .bs-calltoaction > .row > [class*=" col-"]{
+            float:none;
+            display:block;
+            vertical-align:middle;
+            position: relative;
+        }
+
+        .cta-contents{
+            text-align: center;
+        }
 }
 
