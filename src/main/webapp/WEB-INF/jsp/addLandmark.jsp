@@ -3,8 +3,8 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 <div class="container-fluid">
 	<h4>Landmark Details</h4><br>
-<c:url var="suggestionHref" value="/suggestions"/>
-	<form action="${suggestionHref}" method="POST">
+<c:url var="addLandmarkHref" value="/addLandmark"/>
+	<form action="${addLandmarkHref}" method="POST">
 		<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 	
 		<label for="landmarkId">Id</label>
