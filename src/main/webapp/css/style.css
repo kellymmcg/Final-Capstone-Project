@@ -9,6 +9,10 @@ html {
 	background: #FFFFFF;
 }
 
+.regBox {
+	color: black;
+}
+
 .affix {
 	top: 0;
 	width: 100%;

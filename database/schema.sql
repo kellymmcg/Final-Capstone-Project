@@ -15,7 +15,7 @@ CREATE TABLE app_user (
 	id INTEGER PRIMARY KEY DEFAULT NEXTVAL('seq_app_user_id'),
 	user_name VARCHAR(64) NOT NULL,
 	password VARCHAR(128) NOT NULL,
-	salt VARCHAR(128) NOT NULL
+	salt VARCHAR(480) NOT NULL
 );
 
 CREATE SEQUENCE seq_landmark_id;

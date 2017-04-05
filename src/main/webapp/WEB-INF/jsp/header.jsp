@@ -44,8 +44,10 @@
 													<c:url var="logoutAction" value="/logout" />
 													<form id="logoutForm" action="${logoutAction}" method="POST">
 														<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
+														<button type="submit">Logout</button>
 													</form>
-													<li><a id="logoutLink" href="#">Log Out</a></li>
+													<li>Add Landmark</li>
+													
 												</div>
 											</div>
 										</li>	

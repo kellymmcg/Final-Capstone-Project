@@ -39,7 +39,10 @@ import com.techelevator.security.PasswordHasher;
 			
 			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForUser, userName.toUpperCase(), password);
 			if(results.next()) {
-				return true;
+				String storedSalt = results.getString("salt");
+				String storedPassword = results.getString("password");
+				String hashedPassword = passwordHasher.computeHash(password, Base64.decode(storedSalt));
+				return storedPassword.equals(hashedPassword);
 			} else {
 				return false;
 			}

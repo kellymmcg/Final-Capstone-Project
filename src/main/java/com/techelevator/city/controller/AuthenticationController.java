@@ -44,12 +44,19 @@ import com.techelevator.city.model.UserDAO;
 	                return "redirect:/users/"+userName;
 	            }
 	        } else {
-	            return "redirect:/homePage";
+	            return "redirect:/";
 	        }
 	    }
 		
 		private boolean destinationIsValid(String destination) {
 			return destination != null && destination.startsWith("http://localhost:8080/capstone");
+		}
+		
+		@RequestMapping(path="/logout", method=RequestMethod.POST)
+		public String logout(ModelMap model, HttpSession session) {
+			model.remove("currentUser");
+			session.removeAttribute("currentUser");
+			return "redirect:/";
 		}
 		
 	}
