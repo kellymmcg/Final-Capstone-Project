@@ -4,7 +4,10 @@ $(document).ready(function() {
 		$("#logoutForm").submit();
 	});
 	
-
+	$("#searchLink").click(function(event){
+		$("#searchForm").submit();
+	});
+	
 	$.validator.addMethod("complexPassword", function(value) {
 			
 			var rulesPassed = 0;
