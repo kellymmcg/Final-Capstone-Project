@@ -19,8 +19,8 @@
 							<c:url var="searchAction" value="/landmarkSearch"/>
 							<form action="${searchAction}" method="POST" id="searchForm">
 								<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
-							</form>
 								<input type="text" name="landmarkName" id="landmarkName" placeholder="Landmark Name"/>
+							</form>
 								<a href="#" class="btn btn-lg btn-block btn-primary" id="searchLink">Search!</a>
 						</div>
 					</div>

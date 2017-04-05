@@ -16,7 +16,6 @@ import com.techelevator.city.model.UserDAO;
 
 @Transactional
 @Controller
-
 public class LandmarkController {
 
 	private UserDAO userDAO;
@@ -47,8 +46,8 @@ public class LandmarkController {
 	@RequestMapping(path="/landmarkSearch", method=RequestMethod.GET)
 	public String searchLandmarks() {
 		return "landmarkSearch";
-		
 	}
+	
 	@RequestMapping(path="/landmarkSearch", method=RequestMethod.POST)
 	public String submitLandmarkSearch(@RequestParam String landmarkName, ModelMap model) {
 		Landmark landmark = landDAO.searchLandmarkByName(landmarkName);
