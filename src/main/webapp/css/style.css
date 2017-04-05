@@ -9,6 +9,52 @@ html {
 	background: #FFFFFF;
 }
 
+#noticeBar {
+	text-align: right;
+	position: relative;
+	bottom: 20px;
+	padding-top: 10px;
+	padding-bottom: 3px;
+	padding-right: 10px;
+	color: white;
+	background-color: #FCB12F;
+} 
+
+#wHeader {
+	font-size: 20px;
+	text-align: left;
+	padding-left: 10px;
+}
+
+#lHeader {
+	padding-right: 8px;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.regBox {
+	color: black;
+}
+
+.affix {
+	top: 0;
+	width: 100%;
+}
+
+.affix + .container-fluid {
+	padding-top: 70px;
+}
+
+.loginTab {
+	width: 200px;
+	padding: 30px;
+}
+
+.loginTab button {
+	color: #736f72;
+}
+
 footer {
 	position:absolute;
    	width:100%;

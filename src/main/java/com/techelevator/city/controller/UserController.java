@@ -28,9 +28,15 @@ public class UserController {
 		return "registration";
 	}
 	
+	@RequestMapping(path="/registration", method=RequestMethod.POST)
+	public String createUser(@RequestParam String userName, @RequestParam String password) {
+		userDAO.saveUser(userName, password);
+		return "redirect:/";
+	}
+	
 	@RequestMapping(path="/users/{userName}", method=RequestMethod.GET)
 	public String displayUserDashboard() {
-		return "homePage";
+		return "redirect:/";
 	}
 	
 }

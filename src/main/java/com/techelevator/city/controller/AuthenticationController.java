@@ -1,7 +1,5 @@
 package com.techelevator.city.controller;
 
-import java.util.Map;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.city.model.UserDAO;
 
@@ -32,7 +31,8 @@ import com.techelevator.city.model.UserDAO;
 	                        @RequestParam String password,
 	                        @RequestParam(required=false) String destination,
 	                        HttpSession session,
-	                        ModelMap model) {
+	                        ModelMap model,
+	                        RedirectAttributes redir) {
 	        
 	        if(userDAO.searchForUsernameAndPassword(userName, password)) {
 	            session.invalidate();
@@ -44,12 +44,20 @@ import com.techelevator.city.model.UserDAO;
 	                return "redirect:/users/"+userName;
 	            }
 	        } else {
-	            return "redirect:/homePage";
+	        	redir.addFlashAttribute("loginFailure", "Incorrect username or password!");
+	            return "redirect:/";
 	        }
 	    }
 		
 		private boolean destinationIsValid(String destination) {
-			return destination != null && destination.startsWith("http://localhost:8080/critter-app");
+			return destination != null && destination.startsWith("http://localhost:8080/capstone");
+		}
+		
+		@RequestMapping(path="/logout", method=RequestMethod.POST)
+		public String logout(ModelMap model, HttpSession session) {
+			model.remove("currentUser");
+			session.removeAttribute("currentUser");
+			return "redirect:/";
 		}
 		
 	}
