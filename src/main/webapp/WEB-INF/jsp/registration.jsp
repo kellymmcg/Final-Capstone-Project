@@ -6,6 +6,7 @@
 	<div class="registrationbox">
 		<h3>Registration</h3>
 		<form class="form-horizontal" action='' method="POST">
+			<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 			<fieldset>
 			
 				<div class="control-group">
