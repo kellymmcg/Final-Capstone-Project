@@ -75,20 +75,21 @@
 						<button class="btn btn-success">Register</button>
 					</div>
 				</div>
-				
+				<!--  
 				<p> Passwords must be at least 10 characters long, 
 				No more than two identical characters in a row.
-				Must contain at least 3 of the following 4 types of characters:
+				Must contain at least 3 of the following 4 types of characters: Uppercase letter (A-Z),
+				Lowercase letter (a-z), Number (0-9), or A "special character (#, $, %, etc...)"
 						<li>Uppercase letter (A-Z)</li>
 						<li>Lowercase letter (a-z)</li>
 						<li>Number (0-9)</li>
 						<li>A "special" character (#, $, space, etc)</li>
 					</ol>
 				</li>
-				No more than two identical characters in a row
+				No more than two identical characters in a row -->
 		</div></p>
 			</fieldset>
-		</form>
+	</form>
 	</div>
 </div>
 
