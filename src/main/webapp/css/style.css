@@ -9,6 +9,24 @@ html {
 	background: #FFFFFF;
 }
 
+.affix {
+	top: 0;
+	width: 100%;
+}
+
+.affix + .container-fluid {
+	padding-top: 70px;
+}
+
+.loginTab {
+	width: 200px;
+	padding: 30px;
+}
+
+.loginTab button {
+	color: #736f72;
+}
+
 footer {
 	position:absolute;
    	width:100%;

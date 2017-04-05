@@ -49,7 +49,7 @@ import com.techelevator.city.model.UserDAO;
 	    }
 		
 		private boolean destinationIsValid(String destination) {
-			return destination != null && destination.startsWith("http://localhost:8080/critter-app");
+			return destination != null && destination.startsWith("http://localhost:8080/capstone");
 		}
 		
 	}

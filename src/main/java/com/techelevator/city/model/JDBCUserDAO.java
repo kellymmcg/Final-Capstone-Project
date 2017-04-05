@@ -34,14 +34,12 @@ import com.techelevator.security.PasswordHasher;
 		public boolean searchForUsernameAndPassword(String userName, String password) {
 			String sqlSearchForUser = "SELECT * "+
 								      "FROM app_user "+
-								      "WHERE UPPER(user_name) = ?";
+								      "WHERE UPPER(user_name) = ?"+
+								      "AND password = ?";
 			
-			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForUser, userName.toUpperCase());
+			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForUser, userName.toUpperCase(), password);
 			if(results.next()) {
-				String storedSalt = results.getString("salt");
-				String storedPassword = results.getString("password");
-				String hashedPassword = passwordHasher.computeHash(password, Base64.decode(storedSalt));
-				return storedPassword.equals(hashedPassword);
+				return true;
 			} else {
 				return false;
 			}

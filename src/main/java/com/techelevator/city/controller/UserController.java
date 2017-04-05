@@ -30,7 +30,7 @@ public class UserController {
 	
 	@RequestMapping(path="/users/{userName}", method=RequestMethod.GET)
 	public String displayUserDashboard() {
-		return "homePage";
+		return "redirect:/";
 	}
 	
 }
