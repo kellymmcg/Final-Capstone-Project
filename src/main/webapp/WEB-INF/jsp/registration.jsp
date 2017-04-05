@@ -12,10 +12,9 @@
 			rules : {
 				password : {
 					required : true,
-					minlength : 10,
+					minlength : 8,
 					maxlength : 128,
-					complexPassword : true,
-					noMoreThan2Duplicates : true
+					complexPassword : true
 				},
 				userName : {
 					required : true
@@ -71,7 +70,7 @@
 					<div class="controls">
 						<input type="password" id="confirmPassword"
 							name="confirmPassword" placeholder="Re-Type Password"
-							class="input-xlarge regBox">
+							class="input-xlarge regBox"><br><br>
 					</div>
 				</div>
 
@@ -83,11 +82,6 @@
 					</div>
 				</div><br>
 
-				<p>Passwords must be at least 10 characters long, no more than
-					two identical characters in a row, it must contain at least 3 of
-					the following 4 types of characters: Uppercase letter (A-Z),
-					Lowercase letter (a-z), Number (0-9), or A "special character (#,
-					$, %, etc...).</p>
 			</fieldset>
 		</form>
 	</div>
