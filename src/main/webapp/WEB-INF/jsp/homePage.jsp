@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br>   <!-- Creating whitespace for now -- Be sure to delete this! -->
+<br><br><br><br>   <!-- Creating whitespace for now -- Be sure to delete this! -->
 
 <div class="container-fluid theme-bg padding-50">
 	<div class="row">
@@ -20,6 +20,8 @@
         </div>
     </div>
 </div>
+
+<br><br><br><br><br><br><br><br><br>
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
 

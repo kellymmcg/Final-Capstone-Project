@@ -19,7 +19,7 @@
 </head>
 <body>
 	<header>
-		<img src="img/logo.png" class="img-responsive"/>
+		<img src="img/logo.png" class="img-responsive" height="200"/>
 		<nav class="navbar navbar-default" data-spy="affix" data-offset-top="425" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
