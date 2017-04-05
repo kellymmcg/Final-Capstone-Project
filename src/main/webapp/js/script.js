@@ -4,10 +4,8 @@ $(document).ready(function() {
 		$("#logoutForm").submit();
 	});
 	
-	
-	$(document).ready(function () {
 
-		$.validator.addMethod("complexPassword", function(value) {
+	$.validator.addMethod("complexPassword", function(value) {
 			
 			var rulesPassed = 0;
 			
@@ -38,8 +36,8 @@ $(document).ready(function() {
 			}
 			return true;
 		}, "Password must not contain more than two duplicate characters in a row");
-	});
 
 
-	
-});	
+
+   	
+});
