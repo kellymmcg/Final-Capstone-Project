@@ -2,8 +2,8 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<h1> ${landmark.getName()}</h1> <br/>
-<image src="${landmark.getImage()}"/><br/>
+<h1> ${landmark.name}</h1> <br/>
+<img src="${landmark.getImage()}"/><br/>
 ${landmark.getLongitude()} <br/>
 ${landmark.getLatitude()} <br/>
 ${landmark.getAddress()} <br/>
