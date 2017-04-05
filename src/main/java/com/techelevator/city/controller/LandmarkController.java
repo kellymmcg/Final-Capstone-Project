@@ -39,7 +39,7 @@ public class LandmarkController {
 		return"redirect:/submitSuggestion";
 	}
 	
-	@RequestMapping(path="submitSuggestion", method=RequestMethod.GET)
+	@RequestMapping(path="/submitSuggestion", method=RequestMethod.GET)
 	public String suggestionConfirmation() {
 		return "submitSuggestion";
 	}

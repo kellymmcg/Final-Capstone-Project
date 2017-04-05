@@ -7,8 +7,10 @@
 	<form action="${suggestionHref}" method="POST">
 		<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 	
+		<label for="landmarkId">Id</label>
+			<input type="text" name="id" id="landmarkId" /><br><br>	
 		<label for="reviewId">Review Id</label>
-			<input type="text" name="reviewId" id="landmark" /><br><br>	
+			<input type="text" name="reviewId" id="landmarkReviewId" /><br><br>	
 		<label for="landmarkName">Name </label>
 			<input type="text" name="name" id="landmarkName" /><br><br>
 		<label for="landmarkLong">Longitute </label>		
