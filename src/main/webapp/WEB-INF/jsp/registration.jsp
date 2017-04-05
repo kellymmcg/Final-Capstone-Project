@@ -8,7 +8,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
-		$("form").validate({
+		$("form#registration").validate({
 			rules : {
 				password : {
 					required : true,
@@ -40,14 +40,14 @@
 	<div class="registrationbox">
 		<h3>Registration</h3>
 		<c:url var="formAction" value="/registration" />
-		<form class="form-horizontal" action='${formAction}' method="POST">
+		<form class="form-horizontal" id = "registration" action='${formAction}' method="POST">
 			<input type="hidden" name="CSRF_TOKEN"
 				value="<c:out value='${CSRF_TOKEN}' />" />
 			<fieldset>
 
 				<div class="control-group">
 					<!-- Username -->
-					<label class="control-label" for="username">Username</label>
+					<label class="control-label" for="userName">Username</label>
 					<div class="controls">
 						<input type="text" id="userName" name="userName"
 							placeholder="Username" class="input-xlarge regBox">
@@ -66,11 +66,11 @@
 
 				<div class="control-group">
 					<!-- Password -->
-					<label class="control-label" for="password_confirm">Verify
+					<label class="control-label" for="confirmPassword">Verify
 						Password</label>
 					<div class="controls">
-						<input type="password" id="password_confirm"
-							name="password_confirm" placeholder="Re-Type Password"
+						<input type="password" id="confirmPassword"
+							name="confirmPassword" placeholder="Re-Type Password"
 							class="input-xlarge regBox">
 					</div>
 				</div>
