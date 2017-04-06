@@ -460,29 +460,29 @@ body
 #myCarousel .carouselnav
 {
 
-    background: rgb(0,0,0);
-    background: rgba(0,0,0, 0.7);
+    background: #21074f;
+    background: #fcb12f;
     overflow-y: hidden;
     transition: 0.5s;
 }
+
 
 #myCarousel .carouselnav :hover
 {
-
-    background: rgb(0,0,0);
-    background: rgba(0,0,0, 0.7);
+    background: #fcb12f;
+    background: #21074f;
     overflow-y: hidden;
     transition: 0.5s;
 }
 
-.carouselnav-justified > li > a
+.nav-justified > li > a
 {
     border-radius: 0px;
 }
-.carouselnav-pills>li[data-slide-to="0"].active a { background-color:  rgba(76,76,76, 0.7); color:#fcb12f;}
-.carouselnav-pills>li[data-slide-to="1"].active a { background-color:  rgba(76,76,76, 0.7); color:#fcb12f;}
-.carouselnav-pills>li[data-slide-to="2"].active a { background-color:  rgba(76,76,76, 0.7); color:#fcb12f;}
-.carouselnav-pills>li[data-slide-to="3"].active a { background-color:  rgba(76,76,76, 0.7); color:#fcb12f;}
+.nav-pills>li[data-slide-to="0"].active a { background-color:  #21074f; color: #fcb12f;}
+.nav-pills>li[data-slide-to="1"].active a { background-color:  #21074f; color:#fcb12f;}
+.nav-pills>li[data-slide-to="2"].active a { background-color:  #21074f; color:#fcb12f;}
+.nav-pills>li[data-slide-to="3"].active a { background-color:  #21074f; color:#fcb12f;}
 
 .carouselnav {
     padding-left: 0;
