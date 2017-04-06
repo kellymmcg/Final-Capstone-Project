@@ -30,5 +30,34 @@
 <c:out value="Restrooms: ${landmark.restroom}" />
 <br />
 
+<h3>My Google Maps Demo</h3>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-5">
+			<div id="map"></div>
+			<script>
+				function initMap() {
+					var uluru = {
+						lat : ${landmark.longitude},
+						lng : -${landmark.latitude}
+					};
+					var map = new google.maps.Map(document.getElementById('map'), {
+						zoom : 16,
+						center : uluru
+					});
+					var marker = new google.maps.Marker({
+						position : uluru,
+						map : map
+					});
+				}
+			</script>
+			<script async defer
+				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Cyxiz7vexNLr_2SLi_HoFXh4-xC31T8&callback=initMap">
+				
+			</script>
+		</div>	
+	</div>
+</div>
+
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />

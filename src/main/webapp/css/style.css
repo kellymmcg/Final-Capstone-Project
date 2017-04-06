@@ -26,6 +26,11 @@ html {
 	padding-left: 10px;
 }
 
+#map {
+        height: 400px;
+        width: 100%;
+       }
+
 #lHeader {
 	padding-right: 8px;
 	font-size: 20px;
