@@ -27,7 +27,7 @@
 <c:url var="registrationHref" value="css/registrationForm.css" />
 <link rel="stylesheet" type="text/css" href="${registrationHref}">
 
-<c:url var="detailsHref" value="css/landmarkDetails.css" />
+<c:url var="detailsHref" value="css/landmark.css" />
 <link rel="stylesheet" type="text/css" href="${detailsHref}">
 
 </head>

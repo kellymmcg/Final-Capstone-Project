@@ -53,7 +53,7 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 	public List<Landmark> searchLandmarksByName(String landmarkName) {
 		List<Landmark> landmarks = new ArrayList<>();
 		landmarkName = "%"+landmarkName+"%";
-		String sqlSelectLandmarkById ="SELECT * FROM landmark WHERE name = ?";
+		String sqlSelectLandmarkById ="SELECT * FROM landmark WHERE name LIKE ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectLandmarkById, landmarkName);
 		while(results.next()) {
 			Landmark landmark = null;

@@ -30,31 +30,13 @@ public class LandmarkController {
 		this.landDAO = landDAO;
 	}
 	
-	@RequestMapping(path="/suggestions", method=RequestMethod.GET)
-	public String displayLandmarkSuggestionPage() {
-		return "suggestions";
-	}
-	
-	@RequestMapping(path="/suggestions", method=RequestMethod.POST)
-	public String submitLandmarkSuggestion(@ModelAttribute Landmark landmark, ModelMap model) {
-		landDAO.addLandmark(landmark);
-		return"redirect:/submitSuggestion";
-	}
-	
-	@RequestMapping(path="/submitSuggestion", method=RequestMethod.GET)
-	public String suggestionConfirmation() {
-		return "submitSuggestion";
-	}
-	
 	@RequestMapping(path="/search", method=RequestMethod.GET)
 	public String submitLandmarkSearch(@RequestParam Optional<String> name, ModelMap model) {
 		if(! name.isPresent()){
 			return "search";
 		}
 		List<Landmark> landmarks = landDAO.searchLandmarksByName(name.get());
-		if(landmarks != null){
-			model.addAttribute(landmarks);
-		}
+		model.put("landmarks", landmarks);
 		model.put("search", name.get());
 		return "searchResults";
 	}
