@@ -2,4 +2,5 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
+
 <c:import url="/WEB-INF/jsp/footer.jsp" />
