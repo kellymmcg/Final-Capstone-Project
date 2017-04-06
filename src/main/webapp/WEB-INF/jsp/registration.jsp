@@ -10,23 +10,24 @@
 
 		$("form#registration").validate({
 			rules : {
-				password : {
+				mainPassword : {
 					required : true,
 					minlength : 8,
 					maxlength : 128,
-					complexPassword : true
+					complexPassword : true,
+					noMoreThan2Duplicates : true
 				},
 				userName : {
 					required : true
 				},
 				confirmPassword : {
 					required : true,
-					equalTo : "#password"
+					equalTo : "#registrationPassword"
 				}
 			},
 			messages : {
-				confirmPassword : {
-					equalTo : "Passwords do not match"
+				userName: {
+					required: "A username is required!"
 				}
 			},
 			errorClass : "error"
@@ -55,9 +56,9 @@
 
 				<div class="control-group">
 					<!-- Password-->
-					<label class="control-label" for="password">Password</label>
+					<label class="control-label" for="registrationPassword">Password</label>
 					<div class="controls">
-						<input type="password" id="password" name="password"
+						<input type="password" id="registrationPassword" name="password"
 							placeholder="Password" class="input-xlarge regBox">
 					</div>
 				</div>
@@ -65,11 +66,11 @@
 
 				<div class="control-group">
 					<!-- Password -->
-					<label class="control-label" for="confirmPassword">Verify
+					<label class="control-label" for="confirmRegistrationPassword">Verify
 						Password</label>
 					<div class="controls">
-						<input type="password" id="confirmPassword"
-							name="confirmPassword" placeholder="Re-Type Password"
+						<input type="password" id="confirmRegistrationPassword"
+							name="confirmRegistrationPassword" placeholder="Re-Type Password"
 							class="input-xlarge regBox"><br>
 					</div>
 				</div>
