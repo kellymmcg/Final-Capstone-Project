@@ -38,7 +38,7 @@
 						<li><a href="${home}" id="hButton">Home</a></li>
 						<c:choose>
 							<c:when test="${not empty currentUser}">
-								<div class="col-lg-6 col-lg-offset-1 uOption">
+								<div class="col-sm-1 uOption">
                        				<li>
                         			<c:url var="suggestions" value="/landmarkSearch"/>
                             		<a href="${suggestions}" class="btn test btn-sm" data-wow-delay="0.7s"><span class="glyphicon glyphicon-search"></span> Search</a>

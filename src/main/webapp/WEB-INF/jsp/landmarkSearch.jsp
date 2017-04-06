@@ -2,32 +2,37 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-		<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
-		<div class="container">
-			<div class="col-sm-12">
-				<div class="bs-calltoaction bs-calltoaction-primary">
-					<div class="row sBox">
-						<div class="col-md-9 cta-contents">
-							<h1 class="cta-title">Search our Database of Landmarks!</h1>
-							<div class="cta-desc">
-								<p>Simply enter the name of the landmark into the text box:</p>
-								<p class="bullet">&bull; Click "Submit" and let's see what we find!</p><br><br>
-								<p>If the landmark isn't in our database <a href="#" class="spLink">suggest it to our Admins!</a></p>
-							</div>
-						</div>
-						<div class="col-md-3 cta-button">
-							<c:url var="searchAction" value="/landmarkSearch"/>
-							<form action="${searchAction}" method="GET" id="searchForm">
-								<input type="text" name="landmarkName" id="landmarkName" placeholder="Landmark Name"/>
-								<button type="submit" class="btn btn-lg btn-block btn-primary" id="searchLink">Search!</button>
-							</form>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-
-
+<c:url var="imgNameLink" value="img/mapOnTable.png" />
+<c:url var="imgProxLink" value="img/satMap.png" />
+<br><br>
+<div class="container">
+    <div class="col-sm-5 col-sm-offset-1">
+         <div class="thumbnail">
+                <div class="caption">
+                    <c:url var="searchAction" value="/landmarkSearch"/>
+					<form action="${searchAction}" method="GET" id="searchForm">
+						<h2 class="hOverlay">&bull; Search by Name &bull;</h2>
+						<p class="sOverlay">Returns a list of Landmarks with names matching your search!</p><br>
+						<input type="text" name="landmarkName" id="landmarkName" placeholder="Landmark Name"/>
+						<button type="submit" class="btn btn-lg btn-block btn-primary" id="searchLink">Search!</button>
+					</form>
+                </div>
+                <img src="${imgNameLink}" height="200" width="auto">
+            </div>
+      </div>
+      
+      <div class="col-sm-5">
+         <div class="thumbnail">
+                <div class="caption">
+                    <h2 class="hOverlay">&bull; Search by Proximity &bull;</h2>
+                    <p class="sOverlay">Returns a list of Landmarks around your area!</p><br>
+                    <input type="text" name="cityName" id="cityName" placeholder="City"/>
+                    <input type="text" name="stateName" id="stateName" placeholder="State"/><br><br>
+                    <input type="text" name="radius" id="radius" placeholder="Radius"/>
+                    
+                </div>
+                <img src="${imgProxLink}" height="200" width="auto">
+            </div>
+      </div>
+</div>
 <c:import url="/WEB-INF/jsp/footer.jsp" />
