@@ -4,17 +4,27 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-sm-12 dName" >
+		<div class="col-md-12 dName" >
 			<c:out value="${landmark.name}"/>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-3">
+		<div class="col-md-4">
 			<img src="${landmark.image}" class="dImage" />
 		</div>
 		
-		<div class="col-md-3">
-			<p>${landmark.longitude}"</p>
+		<div class="col-md-4">
+			<p id="dAddress">${landmark.address}</p>
+			<p>Open from ${landmark.openTime} to ${landmark.closeTime}</p>
+			<p>Admission: ${landmark.admission}</p>
+			<table>
+				<tr>
+					<td>Handicap accessible?</td> <td>${landmark.handicapAccessible}</td>
+					<td>Consession available?</td> <td>${landmark.consession}</td>
+					<td>Kid Friendly?</td> <td>${landmark.kidFriendly}</td>
+					<td>Restrooms?</td> <td>${landmark.restroom}</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </div>
