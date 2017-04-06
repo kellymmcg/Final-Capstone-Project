@@ -35,7 +35,17 @@
 					id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-left">
 						<c:url var="home" value="/"/>
-						<li><a href="${home}">Home</a></li>
+						<li><a href="${home}" id="hButton">Home</a></li>
+						<c:choose>
+							<c:when test="${not empty currentUser}">
+								<div class="col-lg-6 col-lg-offset-1 uOption">
+                       				<li>
+                        			<c:url var="suggestions" value="/landmarkSearch"/>
+                            		<a href="${suggestions}" class="btn test btn-sm" data-wow-delay="0.7s"><span class="glyphicon glyphicon-search"></span> Search</a>
+                       				</li>
+                    			</div>
+							</c:when>
+						</c:choose>		
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<c:choose>
@@ -99,7 +109,7 @@
 		<div id="noticeBar">
 			<c:choose>
 				<c:when test="${not empty currentUser}">
-					<p id="wHeader">Welcome, ${currentUser}!</p>
+					<p> <!-- Something could go here eventually... maybe... --></p>
 				</c:when>
 				<c:otherwise>
 					<p id="fHeader">${loginFailure}</p>
