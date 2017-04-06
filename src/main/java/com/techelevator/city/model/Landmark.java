@@ -13,6 +13,52 @@ public class Landmark {
 	private String phone;
 	private int reviewId;
 	private String image;
+	private int admission;
+	private boolean handicapAccessible;
+	private boolean consession;
+	private boolean kidFriendly;
+	private boolean water;
+	private boolean restroom;
+
+	public boolean isHandicapAccessible() {
+		return handicapAccessible;
+	}
+
+	public void setHandicapAccessible(boolean handicapAccessible) {
+		this.handicapAccessible = handicapAccessible;
+	}
+
+	public boolean isConsession() {
+		return consession;
+	}
+
+	public void setConsession(boolean consession) {
+		this.consession = consession;
+	}
+
+	public boolean isKidFriendly() {
+		return kidFriendly;
+	}
+
+	public void setKidFriendly(boolean kidFriendly) {
+		this.kidFriendly = kidFriendly;
+	}
+
+	public boolean isWater() {
+		return water;
+	}
+
+	public void setWater(boolean water) {
+		this.water = water;
+	}
+
+	public boolean isRestroom() {
+		return restroom;
+	}
+
+	public void setRestroom(boolean restroom) {
+		this.restroom = restroom;
+	}
 
 	public Long getId() {
 		return id;
@@ -100,6 +146,14 @@ public class Landmark {
 
 	public void setImage(String image) {
 		this.image = image;
+	}
+
+	public int getAdmission() {
+		return admission;
+	}
+
+	public void setAdmission(int admission) {
+		this.admission = admission;
 	}
 
 }
