@@ -30,7 +30,7 @@ address VARCHAR(256) NOT NULL,
 website VARCHAR(256),
 open_time INTEGER NOT NULL,
 close_time INTEGER NOT NULL,
-phone VARCHAR(32) NOT NULL,
+phone VARCHAR(32),
 image VARCHAR(256) NOT NULL,
 admission INTEGER NOT NULL,
 handicap_accessible BOOLEAN,
@@ -66,6 +66,22 @@ INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, 
 VALUES ('9','1','West Side Market','41.484692', '-81.703062', '1975 W 25th St, Cleveland, OH 44113', 'westsidemarket.org', '7', '18', '(216) 664-3387', 'https://planning-org-uploaded-media.s3.amazonaws.com/legacy_resources/greatplaces/spaces/2008/img/westsidemarket01.jpg', '1425', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
 INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
 VALUES ('10','1','Willard Park(Free Stamp)','41.505379', '-81.692324', 'Cleveland, OH 44114', null, '0', '23', '(216) 664-2485', 'https://devaulphotography.files.wordpress.com/2012/08/free-stamp-1a.jpg', '0', 'TRUE', 'FALSE', 'TRUE', 'FALSE', 'FALSE');
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('11','1','Playhouse Square','41.501275','-81.680723', '1501 Euclid Ave, Cleveland, OH 44115', 'playhousesquare.org', '88', '88', '(216) 241-6000', 'https://segd.org/sites/default/files/styles/galleryformatter_slide/public/Playhouse_spectacular.jpg?itok=Kt7ZE3lS', '0', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('12','1','Cleveland Museum of Natural History','41.511470', '-81.613358', '1 Wade Oval Dr, Cleveland, OH 44106', 'cmnh.org' , '10', '17', '(216) 231-4600', 'http://media.architecturaldigest.com/photos/55f9dfa600a69f791feb27b2/master/pass/dam-images-daily-2015-04-cleveland-museum-cleveland-museum-of-natural-history-150-million-expansion-01.jpg', '1500', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('13','1','The Largest Outdoor Chandelier in The World','41.500902', '-81.681771', 'E 14th St, Cleveland, OH 44115', null , '0', '23', null, 'http://images.midwestliving.mdpcdn.com/sites/midwestliving.com/files/102718406_w.jpg', '0', 'TRUE', 'FALSE', 'FALSE', 'FALSE', 'FALSE');
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('14','1','Museum of Contemporary Art Cleveland','41.508908', '-81.604637', '11400 Euclid Ave, Cleveland, OH 44106', 'mocacleveland.org' , '11', '17', '(216) 421-8671', 'http://planning.city.cleveland.oh.us/projects/assets/projectID44_182.jpg', '950', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('15','1','Childrens Museum of Cleveland','41.504248','-81.659839', '3813 Euclid Ave, Cleveland, OH 44115', 'clevelandchildrensmuseum.org' , '88', '88', '(216) 791-7114', 'http://community-wealth.org/sites/clone.community-wealth.org/files/styles/large/public/Children%27s%20museum.jpg?itok=FNIz9zaQ', '808', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('16','1','Rock and Roll Hall of Fame','41.508546', '-81.695368', '1100 E 9th St, Cleveland, OH 44114', 'rockhall.com' , '10', '17', '(216) 781-7625', 'http://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/525/2015/12/01201858/rock-and-roll-hall-of-fame-and-muse.jpg', '2350', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('17','1','Great Lakes Science Center','41.507424', '-81.696724', '601 Erieside Ave, Cleveland, OH 44114', 'greatscience.com' , '10', '17', '(216) 694-2000', 'http://cache.marriott.com/propertyimages/c/clewb/phototour/clewb_phototour32.jpg?Log=1', '950', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
 
 
 COMMIT;
