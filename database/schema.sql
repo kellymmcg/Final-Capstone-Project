@@ -27,11 +27,17 @@ name VARCHAR(128) NOT NULL,
 longitude FLOAT NOT NULL,
 latitude FLOAT NOT NULL,
 address VARCHAR(256) NOT NULL,
-website VARCHAR(256) NOT NULL,
+website VARCHAR(256),
 open_time INTEGER NOT NULL,
 close_time INTEGER NOT NULL,
 phone VARCHAR(32) NOT NULL,
-image VARCHAR(256) NOT NULL
+image VARCHAR(256) NOT NULL,
+admission INTEGER NOT NULL,
+handicap_accessible BOOLEAN,
+consession BOOLEAN,
+kid_friendly BOOLEAN,
+water BOOLEAN,
+restroom BOOLEAN
 
 );
 
@@ -40,6 +46,6 @@ INSERT INTO app_user(user_name, password, salt) VALUES ('AlexisT', 'ur6k/xfmGaYH
 INSERT INTO app_user(user_name, password, salt) VALUES ('KellyM', 'abCu2Z/ss3lg15kZHH9a6A==', 'f1ekHQbXYiuAIvWspr/AkYwqewm/zGAgq7MiyLbI5Ddzw4bt8LZEh/H0eJ9BxbHuxF0UTSbMzivyuxhG0Uyd7ulEDH+DHIw389AD6BhK2A5KnDghFDneLj+hayKeG5ak/BHWBqInOoE2oMZrh/fiO5mve5U8PGhXePuwWDKris8=');
 INSERT INTO app_user(user_name, password, salt) VALUES ('AdamG', 'QAHQxJ5fL70bj4KA1XqOEQ==', 'Kl9CB9BA1QQHdSBpDhafg8rdyWkhlf5s7jxbCKFURNQB26/OROT+K714NBADlkJBj009M+37PlPe+2y50I+yJbD8x0ZlonRHuRYJ9ewnHLaWrUJJLWICqCoTXOLfOuIl8jcXNH2Zov2mF1vKIEsdvBGOqC1txkLHUTjtidOcVCo=');
 
-INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image)
-VALUES ('1','1','Tower City','41.4972', '81.6940', '230 W Huron Rd, Cleveland, OH 44113','www.towercitycenter.com/', '10', '7', '(216) 623-4750','https://devaulphotography.files.wordpress.com/2012/08/tower-city-center.jpg');
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('1','1','Tower City','41.4972', '81.6940', '230 W Huron Rd, Cleveland, OH 44113','www.towercitycenter.com/', '10', '7', '(216) 623-4750','https://devaulphotography.files.wordpress.com/2012/08/tower-city-center.jpg', '0', 'TRUE', 'TRUE', 'TRUE', 'TRUE','TRUE' );
 COMMIT;
