@@ -20,14 +20,14 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 	@Override
 	public void addLandmark(Landmark newLandmark) {
 		String sqlInsertLandmark = "INSERT INTO landmark("
-				+ "id, reviewid, name, longitude, latitude, address, "
+				+ "reviewid, name, longitude, latitude, address, "
 				+ "+website, open_time, close_time, phone, image, "
 				+ "int admission, boolean handicap_accessible, "
 				+ "boolean consession, boolean kid_friendly, boolean water , "
 				+ "boolean restroom)"
-				+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		Long id = getNextId();
-		jdbcTemplate.update(sqlInsertLandmark, id, newLandmark.getId(), newLandmark.getReviewId(),
+		jdbcTemplate.update(sqlInsertLandmark, newLandmark.getReviewId(),
 				newLandmark.getLongitude(), newLandmark.getLatitude(), newLandmark.getAddress(),
 				newLandmark.getWebsite(), newLandmark.getOpenTime(), newLandmark.getCloseTime(),
 				newLandmark.getPhone(), newLandmark.getImage(), newLandmark.getAdmission(),
