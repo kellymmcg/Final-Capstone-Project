@@ -1,5 +1,6 @@
 package com.techelevator.city.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,20 +46,21 @@ public class LandmarkController {
 		return "submitSuggestion";
 	}
 	
-	@RequestMapping(path="/landmarkSearch", method=RequestMethod.GET)
-	public String submitLandmarkSearch(@RequestParam Optional<String> landmarkName, ModelMap model) {
-		if(! landmarkName.isPresent()){
-			return "landmarkSearch";
+	@RequestMapping(path="/search", method=RequestMethod.GET)
+	public String submitLandmarkSearch(@RequestParam Optional<String> name, ModelMap model) {
+		if(! name.isPresent()){
+			return "search";
 		}
-		Landmark landmark = landDAO.searchLandmarkByName(landmarkName.get());
-		model.addAttribute(landmark);
-		return "landmarkDetail";
+		List<Landmark> landmarks = landDAO.searchLandmarksByName(name.get());
+		if(landmarks != null){
+			model.addAttribute(landmarks);
+		}
+		model.put("search", name.get());
+		return "searchResults";
 	}
 	
 	@RequestMapping(path="/searchResults", method=RequestMethod.GET)
 	public String showSearchResults(ModelMap model){
-		Landmark landmark = landDAO.searchLandmarkByName("Tower City");
-		model.put("results", landmark);
 		return "searchResults";
 	}
 	

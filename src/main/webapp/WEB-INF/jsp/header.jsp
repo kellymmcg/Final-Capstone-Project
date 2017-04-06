@@ -54,7 +54,7 @@
 							<c:when test="${not empty currentUser}">
 								<div class="col-sm-1 uOption">
                        				<li>
-                        			<c:url var="suggestions" value="/landmarkSearch"/>
+                        			<c:url var="suggestions" value="/search"/>
                             		<a href="${suggestions}" class="btn test btn-sm" data-wow-delay="0.7s"><span class="glyphicon glyphicon-search"></span> Search</a>
                        				</li>
                     			</div>

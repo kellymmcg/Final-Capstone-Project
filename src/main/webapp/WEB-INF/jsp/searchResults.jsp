@@ -2,10 +2,8 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<ol>
-	<c:forEach var="landmark" items="${results}">
-		<p>${landmark.name}</p>
-	</c:forEach>	
-</ol>
+<c:out value="Search results for: ${search}"/>
+
+<p>Hey there</p>
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />

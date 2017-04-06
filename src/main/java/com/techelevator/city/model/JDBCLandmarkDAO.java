@@ -1,5 +1,8 @@
 package com.techelevator.city.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,14 +50,17 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 	}
 	
 	@Override
-	public Landmark searchLandmarkByName(String landmarkName) {
-		Landmark landmark = null;
+	public List<Landmark> searchLandmarksByName(String landmarkName) {
+		List<Landmark> landmarks = new ArrayList<>();
+		landmarkName = "%"+landmarkName+"%";
 		String sqlSelectLandmarkById ="SELECT * FROM landmark WHERE name = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectLandmarkById, landmarkName);
-		if(results.next()) {
+		while(results.next()) {
+			Landmark landmark = null;
 			landmark = mapRowToLandmark(results);
+			landmarks.add(landmark);
 		}
-		return landmark;
+		return landmarks;
 	}
 
 	private Landmark mapRowToLandmark(SqlRowSet results) {

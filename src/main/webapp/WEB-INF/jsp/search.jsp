@@ -9,11 +9,11 @@
     <div class="col-sm-5 col-sm-offset-1">
          <div class="thumbnail">
                 <div class="caption">
-                    <c:url var="searchAction" value="/landmarkSearch"/>
+                    <c:url var="searchAction" value="/search"/>
 					<form action="${searchAction}" method="GET" id="searchForm">
 						<h2 class="hOverlay">&bull; Search by Name &bull;</h2>
 						<p class="sOverlay">Returns a list of Landmarks with names matching your search!</p><br>
-						<input type="text" name="landmarkName" id="landmarkName" placeholder="Landmark Name"/>
+						<input type="text" name="name" id="name" placeholder="Landmark Name"/>
 						<button type="submit" class="btn btn-lg btn-block btn-primary" id="searchLink">Search!</button>
 					</form>
                 </div>
