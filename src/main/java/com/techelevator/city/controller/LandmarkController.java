@@ -1,5 +1,7 @@
 package com.techelevator.city.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -8,7 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.techelevator.city.model.Landmark;
 import com.techelevator.city.model.LandmarkDAO;
@@ -43,16 +44,22 @@ public class LandmarkController {
 	public String suggestionConfirmation() {
 		return "submitSuggestion";
 	}
+	
 	@RequestMapping(path="/landmarkSearch", method=RequestMethod.GET)
-	public String searchLandmarks() {
-		return "landmarkSearch";
-		
-	}
-	@RequestMapping(path="/landmarkSearch", method=RequestMethod.POST)
-	public String submitLandmarkSearch(@RequestParam String landmarkName, ModelMap model) {
-		Landmark landmark = landDAO.searchLandmarkByName(landmarkName);
+	public String submitLandmarkSearch(@RequestParam Optional<String> landmarkName, ModelMap model) {
+		if(! landmarkName.isPresent()){
+			return "landmarkSearch";
+		}
+		Landmark landmark = landDAO.searchLandmarkByName(landmarkName.get());
 		model.addAttribute(landmark);
-		return "redirect:/landmarkDetail";
+		return "landmarkDetail";
+	}
+	
+	@RequestMapping(path="/searchResults", method=RequestMethod.GET)
+	public String showSearchResults(ModelMap model){
+		Landmark landmark = landDAO.searchLandmarkByName("Tower City");
+		model.put("results", landmark);
+		return "searchResults";
 	}
 	
 	@RequestMapping(path="/landmarkDetail", method=RequestMethod.GET)

@@ -76,7 +76,6 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 		landmark.setKidFriendly(results.getBoolean("kid_friendly"));
 		landmark.setWater(results.getBoolean("water"));
 		landmark.setRestroom(results.getBoolean("restroom"));
-		
 		return landmark;
 	}
 
