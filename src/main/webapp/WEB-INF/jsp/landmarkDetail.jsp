@@ -8,30 +8,15 @@
 			<c:out value="${landmark.name}"/>
 		</div>
 	</div>
-
-<img src="${landmark.image}" />
-<br />
-<c:out value="${landmark.longitude}" />
-<br />
-<c:out value="${landmark.latitude}" />
-<br />
-<c:out value="${landmark.address}" />
-<br />
-<c:out value="${landmark.openTime} A.M. to" />
-<c:out value=" ${landmark.closeTime} P.M " />
-<br />
-<c:out value="Admission: ${landmark.admission}" />
-<br />
-<c:out value="Handicap Accessible: ${landmark.handicapAccessible}" />
-<br />
-<c:out value="Consessions: ${landmark.consession}" />
-<br />
-<c:out value="Kid Friendly: ${landmark.kidFriendly}" />
-<br />
-<c:out value="Water: ${landmark.water}" />
-<br />
-<c:out value="Restrooms: ${landmark.restroom}" />
-<br />
+	<div class="row">
+		<div class="col-md-3">
+			<img src="${landmark.image}" class="dImage" />
+		</div>
+		
+		<div class="col-md-3">
+			<p>${landmark.longitude}"</p>
+		</div>
+	</div>
 </div>
 
 <h3>My Google Maps Demo</h3>

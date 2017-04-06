@@ -13,9 +13,13 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <c:url var="cssHref" value="css/style.css" />
+<link rel="stylesheet" type="text/css" href="${cssHref}">
+
 <c:url value="js/script.js" var="jsHref" />
 <script src="${jsHref}"></script>
-<link rel="stylesheet" type="text/css" href="${cssHref}">
+
+<c:url value="js/homePageSlideShow.js" var="hpjsHref" />
+<script src="${hpjsHref}"></script>
 
 <c:url var="addLandmarkHref" value="css/addLandmarkForm.css" />
 <link rel="stylesheet" type="text/css" href="${addLandmarkHref}">
