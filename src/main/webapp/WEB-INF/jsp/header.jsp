@@ -19,6 +19,10 @@
 
 <c:url var="addLandmarkHref" value="css/addLandmarkForm.css" />
 <link rel="stylesheet" type="text/css" href="${addLandmarkHref}">
+
+<c:url var="detailsHref" value="css/landmarkDetails.css" />
+<link rel="stylesheet" type="text/css" href="${detailsHref}">
+
 </head>
 <body>
 	<header>

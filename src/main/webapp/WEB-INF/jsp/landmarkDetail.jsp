@@ -2,10 +2,13 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<h1>
-	<c:out value="${landmark.name}">
-	</c:out>
-</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 dName" >
+			<c:out value="${landmark.name}"/>
+		</div>
+	</div>
+
 <img src="${landmark.image}" />
 <br />
 <c:out value="${landmark.longitude}" />
@@ -29,6 +32,7 @@
 <br />
 <c:out value="Restrooms: ${landmark.restroom}" />
 <br />
+</div>
 
 <h3>My Google Maps Demo</h3>
 <div class="container">
@@ -39,7 +43,7 @@
 				function initMap() {
 					var uluru = {
 						lat : ${landmark.longitude},
-						lng : -${landmark.latitude}
+						lng : ${landmark.latitude}
 					};
 					var map = new google.maps.Map(document.getElementById('map'), {
 						zoom : 16,
