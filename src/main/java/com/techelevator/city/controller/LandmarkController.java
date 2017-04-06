@@ -55,6 +55,13 @@ public class LandmarkController {
 		return "landmarkDetail";
 	}
 	
+	@RequestMapping(path="/searchResults", method=RequestMethod.GET)
+	public String showSearchResults(ModelMap model){
+		Landmark landmark = landDAO.searchLandmarkByName("Tower City");
+		model.put("results", landmark);
+		return "searchResults";
+	}
+	
 	@RequestMapping(path="/landmarkDetail", method=RequestMethod.GET)
 	public String displaySearchResults() {
 		return "landmarkDetail";
