@@ -11,7 +11,7 @@
             </div>
             <!-- End Item -->
             <div class="item">
-                <img src="img/registration.jpg" width="1000" height="100">
+                <img src="img/registration.jpg" width="auto" height="auto">
            
             </div>
             <!-- End Item -->
