@@ -2,18 +2,8 @@
 
 
 #registrationcontainer {
-  margin: 0;
-  padding: 40px;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  max-width: 600px;
-  width: 100%;
+
+  width: 300px;
   margin: 0 auto;
   position: relative;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -21,14 +11,9 @@
   font-size: 12px;
   line-height: 30px;
   color: #777;
-  background: #21074F;
 }
 
 .registrationpage {
-
-	background-image: url("img/regbackground2.jpg");
-    background-repeat: no-repeat;
-	background-position: center;
-	width: 100%;
-	top: 0px;
+	background-image: url("../img/regbackground2.jpg");
+ 
 }
