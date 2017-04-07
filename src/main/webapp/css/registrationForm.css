@@ -15,5 +15,8 @@
 
 .registrationpage {
 	background-image: url("../img/regbackground2.jpg");
- 	width: 100%;
+	background-repeat: no-repeat;
+	background-size: 75% 75%;
+	background-attachment: fixed;
+
 }

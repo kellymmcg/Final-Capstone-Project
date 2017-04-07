@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 
+.addlandmark {
+	background-image: url("../img/backgroundaddlandmark.jpg");
+ 	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
 
 #landmarkcontainer {
   margin: 0;
@@ -21,8 +26,12 @@
   font-size: 12px;
   line-height: 30px;
   color: #777;
-  background: #4CAF50;
 }
+
+
+
+
+
 
 #contact input[type="text"],
 #contact input[type="email"],

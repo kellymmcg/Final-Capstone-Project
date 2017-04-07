@@ -9,6 +9,19 @@ html {
 	background: #FFFFFF;
 }
 
+.changepassword {
+	background-image: url("../img/lostpassword.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+.suggestlandmark {
+	background-image: url("../img/backgroundsuggestlandmark.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
 .mNav {
 	z-index: 10;
 }
