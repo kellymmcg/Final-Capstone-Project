@@ -479,7 +479,8 @@ bs-calltoaction{
 }
 
 /* HOME PAGE SLIDE SHOW */
-<<<<<<< HEAD
+
+ /*
 .carousel>.carousel-inner>.item>.circleElement {
     background-color: #000;
     border-radius: 50%;
@@ -489,7 +490,7 @@ bs-calltoaction{
     width: 400px;
     height: 400px;
     opacity: .5;
-} /*
+}
 .carousel-indicators {
     top: 35px;
     background: #404549;
@@ -506,28 +507,28 @@ bs-calltoaction{
     border: none;
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 300;
-} */
-.carousel-indicators li {
-    background-color: #999;
-    background-color: rgba(255,255,255,0.3);
 }
+.carousel-indicators li {
+    background-color: red;
+    background-color: rgba(255,255,255,0.3);
+} */
 .carousel-caption {
 	background-color: #21074f;
-       opacity: 0.8;
-	   text-align: center;
-	   padding: 20px;
+    opacity: 0.8;
+	padding: 10px;
+	border: 2px solid #fcb12f;
+    border-radius: 12px;
 }
 
+
 .carousel-caption h4 {
-    font-family: "lato";
-    font-weight: 100;
-    font-size: 61px;
-    color:  #fcb12f
+    font-weight: bold;
+    font-size: 36px;
+    color:  #fcb12f;
 }
 .carousel-caption p {
-    font-family: "lato";
-    margin-top: 39px;
-    font-size: 22px;
+    margin-top: 10px;
+    font-size: 18px;
     margin-bottom: -8px;
     font-weight: 300;
     line-height: 30px;
@@ -571,7 +572,7 @@ bs-calltoaction{
 .carousel-container {
     width: 80% !important;
     padding-left: 10%;
-    margin-top: 35px;
+    margin-top 20px;
 }
 =======
 #myCarousel .carouselnav a small
@@ -604,14 +605,14 @@ bs-calltoaction{
 .nav-pills>li[data-slide-to="1"].active a { background-color:  #21074f; color:#fcb12f;}
 .nav-pills>li[data-slide-to="2"].active a { background-color:  #21074f; color:#fcb12f;}
 .nav-pills>li[data-slide-to="3"].active a { background-color:  #21074f; color:#fcb12f;}
-
+/*
 .carouselnav {
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
     position: absolute;
     bottom: 0;
-}
+} */
 
 .error {
 	color: red;
