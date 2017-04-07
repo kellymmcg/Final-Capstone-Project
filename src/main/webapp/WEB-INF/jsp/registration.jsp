@@ -10,7 +10,7 @@
 
 		$("#contact").validate({
 			rules : {
-				password : {
+				registrationPassword : {
 					required : true,
 					minlength : 8,
 					maxlength : 128,
@@ -20,21 +20,25 @@
 				userName : {
 					required : true
 				},
-				confirmPassword : {
+				confirmRegistrationPassword : {
 					required : true,
 					equalTo : "#registrationPassword"
 				}
 			},
 			messages : {
-				password: {
-					required: "This field is required!"
-					minlenght: "Password must be atleast 8 characters."
-					maxlength: "Password can be no more than 128 characters"
-					complexPassword: "Password must be complex."
-					noMoreThan2Duplicates: "Password cannot have more than 2 duplicates"
+				registrationPassword : {
+					required : "This field is required."
+					minlenght : "Password must be atleast 8 characters."
+					maxlength : "Password can be no more than 128 characters."
+					complexPassword : "Password must be complex."
+					noMoreThan2Duplicates : "Password cannot have more than 2 duplicates."
 				},
 				userName: {
-					required: "A username is required!"
+					required : "A username is required!"
+				},
+				confirmRegistrationPasswork : {
+					required : "Verification password is requred.must match."
+					equalTo : "Passwords must match."
 				}
 			},
 			errorClass : "error"
