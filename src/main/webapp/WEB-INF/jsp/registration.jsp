@@ -10,7 +10,7 @@
 
 		$("#contact").validate({
 			rules : {
-				registrationPassword : {
+				password : {
 					required : true,
 					minlength : 8,
 					maxlength : 128,
@@ -22,22 +22,22 @@
 				},
 				confirmRegistrationPassword : {
 					required : true,
-					equalTo : "#registrationPassword"
+					equalTo :"#registrationPassword"
 				}
 			},
 			messages : {
-				registrationPassword : {
-					required : "This field is required."
-					minlenght : "Password must be atleast 8 characters."
-					maxlength : "Password can be no more than 128 characters."
-					complexPassword : "Password must be complex."
+				password : {
+					required : "This field is required!",
+					minlenght : "Password must be atleast 8 characters.",
+					maxlength : "Password can be no more than 128 characters.",
+					complexPassword : "Password must contain at least 1 uppercase letter and 1 number.",
 					noMoreThan2Duplicates : "Password cannot have more than 2 duplicates."
 				},
 				userName: {
 					required : "A username is required!"
 				},
-				confirmRegistrationPasswork : {
-					required : "Verification password is requred.must match."
+				confirmRegistrationPassword : {
+					required : "Verification password is requred.",
 					equalTo : "Passwords must match."
 				}
 			},
@@ -62,12 +62,12 @@
 
 				<!-- Password-->
 				<fieldset>
-					<input placeholder="Password" type="password" name="registrationPassword" id="registrationPassword" tabindex="2" required>
+					<input placeholder="Password" type="password" name="password" id="registrationPassword" tabindex="2" required>
 				</fieldset>
 	
 				<!-- Password -->
 				<fieldset>
-					<input placeholder="Verify password" type="password" name="confirmRegistrationPassword" id="confirmPassword" tabindex="3" required>
+					<input placeholder="Verify password" type="password" name="confirmRegistrationPassword" tabindex="3" required>
 				</fieldset>
 				
 				<!-- Button -->

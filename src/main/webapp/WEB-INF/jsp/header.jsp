@@ -125,7 +125,7 @@
 					<p> <!-- Something could go here eventually... maybe... --></p>
 				</c:when>
 				<c:otherwise>
-					<p id="fHeader">${loginFailure}</p>
+					<p id="fHeader">${notice}</p>
 				</c:otherwise>
 			</c:choose>	
 			</div>
