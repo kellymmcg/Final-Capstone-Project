@@ -32,6 +32,7 @@
 		<img src="img/logo.png" class="img-responsive" height="200"/>
 		
 		<!-- NAVIGATION BAR INFORMATION -->
+		<c:url var="suggestions" value="/search"/>
 		<nav class="navbar navbar-default mNav" data-spy="affix" data-offset-top="274" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -47,21 +48,17 @@
 					<!--  LEFT SIDE OF THE NAVIGATION BAR  -->
 					<ul class="nav navbar-nav navbar-left">
 						<c:url var="home" value="/"/>
-						<li><a href="${home}" id="hButton">Home</a></li>	
+						<li><a href="${home}" id="hButton">Home</a></li>
 					</ul>
 					
 					<!-- RIGHT SIDE OF THE NAVIGATION BAR  -->
 					<c:url var="suggestions" value="/search"/>
 					<c:url var="addLandmarkAction" value="/addLandmark" />
+					<c:url var="changePassAction" value="/changePassword" />
 					<c:url var="logoutAction" value="/logout" />
 					<ul class="nav navbar-nav navbar-right">
 						<c:choose>
 							<c:when test="${not empty currentUser}">
-								<div class="uOption">
-                       				<li>
-                           				<a href="${suggestions}" class="btn test btn-sm" data-wow-delay="0.7s"><span class="glyphicon glyphicon-search"></span> Search</a>
-                       				</li>
-                    			</div>
 								<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><b>${currentUser}</b><span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li>
@@ -70,8 +67,10 @@
 													<form id="logoutForm" action="${logoutAction}" method="POST">
 														<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 													</form>
-													<li><a href="#" id="logoutLink">Log out</a></li>
-													<li><a href="${addLandmarkAction}" id="addLink">Add Landmark</a></li>
+													<li><a href="${suggestions}" class="" data-wow-delay="0.7s"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+													<li><a href="${addLandmarkAction}" id="addLink"><span class="glyphicon glyphicon-plus-sign"></span> Add Landmark</a></li>
+													<li><a href="${changePassAction}" id="changePassLink"><span class="glyphicon glyphicon-lock"></span> Change Password</a></li>
+													<li><a href="#" id="logoutLink"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
 												</div>
 											</div>
 										</li>	
@@ -101,7 +100,7 @@
 														</div>
 													</form>
 												</div>
-												<div class="bottom text-center"> 
+												<div class="bottom text-center">
 													New here? <a href="${registration}"><b>Join Us</b></a>
 												</div>
 											</div>

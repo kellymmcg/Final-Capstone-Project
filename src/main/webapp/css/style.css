@@ -71,13 +71,26 @@ html {
 	color: #736f72;
 }
 
+.test{
+	background: none;
+    color: black;
+}
+.test:hover{
+	border-radius: 0;
+    -webkit-transition: all 0.5s;
+       -moz-transition: all 0.5s;
+            transition: all 0.5s;
+	color: #f90210;
+    background: #FFFFFF;
+    border-color: #000000;
+}
+
 #hButton {
 	padding-right: 40px;
 	border-right: 1px solid grey;
 }
 
 .uOption {
-	margin-top: 6px;
 }
 
 footer {
@@ -248,21 +261,6 @@ footer {
 
 .padding-50 {
 	padding: 40px !important;
-}
-
-.test {
-	background: none;
-    color: #837777;
-	border-color: #FFFFFF;
-}
-.test:hover{
-	border-radius: 0;
-    -webkit-transition: all 0.5s;
-       -moz-transition: all 0.5s;
-            transition: all 0.5s;
-	color: #fcb12f;
-    background: #FFFFFF;
-    border-color: #000000;
 }
 
 /* Buttons */
