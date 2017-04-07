@@ -33,7 +33,7 @@
 <body>
 	<header>
 		<img src="img/logo.png" class="img-responsive" height="200"/>
-		<nav class="navbar navbar-default" data-spy="affix" data-offset-top="425" role="navigation">
+		<nav class="navbar navbar-default mNav" data-spy="affix" data-offset-top="274" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"
@@ -118,8 +118,6 @@
 					</ul>
 				</div>
 			</div>
-		</nav>
-		<div id="noticeBar">
 			<c:choose>
 				<c:when test="${not empty currentUser}">
 					<p> <!-- Something could go here eventually... maybe... --></p>
@@ -127,6 +125,8 @@
 				<c:otherwise>
 					<p id="fHeader">${loginFailure}</p>
 				</c:otherwise>
-			</c:choose>		
-		</div>
+			</c:choose>	
+		</nav>
+		
+		
 	</header>

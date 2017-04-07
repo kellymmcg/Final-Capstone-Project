@@ -9,15 +9,20 @@ html {
 	background: #FFFFFF;
 }
 
+.mNav {
+	z-index: 10;
+}
+
 #noticeBar {
 	text-align: right;
 	position: relative;
-	bottom: 20px;
+	bottom: 500px;
 	padding-top: 10px;
 	padding-bottom: 3px;
 	padding-right: 10px;
 	color: white;
 	background-color: #FCB12F;
+	z-index: 4;
 } 
 
 #wHeader {
