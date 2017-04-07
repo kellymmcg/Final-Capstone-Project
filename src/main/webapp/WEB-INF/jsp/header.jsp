@@ -4,35 +4,34 @@
 <html>
 <head>
 <title>Tour du City</title>
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script src = "https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
-	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js "></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <c:url var="cssHref" value="css/style.css" />
-<link rel="stylesheet" type="text/css" href="${cssHref}">
-
 <c:url value="js/script.js" var="jsHref" />
-<script src="${jsHref}"></script>
-
 <c:url value="js/homePageSlideShow.js" var="hpjsHref" />
-<script src="${hpjsHref}"></script>
-
 <c:url var="addLandmarkHref" value="css/addLandmarkForm.css" />
-<link rel="stylesheet" type="text/css" href="${addLandmarkHref}">
-
 <c:url var="registrationHref" value="css/registrationForm.css" />
-<link rel="stylesheet" type="text/css" href="${registrationHref}">
-
 <c:url var="detailsHref" value="css/landmark.css" />
+<!-- LISTS OF SCRIPTS AND CSS FILES -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src = "https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
+<script src="http://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js "></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="${jsHref}"></script>
+<script src="${hpjsHref}"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="${cssHref}">
+<link rel="stylesheet" type="text/css" href="${addLandmarkHref}">
+<link rel="stylesheet" type="text/css" href="${registrationHref}">
 <link rel="stylesheet" type="text/css" href="${detailsHref}">
 
 </head>
 <body>
 	<header>
+	
+		<!-- IMAGE LOCATION FOR LOGO -->
 		<img src="img/logo.png" class="img-responsive" height="200"/>
+		
+		<!-- NAVIGATION BAR INFORMATION -->
 		<nav class="navbar navbar-default mNav" data-spy="affix" data-offset-top="274" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -43,40 +42,36 @@
 							class="icon-bar"></span>
 					</button>
 				</div>
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				
-				<div class="collapse navbar-collapse"
-					id="bs-example-navbar-collapse-1">
+					<!--  LEFT SIDE OF THE NAVIGATION BAR  -->
 					<ul class="nav navbar-nav navbar-left">
 						<c:url var="home" value="/"/>
-						<li><a href="${home}" id="hButton">Home</a></li>
-						<c:choose>
-							<c:when test="${not empty currentUser}">
-								<div class="col-sm-1 uOption">
-                       				<li>
-                        			<c:url var="suggestions" value="/search"/>
-                            		<a href="${suggestions}" class="btn test btn-sm" data-wow-delay="0.7s"><span class="glyphicon glyphicon-search"></span> Search</a>
-                       				</li>
-                    			</div>
-							</c:when>
-						</c:choose>		
+						<li><a href="${home}" id="hButton">Home</a></li>	
 					</ul>
+					
+					<!-- RIGHT SIDE OF THE NAVIGATION BAR  -->
+					<c:url var="suggestions" value="/search"/>
+					<c:url var="addLandmarkAction" value="/addLandmark" />
+					<c:url var="logoutAction" value="/logout" />
 					<ul class="nav navbar-nav navbar-right">
 						<c:choose>
 							<c:when test="${not empty currentUser}">
+								<div class="uOption">
+                       				<li>
+                           				<a href="${suggestions}" class="btn test btn-sm" data-wow-delay="0.7s"><span class="glyphicon glyphicon-search"></span> Search</a>
+                       				</li>
+                    			</div>
 								<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"><b>${currentUser}</b><span class="caret"></span></a>
 									<ul class="dropdown-menu">
 										<li>
 											<div class="row">
 												<div class="col-md-12">
-													<c:url var="logoutAction" value="/logout" />
 													<form id="logoutForm" action="${logoutAction}" method="POST">
 														<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 													</form>
 													<li><a href="#" id="logoutLink">Log out</a></li>
-													
-													<c:url var="addLandmarkAction" value="/addLandmark" />
-													<li><a href="${addLandmarkAction}" id="addLink">Add Landmark</a></li> <!-- Place holder until page is in working order... -->
-													
+													<li><a href="${addLandmarkAction}" id="addLink">Add Landmark</a></li>
 												</div>
 											</div>
 										</li>	
@@ -84,6 +79,8 @@
 								</li>
 							</c:when>
 							<c:otherwise>
+								<c:url var="formAction" value="/"/>
+								<c:url var="registration" value="/registration" />
 								<li class="dropdown"><a class="dropdown-toggle"
 									data-toggle="dropdown"><b>Login | Signup</b> <span class="caret"></span></a>
 									<ul id="login-dp" class="dropdown-menu">
@@ -91,7 +88,6 @@
 											<div class="row">
 												<div class="col-md-12">
 													<p id="lHeader">&bull; Login &bull;</p> 
-													<c:url var="formAction" value="/"/>
 													<form class="form" role="form" method="POST" action="${formAction}" id="login-nav">
 														<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 														<div class="form-group">
@@ -105,8 +101,7 @@
 														</div>
 													</form>
 												</div>
-												<div class="bottom text-center">
-													<c:url var="registration" value="/registration" />
+												<div class="bottom text-center"> 
 													New here? <a href="${registration}"><b>Join Us</b></a>
 												</div>
 											</div>
@@ -119,8 +114,9 @@
 				</div>
 			</div>
 			
+			<!--  NOTICE BAR UNDERNEATHE THE NAVIGATION BAR  -->
 			<div id="noticeBar">
-	<c:choose>
+			<c:choose>
 				<c:when test="${not empty currentUser}">
 					<p> <!-- Something could go here eventually... maybe... --></p>
 				</c:when>
