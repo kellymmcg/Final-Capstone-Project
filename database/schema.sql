@@ -145,20 +145,20 @@ VALUES ('34','1','Bedford Reservation','41.375932', '-81.576604', 'Cuyahoga Vall
 INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
 VALUES ('35','1','Big Creek Reservation','41.445539', '-81.717816', '4101 Fulton Pkwy, Cleveland, OH 44144', 'clevelandmetroparks.com' , '0', '23', '(216) 635-3200', 'https://clevelandmetroparks.com/getmedia/45126d11-d74d-4386-b246-a077e9aeaa84/Big_Creek_Carousel.jpg.ashx?h=384&w=640&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
 
---INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
---VALUES ('36','1','Lakefront Reservation (Euclid Beach)','41.582853', '-81.569555', '2-12 Cumberland Ave, Cleveland, OH 44110', 'clevelandmetroparks.com' , '0', '23', null, 'https://clevelandmetroparks.com/getmedia/7bb8ad9d-260b-4288-8645-087ff4cfe09a/Lakefront_Carousel_01.jpg.ashx?h=200&w=200&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
---
---INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
---VALUES ('37','1','Lakefront Reservation (Euclid Beach)','41.582853', '-81.569555', '2-12 Cumberland Ave, Cleveland, OH 44110', 'clevelandmetroparks.com' , '0', '23', null, 'https://clevelandmetroparks.com/getmedia/7bb8ad9d-260b-4288-8645-087ff4cfe09a/Lakefront_Carousel_01.jpg.ashx?h=200&w=200&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
---
---INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
---VALUES ('38','1','Lakefront Reservation (Euclid Beach)','41.582853', '-81.569555', '2-12 Cumberland Ave, Cleveland, OH 44110', 'clevelandmetroparks.com' , '0', '23', null, 'https://clevelandmetroparks.com/getmedia/7bb8ad9d-260b-4288-8645-087ff4cfe09a/Lakefront_Carousel_01.jpg.ashx?h=200&w=200&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
---
---INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
---VALUES ('39','1','Lakefront Reservation (Euclid Beach)','41.582853', '-81.569555', '2-12 Cumberland Ave, Cleveland, OH 44110', 'clevelandmetroparks.com' , '0', '23', null, 'https://clevelandmetroparks.com/getmedia/7bb8ad9d-260b-4288-8645-087ff4cfe09a/Lakefront_Carousel_01.jpg.ashx?h=200&w=200&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
---
---INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
---VALUES ('40','1','Lakefront Reservation (Euclid Beach)','41.582853', '-81.569555', '2-12 Cumberland Ave, Cleveland, OH 44110', 'clevelandmetroparks.com' , '0', '23', null, 'https://clevelandmetroparks.com/getmedia/7bb8ad9d-260b-4288-8645-087ff4cfe09a/Lakefront_Carousel_01.jpg.ashx?h=200&w=200&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('36','1','East 55th Street Marina','441.531210', '-81.652075', '5555 N Marginal Rd, Cleveland, OH 44114', 'clevelandmetroparks.com' , '11', '23', '(216) 391-5566', 'http://edwardscom.net/wp-content/uploads/2014/07/E55th-St-Marina-Signage-II.jpg', '0', 'FALSE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('37','1','Cleveland City Hall','41.505012', '-81.693561', '601 Lakeside Ave E, Cleveland, OH 44114', 'city.cleveland.oh.us' , '8', '17', '(216) 664-2561', 'http://static.panoramio.com/photos/large/34898674.jpg', '0', 'FALSE', 'FALSE', 'FALSE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('38','1','Little Italy','41.508637', '-81.600320', 'Cleveland, OH 44106', null , '88', '88', null, 'https://lh3.googleusercontent.com/_4a0Y5-NnjiOUuNyahjJJ98fLCYk46h8qi1PSpaBjMQpf1TurPcxXFUFYOEj_MFhBFsYnkLXxzE5tGY3dmukxfB9sIAJcFwjL1E6336hPFIPu8NgDpQuenP3', '808', 'FALSE', 'FALSE', 'FALSE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('39','1','Crawford Auto-Aviation Museum','41.513415', '-81.610981', '10825 East Blvd, Cleveland, OH 44106', 'wrhs.org' , '88', '88', '(216) 721-5722', 'http://www.cityprofile.com/forum/attachments/ohio/18569-cleveland-crawford-auto-aviation-museum-2.jpg', '1000', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('40','1','Cleveland Arcade','41.500041', '-81.690333', '401 Euclid Ave, Cleveland, OH 44114', 'theclevelandarcade.com' , '88', '88', '(216) 696-1408', 'http://www.theclevelandarcade.com/files/1949/gallery-arcade-interior-2.jpg', '808', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
 
 
 COMMIT;
