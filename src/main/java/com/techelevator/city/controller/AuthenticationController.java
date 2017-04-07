@@ -46,7 +46,7 @@ import com.techelevator.city.model.UserDAO;
 	        } else {
 	        	redir.addFlashAttribute("loginFailure", "Incorrect username or password!");
 	            return "redirect:/";
-	        }
+	        }                                                                
 	    }
 		
 		private boolean destinationIsValid(String destination) {
