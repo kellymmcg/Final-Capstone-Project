@@ -59,6 +59,14 @@ html {
 	color: black;
 }
 
+#adminControls{
+	margin-top: 30px;
+	text-align: center;
+	color: white;
+	font-size: 15px;
+	background: #2d2d2e;
+}
+
 .affix {
 	top: 0;
 	width: 100%;

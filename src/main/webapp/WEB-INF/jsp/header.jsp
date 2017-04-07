@@ -68,9 +68,12 @@
 														<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 													</form>
 													<li><a href="${suggestions}" class="" data-wow-delay="0.7s"><span class="glyphicon glyphicon-search"></span> Search</a></li>
-													<li><a href="${addLandmarkAction}" id="addLink"><span class="glyphicon glyphicon-plus-sign"></span> Add Landmark</a></li>
+													<li><a href="#" id="manageItinerary"><span class="glyphicon glyphicon-folder-open"></span> Manage Itineraries</a></li>
 													<li><a href="${changePassAction}" id="changePassLink"><span class="glyphicon glyphicon-lock"></span> Change Password</a></li>
 													<li><a href="#" id="logoutLink"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+													
+													<p id="adminControls">Admin Controls</p>
+													<li><a href="${addLandmarkAction}" id="addLandmark"><span class="glyphicon glyphicon-plus-sign"></span> Add Landmark</a></li>
 												</div>
 											</div>
 										</li>	
