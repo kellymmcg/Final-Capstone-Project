@@ -41,13 +41,6 @@
             <a class="carousel-control left" href="#carousel" data-slide="prev"><</a>
             <a class="carousel-control right" href="#carousel" data-slide="next">></a>
           </div>
-          <ol class="carousel-indicators">
-            <li data-target="#carousel" data-slide-to="0" class="myCarousel-target active"></li>
-            <li data-target="#carousel" data-slide-to="1" class="myCarousel-target"></li>
-            <li data-target="#carousel" data-slide-to="2" class="myCarousel-target"></li>
-            <li data-target="#carousel" data-slide-to="3" class="myCarousel-target"></li>
-          </ol>
-
       </div>
     </div>
   </div>
