@@ -129,7 +129,6 @@
 			</div>
 			
 		</nav>
-		<h1 id="mAnchor">A</h1>
-		
+
 	</header>
 	
