@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<div class="container">
+<div class="container dCon">
 	<div class="row">
 		<div class="col-md-12 dName" >
 			<c:out value="${landmark.name}"/>
@@ -13,50 +13,50 @@
 			<img src="${landmark.image}" class="dImage" />
 		</div>
 		
-		<div class="col-md-4">
+		<div class="col-md-4 dInfo">
 			<p id="dAddress">${landmark.address}</p>
 			<p>Open from ${landmark.openTime} to ${landmark.closeTime}</p>
 			<p>Admission: ${landmark.admission}</p>
 			<table>
 				<tr>
-					<td>Handicap accessible?</td> <td>${landmark.handicapAccessible}</td>
-					<td>Consession available?</td> <td>${landmark.consession}</td>
-					<td>Kid Friendly?</td> <td>${landmark.kidFriendly}</td>
-					<td>Restrooms?</td> <td>${landmark.restroom}</td>
+					<td class="glyphicon glyphicon-thumbs-up"></td><td>${landmark.handicapAccessible}</td>
+				</tr>
+				<tr>	
+					<td>Consession available? </td> <td>${landmark.consession}</td>
+				</tr>
+				<tr>
+					<td>Kid Friendly? </td> <td>${landmark.kidFriendly}</td>
+				</tr>
+				<tr>
+					<td>Restrooms? </td> <td>${landmark.restroom}</td>
 				</tr>
 			</table>
 		</div>
-	</div>
-</div>
-
-<h3>My Google Maps Demo</h3>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-5">
+		<div class="col-md-4">
 			<div id="map"></div>
 			<script>
 				function initMap() {
-					var uluru = {
+					var location = {
 						lat : ${landmark.longitude},
 						lng : ${landmark.latitude}
 					};
 					var map = new google.maps.Map(document.getElementById('map'), {
 						zoom : 16,
-						center : uluru
+						center : location
 					});
 					var marker = new google.maps.Marker({
-						position : uluru,
+						position : location,
 						map : map
 					});
 				}
 			</script>
-			<script async defer
-				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Cyxiz7vexNLr_2SLi_HoFXh4-xC31T8&callback=initMap">
-				
-			</script>
+			<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Cyxiz7vexNLr_2SLi_HoFXh4-xC31T8&callback=initMap"></script>
 		</div>	
 	</div>
 </div>
+
+
+
 
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />

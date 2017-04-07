@@ -42,13 +42,18 @@ public class LandmarkController {
 	}
 	
 	@RequestMapping(path="/searchResults", method=RequestMethod.GET)
-	public String showSearchResults(ModelMap model){
-		return "searchResults";
+	public String showSearchResults(@RequestParam Optional<Long> id, ModelMap model){
+		if(! id.isPresent()){
+			return "searchResults";
+		}
+		Landmark landmark = landDAO.searchLandmarkById(id.get());
+		model.addAttribute(landmark);
+		return "landmarkDetails";
 	}
 	
-	@RequestMapping(path="/landmarkDetail", method=RequestMethod.GET)
+	@RequestMapping(path="/landmarkDetails", method=RequestMethod.GET)
 	public String displaySearchResults() {
-		return "landmarkDetail";
+		return "landmarkDetails";
 	}
 
 }

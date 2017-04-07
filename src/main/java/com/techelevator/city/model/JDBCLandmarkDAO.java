@@ -29,7 +29,6 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 				+ "consession, kid_friendly, water , "
 				+ "restroom)"
 				+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-		Long id = getNextId();
 		jdbcTemplate.update(sqlInsertLandmark, newLandmark.getReviewId(), newLandmark.getName(),
 				newLandmark.getLongitude(), newLandmark.getLatitude(), newLandmark.getAddress(),
 				newLandmark.getWebsite(), newLandmark.getOpenTime(), newLandmark.getCloseTime(),
@@ -39,7 +38,7 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 	}
 
 	@Override
-	public Landmark searchLandmarkById(long landmarkId) {
+	public Landmark searchLandmarkById(Long landmarkId) {
 		Landmark landmark = null;
 		String sqlSelectLandmarkById ="SELECT * FROM landmark WHERE id = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectLandmarkById, landmarkId);
@@ -84,16 +83,5 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 		landmark.setRestroom(results.getBoolean("restroom"));
 		return landmark;
 	}
-
-	private Long getNextId() {
-		String sqlSelectNextId = "SELECT NEXTVAL('seq_landmark_id')";
-		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSelectNextId);
-		if (result.next()) {
-			return result.getLong(1);
-		} else {
-			throw new RuntimeException("Something went wrong while getting the next order id");
-		}
-	}
-
 
 }

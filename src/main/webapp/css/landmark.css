@@ -114,17 +114,22 @@ hgroup h2.lead {
 
 /* LANDMARK DETAILS PAGE CSS */
 
+.dCon {
+	background: #e1dde4;
+	padding: 40px;
+}
+
 .dName {
 	font-size: 30px;
+	background: #248dc1;
 	border: 1px solid black;
-	color: black;
+	color: white;
 	margin-bottom: 20px;
 }
 
 .dImage {
-	border: solid black;
-	width: 350px;
-	height: auto;
+	width: 300px;
+	height: 200px;
 }
 
 #dAddress {

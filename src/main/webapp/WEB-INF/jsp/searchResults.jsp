@@ -1,7 +1,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
+<script>
+$("#detailLink").click(function(event){
+	$("#detailForm").submit();
+});
 
+</script>
 <div class="container sCon">
     <hgroup class="mb20">
 		<h1>Search Results</h1>
@@ -21,9 +26,13 @@
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
-					<h3><a href="#" title="">${landmark.name}</a></h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, exercitationem, suscipit, distinctio, qui sapiente aspernatur molestiae non corporis magni sit sequi iusto debitis delectus doloremque.</p>						
-	                <span class="plus"><a href="#" title="Lorem ipsum"><i class="glyphicon glyphicon-plus"></i></a></span>
+					<c:url var="detailAction" value="/searchResults"/>
+					<form action="${detailAction}" method="GET" id="detailForm">
+						<h3><a href="#" id="detailLink">${landmark.name}</a></h3>
+						<p>Tower City Center, originally known as Cleveland Union Terminal, is a large mixed-use facility located on Public Square in downtown Cleveland, Ohio.</p>
+						<input type="hidden" name="id" value="<c:out value='${landmark.id}'/>"/>
+	                	<span class="plus"><button type="submit"><i class="glyphicon glyphicon-plus"></i></button></span>
+	                </form>
 				</div>
 				<span class="clearfix borda"></span>
 			</article>
