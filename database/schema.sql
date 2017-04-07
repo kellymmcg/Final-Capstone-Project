@@ -30,7 +30,7 @@ address VARCHAR(256) NOT NULL,
 website VARCHAR(256),
 open_time INTEGER NOT NULL,
 close_time INTEGER NOT NULL,
-phone VARCHAR(32) NOT NULL,
+phone VARCHAR(32),
 image VARCHAR(256) NOT NULL,
 admission INTEGER NOT NULL,
 handicap_accessible BOOLEAN,
@@ -60,12 +60,105 @@ INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, 
 VALUES ('6','1','Cleveland Museum of Art','41.509723', '-81.611485', '11150 East Blvd, Cleveland, OH 44106','clevelandart.org', '10', '17', '(216) 421-7350', 'http://www.destination360.com/north-america/us/ohio/images/s/cleveland-museum-of-art.jpg', '0', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
 INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
 VALUES ('7','1','Lakeview Cemetery','41.513455','-81.588915', '12316 Euclid Ave, Cleveland, OH 44106', 'lakeviewcemetery.com', '10', '17', '(216) 421-2665', 'https://s3-us-west-2.amazonaws.com/find-a-grave-prod/photos/2005/25/CEM915_110680411771.jpg', '0', 'TRUE', 'FALSE', 'FALSE', 'FALSE', 'FALSE');
+
 INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
 VALUES ('8','1','Cleveland Metroparks Zoo','41.446518','-81.707773', '3900 Wildlife Way, Cleveland, OH 44109', 'clevelandmetroparks.com', '10', '17', '(216) 661-6500', 'https://www.2016cle.com/RNC2016/media/RNC2016/Things%20to%20Do/Parks%20and%20Recreation/cleveland_metroparks_zoo.jpg', '0', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
 INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
 VALUES ('9','1','West Side Market','41.484692', '-81.703062', '1975 W 25th St, Cleveland, OH 44113', 'westsidemarket.org', '7', '18', '(216) 664-3387', 'https://planning-org-uploaded-media.s3.amazonaws.com/legacy_resources/greatplaces/spaces/2008/img/westsidemarket01.jpg', '1425', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
 INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
 VALUES ('10','1','Willard Park(Free Stamp)','41.505379', '-81.692324', 'Cleveland, OH 44114', null, '0', '23', '(216) 664-2485', 'https://devaulphotography.files.wordpress.com/2012/08/free-stamp-1a.jpg', '0', 'TRUE', 'FALSE', 'TRUE', 'FALSE', 'FALSE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('11','1','Playhouse Square','41.501275','-81.680723', '1501 Euclid Ave, Cleveland, OH 44115', 'playhousesquare.org', '88', '88', '(216) 241-6000', 'https://segd.org/sites/default/files/styles/galleryformatter_slide/public/Playhouse_spectacular.jpg?itok=Kt7ZE3lS', '0', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('12','1','Cleveland Museum of Natural History','41.511470', '-81.613358', '1 Wade Oval Dr, Cleveland, OH 44106', 'cmnh.org' , '10', '17', '(216) 231-4600', 'http://media.architecturaldigest.com/photos/55f9dfa600a69f791feb27b2/master/pass/dam-images-daily-2015-04-cleveland-museum-cleveland-museum-of-natural-history-150-million-expansion-01.jpg', '1500', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('13','1','The Largest Outdoor Chandelier in The World','41.500902', '-81.681771', 'E 14th St, Cleveland, OH 44115', null , '0', '23', null, 'http://images.midwestliving.mdpcdn.com/sites/midwestliving.com/files/102718406_w.jpg', '0', 'TRUE', 'FALSE', 'FALSE', 'FALSE', 'FALSE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('14','1','Museum of Contemporary Art Cleveland','41.508908', '-81.604637', '11400 Euclid Ave, Cleveland, OH 44106', 'mocacleveland.org' , '11', '17', '(216) 421-8671', 'http://planning.city.cleveland.oh.us/projects/assets/projectID44_182.jpg', '950', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('15','1','Childrens Museum of Cleveland','41.504248','-81.659839', '3813 Euclid Ave, Cleveland, OH 44115', 'clevelandchildrensmuseum.org' , '88', '88', '(216) 791-7114', 'http://community-wealth.org/sites/clone.community-wealth.org/files/styles/large/public/Children%27s%20museum.jpg?itok=FNIz9zaQ', '808', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('16','1','Rock and Roll Hall of Fame','41.508546', '-81.695368', '1100 E 9th St, Cleveland, OH 44114', 'rockhall.com' , '10', '17', '(216) 781-7625', 'http://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/525/2015/12/01201858/rock-and-roll-hall-of-fame-and-muse.jpg', '2350', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('17','1','Great Lakes Science Center','41.507424', '-81.696724', '601 Erieside Ave, Cleveland, OH 44114', 'greatscience.com' , '10', '17', '(216) 694-2000', 'http://cache.marriott.com/propertyimages/c/clewb/phototour/clewb_phototour32.jpg?Log=1', '950', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('18','1','A Christmas Story House','41.468730','-81.687394', '3159 W 11th St, Cleveland, OH 44109', 'achristmasstoryhouse.com' , '10', '17', '(216) 298-4919', 'https://upload.wikimedia.org/wikipedia/commons/a/aa/A_Christmas_Story_house.JPG', '1100', 'FALSE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('19','1','USS Cod Submarine Memorial','41.510090','-81.691571', '1201 N Marginal Rd, Cleveland, OH 44114', 'usscod.org' , '10', '17', '(216) 566-8770', 'https://static.spplus.com/pictures/uss-cod-small.jpg', '1200', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('20','1','Aquarium','41.496538', '-81.703793', '2000 Sycamore St, Cleveland, OH 44113', 'greaterclevelandaquarium.com' , '10', '17', '(216) 862-8803', 'http://inacents.com/wp-content/uploads/2013/09/130804-Greater-Cleveland-Aquarium-2.jpg', '2000', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('21','1','Browns Stadium','41.506062', '-81.699570', '100 Alfred Lerner Way, Cleveland, OH 44114','firstenergystadium.com' , '88', '88', '(440) 891-5001', 'https://www.theclio.com/web/ul/25060.55019.jpg', '808', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('22','1','Great Northern Mall','41.417032', '-81.905928', '4954 Great Northern Mall, North Olmsted, OH 44070','shoppinggreatnorthernmall.com' , '10', '21', '(440) 734-6304', 'http://media.syracuse.com/post-standard/photo/2017/01/06/21822245-large.jpg', '0', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('23','1','Beachwood Mall','41.498415', '-81.494066', '26300 Cedar Rd, Beachwood, OH 44122','beachwoodplace.com' , '10', '21', '(216) 464-9460', 'http://content.wkyc.com/photo/2014/06/05/1401995613000-Beachwood-Place_2924800_ver1.0.jpg', '0', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('24','1','Richmond Town Square','41.541751', '-81.494481', '691 Richmond Rd, Richmond Heights, OH 44143','shoprichmondtownsquare.com' , '10', '21', '(440) 449-3200', 'http://www.wkyc.com/img/resize/content.wkyc.com/photo/2017/03/17/Richmond%20Town%20Square_1489791904673_8990596_ver1.0.JPG?preset=534-401', '0', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('25','1','Baseball Heritage Museum','41.511171', '-81.644304', '6601 Lexington Ave, Cleveland, OH 44103','baseballheritagemuseum.org' , '10', '14', '(216) 789-1083', 'https://baseballheritagemuseum.org/wp-content/uploads/2015/11/20140921_123500-300x225-300x225.jpg', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('26','1','Nature Center at Shaker Lakes','41.485030', '-81.574454', '2600 S Park Blvd, Cleveland, OH 44120','shakerlakes.org' , '10', '17', '(216) 321-5935', 'http://media.cleveland.com/shaker-heights/photo/nature-center2jpg-ba90b8fd172f8b0c.jpg', '0', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('27','1','Wolstein Center','41.499331', '-81.676922', '2000 Prospect Ave, Cleveland, OH 44115', null , '88', '88', '(844) 407-2279', 'http://bloximages.newyork1.vip.townnews.com/csucauldron.com/content/tncms/assets/v3/editorial/8/74/874d5816-d731-11e4-a806-3bb8315f9447/5519d754a3912.image.jpg?resize=300%2C210', '808', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('28','1','Cleveland Botanical Garden','41.511119', '-81.609579', '11030 East Blvd, Cleveland, OH 44106', 'cbgarden.org' , '10', '17', '(216) 721-1600', 'http://www.universitycircle.org/files/locations/slider/cleveland-botanical-garden-3.jpg', '1200', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('29','1','International Womens Air & Space Museum','41.511520', '-81.689921', '1501 N Marginal Rd, Cleveland, OH 44114', 'iwasm.org' , '8', '20', '(216) 623-1111', 'https://static1.squarespace.com/static/54c6a8f9e4b0d827821a26e8/t/54c8f32ee4b06b0aa190b7a3/1422455628134/', '0', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('30','1','Cleveland Orchestra','41.506223', '-81.609588', '11001 Euclid Ave, Cleveland, OH 44106', 'clevelandorchestra.com' , '88', '88', '(216) 231-1111', 'http://2.bp.blogspot.com/-KzX_yPwtIBw/U3AhkzaDxzI/AAAAAAAAC3U/_GWpItfwJ6k/s1600/resize_a.jpg', '808', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('31','1','Garfield Park Reservation','41.430542', '-81.605177', '11350 Broadway Ave, Garfield Heights, OH 44125', 'clevelandmetroparks.com' , '0', '23', '(216) 341-3152', 'https://c1.staticflickr.com/4/3748/8936947421_fb4ff2f430_b.jpg', '0', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('32','1','Lakefront Reservation (Euclid Beach)','41.582853', '-81.569555', '2-12 Cumberland Ave, Cleveland, OH 44110', 'clevelandmetroparks.com' , '0', '23', null, 'https://clevelandmetroparks.com/getmedia/37494a88-ffa1-4c6b-a793-abb5db35213f/Lakefront_Thumb_01.jpg.ashx?h=300&w=500&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('33','1','Euclid Park Reservation','41.561766', '-81.531292', 'Euclid, OH 44143', 'clevelandmetroparks.com' , '0', '23', '(216) 382-5660', 'https://clevelandmetroparks.com/getmedia/3d853842-01ca-44c3-85fd-152a49445a66/Euclid_Creek_Thumb_01.jpg.ashx?h=300&w=500&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('34','1','Bedford Reservation','41.375932', '-81.576604', 'Cuyahoga Valley National Park, 14505 Button Rd, Walton Hills, OH 44146', 'clevelandmetroparks.com' , '0', '23', '(216) 635-3200', 'https://clevelandmetroparks.com/getmedia/aec40394-b044-4dd8-b16a-394bc439f934/Bedford_03.jpg.ashx?h=300&w=500&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+
+INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+VALUES ('35','1','Big Creek Reservation','41.445539', '-81.717816', '4101 Fulton Pkwy, Cleveland, OH 44144', 'clevelandmetroparks.com' , '0', '23', '(216) 635-3200', 'https://clevelandmetroparks.com/getmedia/45126d11-d74d-4386-b246-a077e9aeaa84/Big_Creek_Carousel.jpg.ashx?h=384&w=640&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+
+--INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+--VALUES ('36','1','Lakefront Reservation (Euclid Beach)','41.582853', '-81.569555', '2-12 Cumberland Ave, Cleveland, OH 44110', 'clevelandmetroparks.com' , '0', '23', null, 'https://clevelandmetroparks.com/getmedia/7bb8ad9d-260b-4288-8645-087ff4cfe09a/Lakefront_Carousel_01.jpg.ashx?h=200&w=200&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+--
+--INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+--VALUES ('37','1','Lakefront Reservation (Euclid Beach)','41.582853', '-81.569555', '2-12 Cumberland Ave, Cleveland, OH 44110', 'clevelandmetroparks.com' , '0', '23', null, 'https://clevelandmetroparks.com/getmedia/7bb8ad9d-260b-4288-8645-087ff4cfe09a/Lakefront_Carousel_01.jpg.ashx?h=200&w=200&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+--
+--INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+--VALUES ('38','1','Lakefront Reservation (Euclid Beach)','41.582853', '-81.569555', '2-12 Cumberland Ave, Cleveland, OH 44110', 'clevelandmetroparks.com' , '0', '23', null, 'https://clevelandmetroparks.com/getmedia/7bb8ad9d-260b-4288-8645-087ff4cfe09a/Lakefront_Carousel_01.jpg.ashx?h=200&w=200&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+--
+--INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+--VALUES ('39','1','Lakefront Reservation (Euclid Beach)','41.582853', '-81.569555', '2-12 Cumberland Ave, Cleveland, OH 44110', 'clevelandmetroparks.com' , '0', '23', null, 'https://clevelandmetroparks.com/getmedia/7bb8ad9d-260b-4288-8645-087ff4cfe09a/Lakefront_Carousel_01.jpg.ashx?h=200&w=200&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
+--
+--INSERT INTO landmark(id, reviewid, name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom)
+--VALUES ('40','1','Lakefront Reservation (Euclid Beach)','41.582853', '-81.569555', '2-12 Cumberland Ave, Cleveland, OH 44110', 'clevelandmetroparks.com' , '0', '23', null, 'https://clevelandmetroparks.com/getmedia/7bb8ad9d-260b-4288-8645-087ff4cfe09a/Lakefront_Carousel_01.jpg.ashx?h=200&w=200&mode=crop&scale=both', '0', 'TRUE', 'FALSE', 'TRUE', 'TRUE', 'TRUE');
 
 
 COMMIT;

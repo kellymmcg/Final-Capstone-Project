@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.city.model.UserDAO;
 
@@ -29,8 +30,9 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/registration", method=RequestMethod.POST)
-	public String createUser(@RequestParam String userName, @RequestParam String password) {
+	public String createUser(@RequestParam String userName, @RequestParam String password, RedirectAttributes redir) {
 		userDAO.saveUser(userName, password);
+		redir.addFlashAttribute("notice", "The registration was a success!");
 		return "redirect:/";
 	}
 	

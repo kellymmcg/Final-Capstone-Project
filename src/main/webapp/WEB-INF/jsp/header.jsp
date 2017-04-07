@@ -10,8 +10,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src = "https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.js"></script>
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.js "></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <c:url var="cssHref" value="css/style.css" />
 <link rel="stylesheet" type="text/css" href="${cssHref}">
 
@@ -24,14 +23,17 @@
 <c:url var="addLandmarkHref" value="css/addLandmarkForm.css" />
 <link rel="stylesheet" type="text/css" href="${addLandmarkHref}">
 
-<c:url var="detailsHref" value="css/landmarkDetails.css" />
+<c:url var="registrationHref" value="css/registrationForm.css" />
+<link rel="stylesheet" type="text/css" href="${registrationHref}">
+
+<c:url var="detailsHref" value="css/landmark.css" />
 <link rel="stylesheet" type="text/css" href="${detailsHref}">
 
 </head>
 <body>
 	<header>
 		<img src="img/logo.png" class="img-responsive" height="200"/>
-		<nav class="navbar navbar-default" data-spy="affix" data-offset-top="425" role="navigation">
+		<nav class="navbar navbar-default mNav" data-spy="affix" data-offset-top="274" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"
@@ -51,7 +53,7 @@
 							<c:when test="${not empty currentUser}">
 								<div class="col-sm-1 uOption">
                        				<li>
-                        			<c:url var="suggestions" value="/landmarkSearch"/>
+                        			<c:url var="suggestions" value="/search"/>
                             		<a href="${suggestions}" class="btn test btn-sm" data-wow-delay="0.7s"><span class="glyphicon glyphicon-search"></span> Search</a>
                        				</li>
                     			</div>
@@ -116,15 +118,19 @@
 					</ul>
 				</div>
 			</div>
-		</nav>
-		<div id="noticeBar">
-			<c:choose>
+			
+			<div id="noticeBar">
+	<c:choose>
 				<c:when test="${not empty currentUser}">
 					<p> <!-- Something could go here eventually... maybe... --></p>
 				</c:when>
 				<c:otherwise>
-					<p id="fHeader">${loginFailure}</p>
+					<p id="fHeader">${notice}</p>
 				</c:otherwise>
-			</c:choose>		
-		</div>
+			</c:choose>	
+			</div>
+			
+		</nav>
+		
 	</header>
+	

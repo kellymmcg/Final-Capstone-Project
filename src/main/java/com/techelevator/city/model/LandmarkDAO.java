@@ -1,11 +1,13 @@
 package com.techelevator.city.model;
 
+import java.util.List;
+
 public interface LandmarkDAO {
 
 	public void addLandmark(Landmark newLandmark);
 	
-	public Landmark searchLandmarkById(long landmarkId);
+	public Landmark searchLandmarkById(Long landmarkId);
 
-	public Landmark searchLandmarkByName(String landmarkName);
+	public List<Landmark> searchLandmarksByName(String landmarkName);
 	
 }

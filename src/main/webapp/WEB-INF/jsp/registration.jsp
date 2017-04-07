@@ -8,9 +8,9 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
-		$("form#registration").validate({
+		$("#contact").validate({
 			rules : {
-				mainPassword : {
+				password : {
 					required : true,
 					minlength : 8,
 					maxlength : 128,
@@ -20,14 +20,25 @@
 				userName : {
 					required : true
 				},
-				confirmPassword : {
+				confirmRegistrationPassword : {
 					required : true,
-					equalTo : "#registrationPassword"
+					equalTo :"#registrationPassword"
 				}
 			},
 			messages : {
+				password : {
+					required : "This field is required!",
+					minlenght : "Password must be atleast 8 characters.",
+					maxlength : "Password can be no more than 128 characters.",
+					complexPassword : "Password must contain at least 1 uppercase letter and 1 number.",
+					noMoreThan2Duplicates : "Password cannot have more than 2 duplicates."
+				},
 				userName: {
-					required: "A username is required!"
+					required : "A username is required!"
+				},
+				confirmRegistrationPassword : {
+					required : "Verification password is requred.",
+					equalTo : "Passwords must match."
 				}
 			},
 			errorClass : "error"
@@ -36,56 +47,34 @@
 	});
 </script>
 
-<div class="registrationpage">
-	<div class="registrationbox">
-		<h3>Registration</h3>
-		<c:url var="formAction" value="/registration" />
-		<form class="form-horizontal" id = "registration" action='${formAction}' method="POST">
-			<input type="hidden" name="CSRF_TOKEN"
-				value="<c:out value='${CSRF_TOKEN}' />" />
-			<fieldset>
+<div class="container" id="registrationcontainer">
+	<c:url var="formAction" value="/registration" />
+		<form id="contact" action='${formAction}' method="POST">
+			<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
+			
+				<h3>Registration</h3>
+    			<h4>Create an account</h4>
 
-				<div class="control-group">
-					<!-- Username -->
-					<label class="control-label" for="userName">Username</label>
-					<div class="controls">
-						<input type="text" id="userName" name="userName"
-							placeholder="Username" class="input-xlarge regBox">
-					</div>
-				</div>
+				<!-- Username -->					
+				<fieldset>
+					<input placeholder="Username" type="text" name="userName" tabindex="1" required autofocus>
+				</fieldset>
 
-				<div class="control-group">
-					<!-- Password-->
-					<label class="control-label" for="registrationPassword">Password</label>
-					<div class="controls">
-						<input type="password" id="registrationPassword" name="password"
-							placeholder="Password" class="input-xlarge regBox">
-					</div>
-				</div>
-
-
-				<div class="control-group">
-					<!-- Password -->
-					<label class="control-label" for="confirmRegistrationPassword">Verify
-						Password</label>
-					<div class="controls">
-						<input type="password" id="confirmRegistrationPassword"
-							name="confirmRegistrationPassword" placeholder="Re-Type Password"
-							class="input-xlarge regBox"><br>
-					</div>
-				</div>
-
-				<div class="control-group">
-					<br>
-					<!-- Button -->
-					<div class="controls">
-						<button class="btn btn-success">Register</button>
-					</div>
-				</div><br>
-
-			</fieldset>
+				<!-- Password-->
+				<fieldset>
+					<input placeholder="Password" type="password" name="password" id="registrationPassword" tabindex="2" required>
+				</fieldset>
+	
+				<!-- Password -->
+				<fieldset>
+					<input placeholder="Verify password" type="password" name="confirmRegistrationPassword" tabindex="3" required>
+				</fieldset>
+				
+				<!-- Button -->
+				<fieldset>
+					<button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Register</button>	
+				</fieldset>
 		</form>
-	</div>
 </div>
 
 
