@@ -41,4 +41,9 @@ public class UserController {
 		return "redirect:/";
 	}
 	
+	@RequestMapping(path="/changePassword", method=RequestMethod.GET)
+	public String displayChangePasswordForm(){
+		return "changePassword";
+	}
+	
 }
