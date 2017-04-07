@@ -4,7 +4,6 @@
 
 <c:url var="pwValidationSrc" value="js/password.js" />
 <script src="${pwValidationSrc}"></script>
-<div class="registrationpage">
 	<script type="text/javascript">
 		$(document).ready(function() {
 	
@@ -47,6 +46,7 @@
 		});
 	</script>
 	
+<div class="registrationpage">
 	<div class="container" id="registrationcontainer">
 		<c:url var="formAction" value="/registration" />
 			<form id="contact" action='${formAction}' method="POST">

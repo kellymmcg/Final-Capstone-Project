@@ -23,3 +23,12 @@
   color: #777;
   background: #21074F;
 }
+
+.registrationpage {
+
+	background-image: url("img/regbackground2.jpg");
+    background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	top: 0px;
+}
