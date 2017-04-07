@@ -42,8 +42,15 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/changePassword", method=RequestMethod.GET)
-	public String displayChangePasswordForm(){
+	public String displayChangePasswordForm() {
 		return "changePassword";
+	}
+	
+	@RequestMapping(path="/changePassword", method=RequestMethod.POST)
+	public String updatePassword(@RequestParam String userName, @RequestParam String password, RedirectAttributes redir) {	
+		userDAO.updatePassword(userName, password);
+		redir.addFlashAttribute("notice", "Your password has been updated.");
+		return "redirect:/";
 	}
 	
 }
