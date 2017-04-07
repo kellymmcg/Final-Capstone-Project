@@ -2,42 +2,53 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 <div class="container">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-         <div class="item active">
-                <img src="img/homepageone.jpg">
-             
+    <div class="row">
+      <div class="span12 carousel-container">
+          <div id="carousel" class="carousel slide carousel-fade">
+
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+              <div data-slide-no="0" class="item carousel-item active">
+                <img src="img/homepageonere.jpg" alt="">
+                <div class="carousel-caption">
+                  <h4>We Help You Estimate!</h4>
+                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </div>
+              <div data-slide-no="1" class="item carousel-item">
+                <img src="img/registrationre.jpg" alt="">
+                <div class="carousel-caption">
+                  <h4>second thumbnail</h4>
+                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </div>
+              <div data-slide-no="2" class="item carousel-item">
+                <img src="img/computerre.jpg" alt="">
+                <div class="carousel-caption">
+                  <h4>Third Thumbnail label</h4>
+                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </div>
+               <div data-slide-no="3" class="item carousel-item">
+                <img src="img/enjoyre.jpg" alt="">
+                <div class="carousel-caption">
+                  <h4>Third Thumbnail label</h4>
+                  <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                </div>
+              </div>
             </div>
-            <!-- End Item -->
-            <div class="item">
-                <img src="img/registration.jpg" width="auto" height="auto">
-           
-            </div>
-            <!-- End Item -->
-            <div class="item">
-                <img src="img/computer.jpg" height="100" width="auto">
-        
-            </div>
-            <!-- End Item -->
-            <div class="item">
-                <img src="img/enjoy.jpg" width="1000" height="100">
-            </div>
-            <!-- End Item -->
-        </div>
-        <!-- End Carousel Inner -->
-        <ul class="nav nav-pills nav-justified carouselnav">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"><a href="#">Search<br><small>Search landmarks and tourist attraction</small></a></li>
-            <li data-target="#myCarousel" data-slide-to="1"><a href="#">Join Us<br><small>Sign up for a Tour du City account</small></a></li>
-            <li data-target="#myCarousel" data-slide-to="2"><a href="#">Create and Save<br><small>Create and save itineraries when you sign up</small></a></li>
-            <li data-target="#myCarousel" data-slide-to="3"><a href="#">Use It<small>Use your itinerary to make your trip great</small></a></li>
-        </ul>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#carousel" data-slide="prev"><</a>
+            <a class="carousel-control right" href="#carousel" data-slide="next">></a>
+          </div>
+          <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="myCarousel-target active"></li>
+            <li data-target="#carousel" data-slide-to="1" class="myCarousel-target"></li>
+            <li data-target="#carousel" data-slide-to="2" class="myCarousel-target"></li>
+            <li data-target="#carousel" data-slide-to="3" class="myCarousel-target"></li>
+          </ol>
+
+      </div>
     </div>
-    <!-- End Carousel -->
-</div>
-
-
-
-
-
+  </div>
 <c:import url="/WEB-INF/jsp/footer.jsp" />
