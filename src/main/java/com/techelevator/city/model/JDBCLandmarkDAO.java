@@ -52,8 +52,22 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 	public List<Landmark> searchLandmarksByName(String landmarkName) {
 		List<Landmark> landmarks = new ArrayList<>();
 		landmarkName = "%"+landmarkName+"%";
-		String sqlSelectLandmarkById ="SELECT * FROM landmark WHERE name LIKE ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectLandmarkById, landmarkName);
+		String sqlSelectLandmarkByName ="SELECT * FROM landmark WHERE name LIKE ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectLandmarkByName, landmarkName);
+		while(results.next()) {
+			Landmark landmark = null;
+			landmark = mapRowToLandmark(results);
+			landmarks.add(landmark);
+		}
+		return landmarks;
+	}
+
+	@Override
+	public List<Landmark> searchLandmarksByAddress(String landmarkAddress) {
+		List<Landmark> landmarks = new ArrayList<>();
+		landmarkAddress = "%"+landmarkAddress+"%";
+		String sqlSelectLandmarkByAddress ="SELECT * FROM landmark WHERE address LIKE ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectLandmarkByAddress, landmarkAddress);
 		while(results.next()) {
 			Landmark landmark = null;
 			landmark = mapRowToLandmark(results);
@@ -83,5 +97,6 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 		landmark.setRestroom(results.getBoolean("restroom"));
 		return landmark;
 	}
+
 
 }

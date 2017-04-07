@@ -10,4 +10,6 @@ public interface LandmarkDAO {
 
 	public List<Landmark> searchLandmarksByName(String landmarkName);
 	
+	public List<Landmark> searchLandmarksByAddress(String landmarkAddress);
+	
 }
