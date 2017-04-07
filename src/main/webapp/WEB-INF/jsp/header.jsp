@@ -118,7 +118,9 @@
 					</ul>
 				</div>
 			</div>
-			<c:choose>
+			
+			<div id="noticeBar">
+	<c:choose>
 				<c:when test="${not empty currentUser}">
 					<p> <!-- Something could go here eventually... maybe... --></p>
 				</c:when>
@@ -126,7 +128,9 @@
 					<p id="fHeader">${loginFailure}</p>
 				</c:otherwise>
 			</c:choose>	
+			</div>
+			
 		</nav>
 		
-		
 	</header>
+	
