@@ -512,14 +512,17 @@ bs-calltoaction{
     background-color: rgba(255,255,255,0.3);
 }
 .carousel-caption {
-    padding: 35px;
-    text-align: center;
+	background-color: #21074f;
+       opacity: 0.8;
+	   text-align: center;
+	   padding: 20px;
 }
+
 .carousel-caption h4 {
     font-family: "lato";
     font-weight: 100;
     font-size: 61px;
-    color: #21074f;
+    color:  #fcb12f
 }
 .carousel-caption p {
     font-family: "lato";
@@ -528,7 +531,7 @@ bs-calltoaction{
     margin-bottom: -8px;
     font-weight: 300;
     line-height: 30px;
-    color: white;
+ 	color:  #fcb12f
 }
 /*
 .carousel-fade .carousel-inner .item {
