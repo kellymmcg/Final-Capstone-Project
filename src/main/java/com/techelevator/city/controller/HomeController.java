@@ -29,4 +29,9 @@ package com.techelevator.city.controller;
 			return "homePage";
 		}
 		
+		@RequestMapping(path="/testPage", method=RequestMethod.GET)
+		public String showPage() {
+			return "testPage";
+		}
+		
 }
