@@ -42,6 +42,12 @@ html {
     width: 300px;
 }
 
+#mAnchor {
+	padding: 50px;
+	font-size: 0px;
+	color: white;
+}
+
 #lHeader {
 	padding-right: 8px;
 	font-size: 20px;
@@ -69,6 +75,10 @@ html {
 
 .loginTab button {
 	color: #736f72;
+}
+
+.mAnchor {
+	position:absolute;
 }
 
 .test{
