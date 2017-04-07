@@ -8,9 +8,9 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 
-		$("form #contact").validate({
+		$("#contact").validate({
 			rules : {
-				mainPassword : {
+				password : {
 					required : true,
 					minlength : 8,
 					maxlength : 128,
@@ -26,6 +26,13 @@
 				}
 			},
 			messages : {
+				password: {
+					required: "This field is required!"
+					minlenght: "Password must be atleast 8 characters."
+					maxlength: "Password can be no more than 128 characters"
+					complexPassword: "Password must be complex."
+					noMoreThan2Duplicates: "Password cannot have more than 2 duplicates"
+				},
 				userName: {
 					required: "A username is required!"
 				}
@@ -51,12 +58,12 @@
 
 				<!-- Password-->
 				<fieldset>
-					<input placeholder="Password" type="password" name="password" tabindex="2" required>
+					<input placeholder="Password" type="password" name="registrationPassword" id="registrationPassword" tabindex="2" required>
 				</fieldset>
 	
 				<!-- Password -->
 				<fieldset>
-					<input placeholder="Verify password" type="password" name="confirmRegistrationPassword" tabindex="3" required>
+					<input placeholder="Verify password" type="password" name="confirmRegistrationPassword" id="confirmPassword" tabindex="3" required>
 				</fieldset>
 				
 				<!-- Button -->

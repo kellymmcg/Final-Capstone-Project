@@ -492,5 +492,9 @@ body
     bottom: 0;
 }
 
+.error {
+	color: red;
+}
+
 
 
