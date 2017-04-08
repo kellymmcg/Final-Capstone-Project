@@ -2,6 +2,9 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
+<div id="aboutUs">
+	<h1>About Us</h1>
+</div>
 <div class="container-fluid">
 	<div class="row">
 		<!-- Kevin Crumedy -->

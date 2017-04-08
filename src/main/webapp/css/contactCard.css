@@ -43,3 +43,8 @@
 .contactButton:hover, .card a:hover {
     opacity: 0.7;
 }
+
+#aboutUs {
+	padding-bottom: 20px;
+	padding-left: 20px;
+}
