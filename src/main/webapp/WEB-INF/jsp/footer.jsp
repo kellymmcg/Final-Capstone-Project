@@ -2,9 +2,8 @@
 
 		<footer>
 			<div class="footerContent">
-				<c:url var="contactUsHref" value="/contactUs"/>
-				<b><a href="#">About Us</a><br>
-				<a href="${contactUsHref}">Contact Us</a></b><br>
+				<c:url var="aboutUsHref" value="/aboutUs"/>
+				<b><a href="${aboutUsHref}">About Us</a></b><br>
 				<p>© Copyright 2017 Tour du City.</p>
 			</div>
 		</footer>
