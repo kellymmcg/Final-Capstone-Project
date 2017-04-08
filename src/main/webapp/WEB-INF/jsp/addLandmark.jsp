@@ -62,9 +62,9 @@
 			
 			<fieldset>
 	      		<button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-	    	</fieldset>
+	    		</fieldset>
 	    	
-	    	<p class="copyright">Designed by Team Bravo</p>
+	    		<p class="copyright">Designed by Team Bravo</p>
 		</form>
 	</div>
 </div>

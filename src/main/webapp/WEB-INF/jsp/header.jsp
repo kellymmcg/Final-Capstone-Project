@@ -10,6 +10,8 @@
 <c:url var="addLandmarkHref" value="css/addLandmarkForm.css" />
 <c:url var="registrationHref" value="css/registrationForm.css" />
 <c:url var="detailsHref" value="css/landmark.css" />
+<c:url var="contactCardHref" value="css/contactCard.css" />
+
 <!-- LISTS OF SCRIPTS AND CSS FILES -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -18,11 +20,14 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="${jsHref}"></script>
 <script src="${hpjsHref}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="${cssHref}">
 <link rel="stylesheet" type="text/css" href="${addLandmarkHref}">
 <link rel="stylesheet" type="text/css" href="${registrationHref}">
 <link rel="stylesheet" type="text/css" href="${detailsHref}">
+<link rel="stylesheet" type="text/css" href="${contactCardHref}">
+
 
 </head>
 <body>

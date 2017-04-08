@@ -34,4 +34,14 @@ package com.techelevator.city.controller;
 			return "testPage";
 		}
 		
+		@RequestMapping(path="/contactUs", method=RequestMethod.GET)
+		public String displayContactUsPage() {
+			return "contactUs";
+		}
+		
+		@RequestMapping(path="/aboutUs", method=RequestMethod.GET)
+		public String displayAboutUsPage() {
+			return "aboutUs";
+		}
+		
 }
