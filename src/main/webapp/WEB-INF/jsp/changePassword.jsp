@@ -4,7 +4,7 @@
 <<<<<<< HEAD
 <div class = "changepassword">
 	<h1>Change password stuff goes here.</h1>
-</div>
+
 =======
 
 <c:url var="pwValidationSrc" value="js/password.js" />
@@ -66,6 +66,6 @@
     	</fieldset>
 	</form>
 </div>
-
+</div>
 >>>>>>> 6ae97049edfe8da370b0af227ff96453db33a07d
 <c:import url="/WEB-INF/jsp/footer.jsp" />

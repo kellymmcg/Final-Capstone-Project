@@ -13,7 +13,6 @@ html {
 	background-image: url("../img/lostpassword.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	background-attachment: fixed;
 }
 
 .suggestlandmark {
@@ -598,7 +597,7 @@ bs-calltoaction{
     padding-left: 20%;
     margin-top: 20px;
 }
-=======
+
 #myCarousel .carouselnav a small
 {
     display: block;
@@ -644,4 +643,4 @@ bs-calltoaction{
 
 
 
->>>>>>> 7c01707972c5a3a18a9c22e65bcb66a5162a1328
+
