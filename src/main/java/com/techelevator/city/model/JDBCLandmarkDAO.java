@@ -87,7 +87,7 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 		landmark.setOpenTime(results.getInt("open_time"));
 		landmark.setCloseTime(results.getInt("close_time"));
 		landmark.setPhone(results.getString("phone"));
-		landmark.setItineraryId(results.getInt("itineraryId"));
+		landmark.setItineraryId(results.getInt("itinerary_id"));
 		landmark.setImage(results.getString("image"));
 		landmark.setAdmission(results.getInt("admission"));
 		landmark.setHandicapAccessible(results.getBoolean("handicap_accessible"));
