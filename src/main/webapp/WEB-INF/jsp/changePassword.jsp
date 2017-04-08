@@ -1,11 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
-<<<<<<< HEAD
-<div class = "changepassword">
-	<h1>Change password stuff goes here.</h1>
 
-=======
+<div class = "changepassword">
 
 <c:url var="pwValidationSrc" value="js/password.js" />
 <script src="${pwValidationSrc}"></script>
@@ -67,5 +64,5 @@
 	</form>
 </div>
 </div>
->>>>>>> 6ae97049edfe8da370b0af227ff96453db33a07d
+
 <c:import url="/WEB-INF/jsp/footer.jsp" />
