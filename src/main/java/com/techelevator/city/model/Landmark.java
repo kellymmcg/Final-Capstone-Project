@@ -11,7 +11,7 @@ public class Landmark {
 	private int openTime;
 	private int closeTime;
 	private String phone;
-	private int reviewId;
+	private int itineraryId;
 	private String image;
 	private int admission;
 	private boolean handicapAccessible;
@@ -132,12 +132,12 @@ public class Landmark {
 		this.phone = phone;
 	}
 
-	public int getReviewId() {
-		return reviewId;
+	public int getItineraryId() {
+		return itineraryId;
 	}
 
-	public void setReviewId(int reviewId) {
-		this.reviewId = reviewId;
+	public void setItineraryId(int itineraryId) {
+		this.itineraryId = itineraryId;
 	}
 
 	public String getImage() {

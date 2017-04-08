@@ -23,13 +23,13 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 	@Override
 	public void addLandmark(Landmark newLandmark) {
 		String sqlInsertLandmark = "INSERT INTO landmark("
-				+ "reviewid, name, longitude, latitude, address, "
+				+ "itinerary_id, name, longitude, latitude, address, "
 				+ "website, open_time, close_time, phone, image, "
 				+ "admission, handicap_accessible, "
 				+ "consession, kid_friendly, water , "
 				+ "restroom)"
 				+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-		jdbcTemplate.update(sqlInsertLandmark, newLandmark.getReviewId(), newLandmark.getName(),
+		jdbcTemplate.update(sqlInsertLandmark, newLandmark.getItineraryId(), newLandmark.getName(),
 				newLandmark.getLongitude(), newLandmark.getLatitude(), newLandmark.getAddress(),
 				newLandmark.getWebsite(), newLandmark.getOpenTime(), newLandmark.getCloseTime(),
 				newLandmark.getPhone(), newLandmark.getImage(), newLandmark.getAdmission(),
@@ -87,7 +87,7 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 		landmark.setOpenTime(results.getInt("open_time"));
 		landmark.setCloseTime(results.getInt("close_time"));
 		landmark.setPhone(results.getString("phone"));
-		landmark.setReviewId(results.getInt("reviewId"));
+		landmark.setItineraryId(results.getInt("itineraryId"));
 		landmark.setImage(results.getString("image"));
 		landmark.setAdmission(results.getInt("admission"));
 		landmark.setHandicapAccessible(results.getBoolean("handicap_accessible"));
