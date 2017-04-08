@@ -37,8 +37,11 @@ $("#detailLink").click(function(event){
 				<span class="clearfix borda"></span>
 			</article>
 		</section>
+		
 	</c:forEach>
 </div>	
+
+
 
 
 	
