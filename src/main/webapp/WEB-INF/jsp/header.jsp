@@ -11,6 +11,7 @@
 <c:url var="registrationHref" value="css/registrationForm.css" />
 <c:url var="detailsHref" value="css/landmark.css" />
 <c:url var="contactCardHref" value="css/contactCard.css" />
+<c:url var="footerStyleHref" value="css/footerStyle.css" />
 
 <!-- LISTS OF SCRIPTS AND CSS FILES -->
 
@@ -27,6 +28,7 @@
 <link rel="stylesheet" type="text/css" href="${registrationHref}">
 <link rel="stylesheet" type="text/css" href="${detailsHref}">
 <link rel="stylesheet" type="text/css" href="${contactCardHref}">
+<link rel="stylesheet" type="text/css" href="${footerStyleHref}">
 
 
 </head>
