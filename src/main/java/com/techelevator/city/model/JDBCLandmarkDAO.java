@@ -27,14 +27,14 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 				+ "website, open_time, close_time, phone, image, "
 				+ "admission, handicap_accessible, "
 				+ "consession, kid_friendly, water , "
-				+ "restroom)"
-				+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+				+ "restroom, description)"
+				+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		jdbcTemplate.update(sqlInsertLandmark, newLandmark.getItineraryId(), newLandmark.getName(),
 				newLandmark.getLongitude(), newLandmark.getLatitude(), newLandmark.getAddress(),
 				newLandmark.getWebsite(), newLandmark.getOpenTime(), newLandmark.getCloseTime(),
 				newLandmark.getPhone(), newLandmark.getImage(), newLandmark.getAdmission(),
 				newLandmark.isHandicapAccessible(), newLandmark.isConsession(), 
-				newLandmark.isKidFriendly(), newLandmark.isWater(), newLandmark.isRestroom());
+				newLandmark.isKidFriendly(), newLandmark.isWater(), newLandmark.isRestroom(), newLandmark.getDescription());
 	}
 
 	@Override
@@ -95,6 +95,7 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 		landmark.setKidFriendly(results.getBoolean("kid_friendly"));
 		landmark.setWater(results.getBoolean("water"));
 		landmark.setRestroom(results.getBoolean("restroom"));
+		landmark.setDescription(results.getString("description"));
 		return landmark;
 	}
 

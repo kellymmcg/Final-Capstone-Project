@@ -19,6 +19,7 @@ public class Landmark {
 	private boolean kidFriendly;
 	private boolean water;
 	private boolean restroom;
+	private String description;
 
 	public boolean isHandicapAccessible() {
 		return handicapAccessible;
@@ -154,6 +155,14 @@ public class Landmark {
 
 	public void setAdmission(int admission) {
 		this.admission = admission;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 }
