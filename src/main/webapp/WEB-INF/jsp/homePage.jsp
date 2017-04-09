@@ -105,8 +105,9 @@
 <!-- End  bootstrap-touch-slider Slider -->
 
 <!-- SECTION 2 -->
-<div class="jumbotron"><br><br><br><div>
+<br><br><br>
 
+<div style="background:transparent !important" class="jumbotron">
 <div class="container">
 	<div class="row">
 		<div class="col-sm-4">
@@ -129,11 +130,11 @@
 		</div>
 	</div>
 </div>
+</div>
 
-<hr>
 
-<div class="container">
-	<div class="jumbotron" id="jumbotronText">
+<div class="jumbotron" id="jumbotronText">
+	<div class="container">
 		<h1>Map your route...</h1>
 		<p>Add screenshot of routed itinerary on google map...</p>
 	</div>
