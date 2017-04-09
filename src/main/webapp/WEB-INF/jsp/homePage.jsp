@@ -35,7 +35,7 @@
 							city!</h1>
 						<p data-animation="animated fadeInLeft">Explore the historic
 							landmarks your city has to offer.</p>
-						<a href="${formAction}" target="_blank" class="btn btn-default"
+						<a href="${formAction}" target="_blank" class="btn btn-default lBut"
 							data-animation="animated fadeInLeft">Login</a> <a
 							href="${registration}" target="_blank" class="btn btn-primary"
 							data-animation="animated fadeInRight">Join Us</a>

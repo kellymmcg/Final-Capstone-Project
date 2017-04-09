@@ -28,8 +28,8 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 				+ "admission, handicap_accessible, "
 				+ "consession, kid_friendly, water , "
 				+ "restroom, description)"
-				+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-		jdbcTemplate.update(sqlInsertLandmark, newLandmark.getItineraryId(), newLandmark.getName(),
+				+ "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+		jdbcTemplate.update(sqlInsertLandmark, newLandmark.getName(),
 				newLandmark.getLongitude(), newLandmark.getLatitude(), newLandmark.getAddress(),
 				newLandmark.getWebsite(), newLandmark.getOpenTime(), newLandmark.getCloseTime(),
 				newLandmark.getPhone(), newLandmark.getImage(), newLandmark.getAdmission(),
@@ -87,7 +87,6 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 		landmark.setOpenTime(results.getInt("open_time"));
 		landmark.setCloseTime(results.getInt("close_time"));
 		landmark.setPhone(results.getString("phone"));
-		landmark.setItineraryId(results.getInt("itinerary_id"));
 		landmark.setImage(results.getString("image"));
 		landmark.setAdmission(results.getInt("admission"));
 		landmark.setHandicapAccessible(results.getBoolean("handicap_accessible"));

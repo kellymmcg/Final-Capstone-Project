@@ -242,6 +242,7 @@
     white-space: nowrap;
     letter-spacing: 1px;
     display: inline-block;
+    background: white;
     border: none;
     text-transform: uppercase;
     -webkit-animation-delay: 2s;

@@ -7,7 +7,7 @@ $("#detailLink").click(function(event){
 });
 
 </script>
-<div class="container sCon">
+<div class="container-fluid sCon">
     <hgroup class="mb20">
 		<h1>Search Results</h1>
 		<h2 class="lead"><strong class="text-danger">${landmarks.size()}</strong> results were found for the search for <strong class="text-danger">${search}</strong></h2>								
@@ -37,13 +37,7 @@ $("#detailLink").click(function(event){
 				<span class="clearfix borda"></span>
 			</article>
 		</section>
-		
 	</c:forEach>
 </div>	
-
-
-
-
-	
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />
