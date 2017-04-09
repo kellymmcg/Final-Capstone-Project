@@ -17,18 +17,17 @@ body, html {
 	font-size: 12px;
 	line-height: 30px;
 	color: #777;
-
 }
 
 .updateP {
 	border: 2px solid red;
 	border-radius: 13px;
 }
+
 .changepassword {
 	background-image: url("../img/changepasswordbackground.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
-	
 }
 
 .suggestlandmark {
@@ -70,7 +69,7 @@ body, html {
 	width: 300px;
 }
 
-#mapP{
+#mapP {
 	height: 400px;
 	width: auto;
 }
@@ -518,9 +517,6 @@ bs-calltoaction {
 }
 
 /* HOME PAGE SLIDE SHOW */
-
-
-
 .carousel-caption {
 	background-color: #21074f;
 	opacity: 0.8;
@@ -547,15 +543,15 @@ bs-calltoaction {
 }
 
 .carousel-fade .carousel-inner .item {
-    opacity: 0;
-    -webkit-transition-property: opacity;
-    -moz-transition-property: opacity;
-    -o-transition-property: opacity;
-    transition-property: opacity;
-} 
+	opacity: 0;
+	-webkit-transition-property: opacity;
+	-moz-transition-property: opacity;
+	-o-transition-property: opacity;
+	transition-property: opacity;
+}
+
 .carousel-fade .carousel-inner .active {
 	opacity: 1;
-
 }
 
 .carousel-fade .carousel-inner .active.left, .carousel-fade .carousel-inner .active.right
@@ -595,7 +591,6 @@ bs-calltoaction {
 	}
 	.carousel {
 		margin-bottom: 0;
-		
 	}
 	.hero-unit {
 		padding-bottom: 60px
@@ -607,13 +602,11 @@ bs-calltoaction {
 
 .item img {
 	margin: 0 auto;
-
 }
 
 .carousel-inner {
-	
 	margin: 0 auto;
-} 
+}
 
 #myCarousel .carouselnav a small {
 	display: block;
@@ -633,14 +626,36 @@ bs-calltoaction {
 	transition: 0.5s;
 }
 
-
 .carouselnav {
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-    position: absolute;
-    bottom: 0;
-} 
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+	position: absolute;
+	bottom: 0;
+}
+
 .error {
 	color: red;
 }
+
+.searchpage {
+	background-image: url("../img/searchbackground.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.searchbynamecontainer {
+	width: 300px;
+	margin: 0 auto;
+	position: relative;
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-weight: 100;
+	font-size: 12px;
+	line-height: 30px;
+	color:  #fcb12f;
+	padding-bottom: 20px;
+	border: 2px solid black;
+	background-color: rgba(0, 0, 255, 0.3);
+	
+}
+
