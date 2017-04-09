@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
+
 <div class="registrationpage">
 	<c:url var="pwValidationSrc" value="js/password.js" />
 	<script src="${pwValidationSrc}"></script>
@@ -49,7 +50,7 @@
 
 		<div class="container" id="registrationcontainer">
 			<c:url var="formAction" value="/registration" />
-				<form id="contact" action='${formAction}' method="POST">
+				<form id="contact" class="regform" action='${formAction}' method="POST">
 					<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 					
 						<h3>Registration</h3>

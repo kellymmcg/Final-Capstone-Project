@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+
+#logincontainer {
+	width: 300px;
+	height: 900px;
+  	margin: 0 auto;
+  	position: relative;
+  	font-family: "Roboto", Helvetica, Arial, sans-serif;
+  	font-weight: 100;
+  	font-size: 12px;
+  	line-height: 30px;
+  	color: #777;
+}
+
+.loginform {
+	width: 400px;
+	height: 285px;
+	position: absolute;
+    top: 45%;
+    left: 55%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.loginusername {
+	padding-top: 10px;
+}
+
+.loginpage {
+	background-image: url("../img/citywindows.jpg");
+	background-size: 100% 100%;
+	background-position: center; 
+}

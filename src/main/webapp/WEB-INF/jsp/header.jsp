@@ -7,6 +7,7 @@
 <c:url var="cssHref" value="css/style.css" />
 <c:url value="js/script.js" var="jsHref" />
 <c:url value="js/homePageSlideShow.js" var="hpjsHref" />
+<c:url var="loginPageHref" value="css/loginPage.css" />
 <c:url var="addLandmarkHref" value="css/addLandmarkForm.css" />
 <c:url var="registrationHref" value="css/registrationForm.css" />
 <c:url var="detailsHref" value="css/landmark.css" />
@@ -29,6 +30,7 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
 
 <link rel="stylesheet" type="text/css" href="${cssHref}">
+<link rel="stylesheet" type="text/css" href="${loginPageHref}">
 <link rel="stylesheet" type="text/css" href="${addLandmarkHref}">
 <link rel="stylesheet" type="text/css" href="${registrationHref}">
 <link rel="stylesheet" type="text/css" href="${detailsHref}">
@@ -106,7 +108,7 @@
 													<form class="form" role="form" method="POST" action="${formAction}" id="login-nav">
 														<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 														<div class="form-group">
-															<input type="text" class="form-control" name="userName" id="userName" placeholder="Username" required>
+															<input type="text" class="form-control" name="userName" id="userName" placeholder="Username" required autofocus>
 														</div>
 														<div class="form-group">
 															<input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
@@ -144,4 +146,3 @@
 		</nav>
 
 	</header>
-	

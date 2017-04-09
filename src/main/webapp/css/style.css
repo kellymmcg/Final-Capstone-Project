@@ -104,8 +104,8 @@ body, html {
 	width: 100%;
 }
 
-.affix+.container-fluid {
-	padding-top: 70px;
+.affix + .container-fluid {
+	padding-top: 300px;
 }
 
 .loginTab {
