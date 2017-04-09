@@ -27,6 +27,29 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 		}
 		return null;
 	}
+	@Override
+	public void createItinerary(Itinerary itinerary) {
+		String sqlInsertItinerary = "INSERT INTO itinerary("
+				+"app_user_id, landmark_id, name, date_started, description"
+				+"VALUES(?,?,?,?,?)";
+		jdbcTemplate.update(sqlInsertItinerary, itinerary.getUser(), itinerary.getLandmark(),
+				itinerary.getName(), itinerary.getDateCreated(), itinerary.getDescription());
+	}
+	@Override
+	public void editItinerary(Itinerary itinerary) {
+		String sqlUpdateItinerary = "UPDATE itinerary"
+				+"SET app_user_id = ?, landmark_id = ?, name = ?, description= ?"
+				+"WHERE id= ?";
+		jdbcTemplate.update(sqlUpdateItinerary, itinerary.getUser(), itinerary.getLandmark(),
+				itinerary.getName(), itinerary.getDescription(), itinerary.getItineraryId());
+	}
+	
+	@Override
+	public void deleteItinerary(Itinerary itinerary) {
+		String sqlDeleteItinerary = "DELETE itinerary"
+				+"WHERE name = ?";
+		jdbcTemplate.update(sqlDeleteItinerary, itinerary.getName());
+	}
 	
 	private Itinerary mapRowToItinerary(SqlRowSet results) {
 		Itinerary itinerary = new Itinerary();
@@ -38,4 +61,5 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 		itinerary.setDescription(results.getString("description"));
 		return itinerary;
 	}
+
 }
