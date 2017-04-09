@@ -7,7 +7,7 @@ $("#detailLink").click(function(event){
 });
 
 </script>
-<div class="container sCon">
+<div class="container-fluid sCon">
     <hgroup class="mb20">
 		<h1>Search Results</h1>
 		<h2 class="lead"><strong class="text-danger">${landmarks.size()}</strong> results were found for the search for <strong class="text-danger">${search}</strong></h2>								
@@ -39,46 +39,5 @@ $("#detailLink").click(function(event){
 		</section>
 	</c:forEach>
 </div>	
-	
-	<c:choose>
-		<c:when test = "${not empty landmarks}">
-	<div id="mapP" ></div>
-    <script>
-      function initMap() {
-    	  var map = new google.maps.Map(document.getElementById('mapP'), {
-    		  zoom: 12,
-    		  center: {lat: 41.4993, lng: -81.6944}
-    	  });
-
-    		  setMarkers(map);
-    		}
-      function setMarkers(map) {
-    	  for (var i = 0; i < ${landmarks.size()}; i++) {
-    	 
-    		var location = {
-    			lat: ${landmarks.get(i).longitude},
-				lng: ${landmarks.get(i).latitude}
-    		};
-    		
-    	    var marker = new google.maps.Marker({
-    	      position: location,
-    	      map: map,
-    	      title: '${landmarks.get(i).name}'
-    	    });
-    	  }
-    	}
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Cyxiz7vexNLr_2SLi_HoFXh4-xC31T8&callback=initMap">
-    </script>
-    </c:when>
-   </c:choose> 
-   
-
-
-
-
-
-	
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />

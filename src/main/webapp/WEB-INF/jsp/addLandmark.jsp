@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 <div class="addlandmark">
-	<div class="container" id="landmarkcontainer">
+	<div class="container-fluid" id="landmarkcontainer">
 		<c:url var="addLandmarkHref" value="/addLandmark"/>
 		<form id="contact" action="${addLandmarkHref}" method="POST">
 			<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
