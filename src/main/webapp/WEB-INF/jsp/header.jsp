@@ -48,7 +48,7 @@
 		<img src="img/logo.png" class="img-responsive" height="200"/>
 		<!-- NAVIGATION BAR INFORMATION -->
 		<c:url var="suggestions" value="/search"/>
-		<nav class="navbar navbar-default mNav" data-spy="affix" data-offset-top="320" role="navigation">
+		<nav class="navbar navbar-default mNav" role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"

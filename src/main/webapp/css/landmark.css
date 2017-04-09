@@ -1,5 +1,14 @@
 @import "http://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
 
+/* MAP CSS */
+
+#mapD {
+	height: 300px;
+	width: 100%;
+}
+
+
+
 /* SEARCH PAGE CSS */
 
 .sCon { 
@@ -109,6 +118,11 @@ hgroup h2.lead {
 
 /* LANDMARK DETAILS PAGE CSS */
 
+.col-centered {
+	float: none;
+	margin: 0 auto;
+}
+
 .dCon {
 	background: #e1dde4;
 	padding: 40px;
@@ -125,6 +139,35 @@ hgroup h2.lead {
 .dImage {
 	width: 300px;
 	height: 200px;
+}
+
+.dIcon {
+	display: inline-block;
+	border: 1px solid black;
+	margin-right: 15px;
+	padding: 2px;
+}
+
+.cYes {
+	background: #86d98d;
+}
+
+.cNo {
+	color: #949394;
+	background:white;
+	
+}
+
+.card {
+	padding: 10px;
+	background: #ebe9ee;
+}
+
+.dWhole {
+	padding: 50px;
+	background-image: url("../img/addlandmarkbackground.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 
 #dAddress {

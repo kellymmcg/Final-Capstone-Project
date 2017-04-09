@@ -1,5 +1,7 @@
 package com.techelevator.city.model;
 
+import java.text.DecimalFormat;
+
 public class Landmark {
 
 	private Long id;
@@ -21,23 +23,44 @@ public class Landmark {
 	private boolean restroom;
 	private String description;
 
-	public boolean isHandicapAccessible() {
-		return handicapAccessible;
+	public String getHandicapAccessible() {
+		if(handicapAccessible == true){
+			return "Yes";
+		}
+		return "No";
+	}
+	
+	public boolean addHandicapAccessible() {
+		return handicapAccessible;	
 	}
 
 	public void setHandicapAccessible(boolean handicapAccessible) {
 		this.handicapAccessible = handicapAccessible;
 	}
 
-	public boolean isConsession() {
+	public String getConsession() {
+		if(consession == true){
+			return "Yes";
+		}
+		return "No";
+	}
+	
+	public boolean addConsession(){
 		return consession;
 	}
-
+	
 	public void setConsession(boolean consession) {
 		this.consession = consession;
 	}
 
-	public boolean isKidFriendly() {
+	public String getKidFriendly() {
+		if(kidFriendly == true){
+			return "Yes";
+		}
+		return "No";
+	}
+	
+	public boolean addKidFriendly() {
 		return kidFriendly;
 	}
 
@@ -45,7 +68,14 @@ public class Landmark {
 		this.kidFriendly = kidFriendly;
 	}
 
-	public boolean isWater() {
+	public String getWater() {
+		if(water == true){
+			return "Yes";
+		}
+		return "No";
+	}
+	
+	public boolean addWater() {
 		return water;
 	}
 
@@ -53,7 +83,14 @@ public class Landmark {
 		this.water = water;
 	}
 
-	public boolean isRestroom() {
+	public String getRestroom() {
+		if(restroom == true){
+			return "Yes";
+		}
+		return "No";
+	}
+	
+	public boolean addRestroom() {
 		return restroom;
 	}
 
@@ -149,7 +186,18 @@ public class Landmark {
 		this.image = image;
 	}
 
-	public int getAdmission() {
+	public String getAdmission() {
+		DecimalFormat df = new DecimalFormat("'$'0.00");
+		if(admission == 0) {
+			return "No admission";
+		}else if(admission == 808){
+			return "Varies";
+		}else{
+			return df.format((double)admission / 100);
+		}
+	}
+	
+	public int addAdmission() {
 		return admission;
 	}
 

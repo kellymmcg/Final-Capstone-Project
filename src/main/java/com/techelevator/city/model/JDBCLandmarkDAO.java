@@ -32,9 +32,9 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 		jdbcTemplate.update(sqlInsertLandmark, newLandmark.getName(),
 				newLandmark.getLongitude(), newLandmark.getLatitude(), newLandmark.getAddress(),
 				newLandmark.getWebsite(), newLandmark.getOpenTime(), newLandmark.getCloseTime(),
-				newLandmark.getPhone(), newLandmark.getImage(), newLandmark.getAdmission(),
-				newLandmark.isHandicapAccessible(), newLandmark.isConsession(), 
-				newLandmark.isKidFriendly(), newLandmark.isWater(), newLandmark.isRestroom(), newLandmark.getDescription());
+				newLandmark.getPhone(), newLandmark.getImage(), newLandmark.addAdmission(),
+				newLandmark.addHandicapAccessible(), newLandmark.addConsession(), 
+				newLandmark.addKidFriendly(), newLandmark.addWater(), newLandmark.addRestroom(), newLandmark.getDescription());
 	}
 
 	@Override
