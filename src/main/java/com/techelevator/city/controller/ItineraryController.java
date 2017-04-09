@@ -27,8 +27,13 @@ public class ItineraryController {
 			this.landDAO = landDAO;
 		}
 		
-		@RequestMapping(path="/itinerary", method=RequestMethod.GET)
-		public String displayItineraryPage() {
-			return "itinerary";
+		@RequestMapping(path="/createItinerary", method=RequestMethod.GET)
+		public String displayCreateItineraryPage() {
+			return "createItinerary";
+		}
+		
+		@RequestMapping(path="/manageItinerary", method=RequestMethod.GET)
+		public String displayManageItineraryPage() {
+			return "manageItinerary";
 		}
 }

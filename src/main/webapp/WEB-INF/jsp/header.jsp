@@ -12,6 +12,7 @@
 <c:url var="detailsHref" value="css/landmark.css" />
 <c:url var="contactCardHref" value="css/contactCard.css" />
 <c:url var="footerStyleHref" value="css/footerStyle.css" />
+<c:url var="homePageHref" value="css/homePage.css" />
 
 <!-- LISTS OF SCRIPTS AND CSS FILES -->
 
@@ -23,12 +24,17 @@
 <script src="${hpjsHref}"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+
 <link rel="stylesheet" type="text/css" href="${cssHref}">
 <link rel="stylesheet" type="text/css" href="${addLandmarkHref}">
 <link rel="stylesheet" type="text/css" href="${registrationHref}">
 <link rel="stylesheet" type="text/css" href="${detailsHref}">
 <link rel="stylesheet" type="text/css" href="${contactCardHref}">
 <link rel="stylesheet" type="text/css" href="${footerStyleHref}">
+<link rel="stylesheet" type="text/css" href="${homePageHref}">
 
 
 </head>
