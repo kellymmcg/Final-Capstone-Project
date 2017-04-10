@@ -17,8 +17,7 @@ DROP SEQUENCE IF EXISTS seq_itinerary_id;
 CREATE SEQUENCE seq_app_user_id;
 
 CREATE TABLE app_user (
-	userId INTEGER PRIMARY KEY DEFAULT NEXTVAL('seq_app_user_id'),
-	user_name VARCHAR(64) NOT NULL,
+	user_name VARCHAR(64) PRIMARY KEY NOT NULL,
 	password VARCHAR(128) NOT NULL,
 	salt VARCHAR(480) NOT NULL
 );
@@ -49,23 +48,16 @@ CREATE SEQUENCE seq_itinerary_id;
 
 CREATE TABLE itinerary (
 	
-	itineraryId INTEGER PRIMARY KEY DEFAULT NEXTVAL('seq_itinerary_id'),
-	userId INTEGER NOT NULL,
+	itineraryId INTEGER NOT NULL,
+	user_name VARCHAR(64) NOT NULL,
+	landmarkId INTEGER NOT NULL,
 	name VARCHAR(64) NOT NULL,
 	date_started DATE,
 	description VARCHAR(256),
 	
-	CONSTRAINT fk_itinerary_app_user FOREIGN KEY (userId) REFERENCES app_user(userId)
-);
-
-CREATE TABLE itinerary_details (
-	
-	itineraryId INTEGER NOT NULL,
-	landmarkId INTEGER NOT NULL,
-	
-	CONSTRAINT pk_itinerary_details PRIMARY KEY (itineraryId, landmarkId),
-	CONSTRAINT fk_itinerary__details_itinerary FOREIGN KEY (itineraryId) REFERENCES itinerary(itineraryId),
-	CONSTRAINT fk_itinerary_details_landmark FOREIGN KEY (landmarkId) REFERENCES landmark(landmarkId)
+	CONSTRAINT pk_itinerary PRIMARY KEY (itineraryId, landmarkId, user_name),
+	CONSTRAINT fk_itinerary_app_user FOREIGN KEY (user_name) REFERENCES app_user(user_name),
+	CONSTRAINT fk_itinerary_landmark FOREIGN KEY (landmarkId) REFERENCES landmark(landmarkId)
 );
 
 INSERT INTO app_user(user_name, password, salt) VALUES ('KevinC', 'Z+6dbfgKW9yOzFOoTOkL2A==', 'o7BHFhCTGHVmsaQ/aV/eMtPLAKwjny7PfHNHYxNurH8jNTB98T6GXTKttD2Q/Oqkpp++6kqt0x1wwtk/dhYHslKuROy4z3exR3uKDEHXW+SYNXlGLpW5niA56ej2Jc/yCR5liYjKko8U3cGNuUFp/jp5bpfiLC1qif55iji0qZc=');
@@ -193,19 +185,10 @@ VALUES ('Crawford Auto-Aviation Museum','41.513415', '-81.610981', '10825 East B
 INSERT INTO landmark(name, longitude, latitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom, description)
 VALUES ('Cleveland Arcade','41.500041', '-81.690333', '401 Euclid Ave, Cleveland, OH 44114', 'theclevelandarcade.com' , '88', '88', '(216) 696-1408', 'http://www.theclevelandarcade.com/files/1949/gallery-arcade-interior-2.jpg', '808', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE',null);
 
-INSERT INTO itinerary(userId, name, date_started, description) VALUES (4,'Test Itinerary','2017-04-09','This is my first itinerary!');
-INSERT INTO itinerary(userId, name, date_started, description) VALUES (2,'Test Itinerary','2017-04-09','This is my first itinerary!');
-INSERT INTO itinerary(userId, name, date_started, description) VALUES (4,'Second Itinerary','2017-04-09','This is my first itinerary!');
+INSERT INTO itinerary(itineraryId, user_name, landmarkId, name, date_started, description) VALUES (1, 'AdamG', 3, 'Test Itinerary','2017-04-09','This is my first itinerary!');
 
-INSERT INTO itinerary_details(itineraryId, landmarkId) VALUES (1, 1);
-INSERT INTO itinerary_details(itineraryId, landmarkId) VALUES (1, 2);
-INSERT INTO itinerary_details(itineraryId, landmarkId) VALUES (1, 3);
-INSERT INTO itinerary_details(itineraryId, landmarkId) VALUES (2, 4);
-INSERT INTO itinerary_details(itineraryId, landmarkId) VALUES (2, 1);
-INSERT INTO itinerary_details(itineraryId, landmarkId) VALUES (2, 16);
-INSERT INTO itinerary_details(itineraryId, landmarkId) VALUES (3, 1);
-INSERT INTO itinerary_details(itineraryId, landmarkId) VALUES (3, 15);
-INSERT INTO itinerary_details(itineraryId, landmarkId) VALUES (3, 7);
+
+
 
 
 

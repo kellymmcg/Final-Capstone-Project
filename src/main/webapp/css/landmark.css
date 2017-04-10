@@ -3,6 +3,7 @@
 /* MAP CSS */
 
 #mapD {
+	border: 1px solid black;
 	height: 300px;
 	width: 100%;
 }
@@ -177,4 +178,16 @@ hgroup h2.lead {
 html {
 	margin: 0;
 	padding: 0;
+}
+
+.iSelect {
+	font-size: 20px;
+	height: 30px;
+	width: 100%;
+	margin-bottom: 57px;
+}
+
+.iAdd {
+	font-size: 18px;
+	text-align: center;
 }

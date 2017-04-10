@@ -29,7 +29,7 @@ $("#detailLink").click(function(event){
 					<c:url var="detailAction" value="/searchResults"/>
 					<form action="${detailAction}" method="GET" id="detailForm">
 						<h3><a href="#" id="detailLink">${landmark.name}</a></h3>
-						<p>Tower City Center, originally known as Cleveland Union Terminal, is a large mixed-use facility located on Public Square in downtown Cleveland, Ohio.</p>
+						<p>${landmark.description}</p>
 						<input type="hidden" name="id" value="<c:out value='${landmark.id}'/>"/>
 	                	<span class="plus"><button type="submit"><i class="glyphicon glyphicon-plus"></i></button></span>
 	                </form>

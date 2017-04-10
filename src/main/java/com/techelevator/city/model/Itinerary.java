@@ -5,27 +5,27 @@ import java.util.Date;
 
 public class Itinerary {
 
-	private int itineraryId;
-	private int user;
+	private int id;
+	private String userName;
 	private int landmark;
 	private String name;
 	private String description;
 	private Date dateCreated;
 
-	public int getItineraryId() {
-		return itineraryId;
+	public int getId() {
+		return id;
 	}
 
-	public void setItineraryId(int itineraryId) {
-		this.itineraryId = itineraryId;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public int getUser() {
-		return user;
+	public String getUser() {
+		return userName;
 	}
 
-	public void setUser(int user) {
-		this.user = user;
+	public void setUser(String string) {
+		this.userName = string;
 	}
 
 	public int getLandmark() {

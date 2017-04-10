@@ -36,11 +36,25 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 				newLandmark.addHandicapAccessible(), newLandmark.addConsession(), 
 				newLandmark.addKidFriendly(), newLandmark.addWater(), newLandmark.addRestroom(), newLandmark.getDescription());
 	}
+	
+	@Override
+	public List<Landmark> getLandmarksByItineraryId(int id) {
+		List<Landmark> landmarks = new ArrayList<>();
+		String sqlGetLandmarksByItineraryId = "SELECT * FROM landmark JOIN itinerary ON itinerary.landmarkId = landmark.landmarkId "
+											+ "WHERE itineraryId = ?;";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetLandmarksByItineraryId, id);
+		while(results.next()){
+			Landmark landmark = null;
+			landmark = mapRowToLandmark(results);
+			landmarks.add(landmark);
+		}
+		return landmarks;
+	}
 
 	@Override
 	public Landmark searchLandmarkById(Long landmarkId) {
 		Landmark landmark = null;
-		String sqlSelectLandmarkById ="SELECT * FROM landmark WHERE id = ?";
+		String sqlSelectLandmarkById ="SELECT * FROM landmark WHERE landmarkId = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectLandmarkById, landmarkId);
 		if(results.next()) {
 			landmark = mapRowToLandmark(results);
@@ -78,7 +92,7 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 
 	private Landmark mapRowToLandmark(SqlRowSet results) {
 		Landmark landmark = new Landmark();
-		landmark.setId(results.getLong("id"));
+		landmark.setId(results.getLong("landmarkId"));
 		landmark.setName(results.getString("name"));
 		landmark.setLongitude(results.getFloat("longitude"));
 		landmark.setLatitude(results.getFloat("latitude"));

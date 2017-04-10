@@ -13,7 +13,6 @@ public class Landmark {
 	private int openTime;
 	private int closeTime;
 	private String phone;
-	private int itineraryId;
 	private String image;
 	private int admission;
 	private boolean handicapAccessible;
@@ -168,14 +167,6 @@ public class Landmark {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-
-	public int getItineraryId() {
-		return itineraryId;
-	}
-
-	public void setItineraryId(int itineraryId) {
-		this.itineraryId = itineraryId;
 	}
 
 	public String getImage() {

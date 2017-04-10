@@ -1,6 +1,7 @@
 package com.techelevator.city.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -21,17 +22,29 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 	}
 
 	@Override
-	public List<Itinerary> findItineraryByUser(int user) {
+	public List<Itinerary> findItineraryByUser(String currentUser) {
 		List<Itinerary> itineraries = new ArrayList<>();
-		String sqlSelectItineraryByUser = "SELECT * FROM itinerary WHERE app_user_id = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectItineraryByUser, user);
-		if(results.next()) {
+		String sqlSelectItineraryByUser = "SELECT * FROM itinerary WHERE user_name = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectItineraryByUser, currentUser);
+		while(results.next()) {
 			Itinerary itinerary = new Itinerary();
 			itinerary = mapRowToItinerary(results);
 			itineraries.add(itinerary);
 		}
 		return itineraries;
 	}
+	
+	@Override
+	public Itinerary findItineraryById(int id) {
+		Itinerary itinerary = null;
+		String sqlSelectItineraryById = "SELECT * FROM itinerary WHERE itineraryId = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectItineraryById, id);
+		while(results.next()) {
+			itinerary = mapRowToItinerary(results);
+		}
+		return itinerary;
+	}
+	
 	@Override
 	public void createItinerary(Itinerary itinerary) {
 		String sqlInsertItinerary = "INSERT INTO itinerary("
@@ -46,7 +59,7 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 				+"SET app_user_id = ?, landmark_id = ?, name = ?, description= ?"
 				+"WHERE id= ?";
 		jdbcTemplate.update(sqlUpdateItinerary, itinerary.getUser(), itinerary.getLandmark(),
-				itinerary.getName(), itinerary.getDescription(), itinerary.getItineraryId());
+				itinerary.getName(), itinerary.getDescription(), itinerary.getId());
 	}
 	
 	@Override
@@ -56,15 +69,24 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 		jdbcTemplate.update(sqlDeleteItinerary, itinerary.getName());
 	}
 	
+	@Override
+	public void addLandmarkToItinerary(int itineraryId, String user, int landmarkId, String name, Date date, String description) {
+		String sqlInsertNewLandmarkToItinerary = "INSERT INTO itinerary(itineraryId, user_name, landmarkId, name, date_started, description) "
+				+ "VALUES (?, ?, ?, ?, ?, ?);";
+		jdbcTemplate.update(sqlInsertNewLandmarkToItinerary, itineraryId, user, landmarkId, name, date, description);
+		
+	}
+	
 	private Itinerary mapRowToItinerary(SqlRowSet results) {
 		Itinerary itinerary = new Itinerary();
-		itinerary.setItineraryId(results.getInt("id"));
-		itinerary.setUser(results.getInt("app_user_id"));
-		itinerary.setLandmark(results.getInt("landmark_id"));
+		itinerary.setId(results.getInt("itineraryId"));
+		itinerary.setUser(results.getString("user_name"));
+		itinerary.setLandmark(results.getInt("landmarkId"));
 		itinerary.setName(results.getString("name"));
 		itinerary.setDateCreated(results.getDate("date_started"));
 		itinerary.setDescription(results.getString("description"));
 		return itinerary;
 	}
+
 
 }

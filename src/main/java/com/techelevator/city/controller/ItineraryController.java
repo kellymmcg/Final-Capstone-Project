@@ -1,11 +1,14 @@
 package com.techelevator.city.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.techelevator.city.model.ItineraryDAO;
@@ -34,8 +37,14 @@ public class ItineraryController {
 		}
 		
 		@RequestMapping(path="/manageItinerary", method=RequestMethod.GET)
-		public String displayManageItineraryPage(ModelMap model) {
-			model.put("itineraries", itineraryDAO.findItineraryByUser(4));
-			return "manageItinerary";
+		public String displayManageItineraryPage(@RequestParam Optional<Integer> id, ModelMap model) {
+			if(! id.isPresent()){
+				String userName = (String) model.get("currentUser");
+				model.put("itineraries", itineraryDAO.findItineraryByUser(userName));
+				return "manageItinerary";
+			}
+			model.put("itinerary", itineraryDAO.findItineraryById(id.get()));
+			model.put("landmarks", landDAO.getLandmarksByItineraryId(id.get()));
+			return "itineraryPage";
 		}
 }

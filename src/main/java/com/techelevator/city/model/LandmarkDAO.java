@@ -12,4 +12,6 @@ public interface LandmarkDAO {
 	
 	public List<Landmark> searchLandmarksByAddress(String landmarkAddress);
 	
+	public List<Landmark> getLandmarksByItineraryId (int id);
+	
 }
