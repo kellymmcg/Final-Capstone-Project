@@ -10,11 +10,10 @@ DROP TABLE IF EXISTS landmark;
 DROP SEQUENCE IF EXISTS seq_landmark_id;	
 DROP TABLE IF EXISTS itinerary;
 DROP SEQUENCE IF EXISTS seq_itinerary_id;
-
-
-
-
-
+DROP TABLE IF EXISTS review;
+DROP SEQUENCE IF EXISTS seq_review_id;
+DROP TABLE IF EXISTS suggestion;
+DROP SEQUENCE IF EXISTS seq_suggestion_id;
 
 CREATE SEQUENCE seq_app_user_id;
 
@@ -60,6 +59,30 @@ CREATE TABLE itinerary (
 	CONSTRAINT pk_itinerary PRIMARY KEY (itineraryId, landmarkId, user_name),
 	CONSTRAINT fk_itinerary_app_user FOREIGN KEY (user_name) REFERENCES app_user(user_name),
 	CONSTRAINT fk_itinerary_landmark FOREIGN KEY (landmarkId) REFERENCES landmark(landmarkId)
+);
+
+CREATE SEQUENCE seq_review_id;
+
+CREATE TABLE review (
+	id INTEGER NOT NULL,
+	landmarkId INTEGER NOT NULL,
+	user_name VARCHAR(64) NOT NULL,
+	review VARCHAR(254) NOT NULL,
+	stars INTEGER NOT NULL,
+	
+	CONSTRAINT pk_review PRIMARY KEY (id, landmarkId, user_name),
+	CONSTRAINT fk_review_app_user FOREIGN KEY (user_name) REFERENCES app_user(user_name),
+	CONSTRAINT fk_review_landmark FOREIGN KEY (landmarkId) REFERENCES landmark(landmarkId)
+);
+CREATE SEQUENCE seq_suggestion_id;
+
+CREATE TABLE suggestion (
+id INTEGER PRIMARY KEY DEFAULT NEXTVAL('seq_suggestion_id'),
+user_name VARCHAR(64) NOT NULL,
+name VARCHAR(64) NOT NULL,
+address VARCHAR(128) NOT NULL,
+description VARCHAR(254) NOT NULL
+
 );
 
 INSERT INTO app_user(user_name, password, salt) VALUES ('KevinC', 'Z+6dbfgKW9yOzFOoTOkL2A==', 'o7BHFhCTGHVmsaQ/aV/eMtPLAKwjny7PfHNHYxNurH8jNTB98T6GXTKttD2Q/Oqkpp++6kqt0x1wwtk/dhYHslKuROy4z3exR3uKDEHXW+SYNXlGLpW5niA56ej2Jc/yCR5liYjKko8U3cGNuUFp/jp5bpfiLC1qif55iji0qZc=');
