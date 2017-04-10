@@ -34,7 +34,7 @@
 		
 		
 <div class="container" id="logincontainer">
-			<c:url var="formAction" value="/loginPage" />
+			<c:url var="formAction" value="/" />
 				<form id="contact" class="loginform" action='${formAction}' method="POST">
 					<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 					
