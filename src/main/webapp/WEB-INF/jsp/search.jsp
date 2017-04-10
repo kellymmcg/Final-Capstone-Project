@@ -9,7 +9,7 @@
 			<h3>Search by Name</h3>
 			<input type="text" name="name" id="name" placeholder="Landmark Name" /><br>
 			<button type="submit"
-				class="btn btn-md btn-block btn-primary sButton" id="searchLink">Search!</button>
+				class="btn btn-md btn-block btn-search sButton" id="searchLink">Search!</button>
 		</form>
 	<h3>or</h3>
 	
@@ -21,7 +21,7 @@
 				placeholder="State" /><br> <input type="text" name="radius"
 				id="radius" placeholder="Radius" /><br>
 			<button type="submit"
-				class="btn btn-md btn-block btn-primary sButton" id="searchLink">Search!</button>
+				class="btn btn-md btn-block btn-search sButton" id="searchLink">Search!</button>
 		</form>
 	</div>
 </div>
