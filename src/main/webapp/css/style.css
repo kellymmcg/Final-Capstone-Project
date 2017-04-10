@@ -9,6 +9,7 @@ body, html {
 }
 
 #updatePasswordContainer {
+
 	width: 300px;
 	margin: 0 auto;
 	position: relative;
@@ -17,6 +18,9 @@ body, html {
 	font-size: 12px;
 	line-height: 30px;
 	color: #777;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	
 }
 
 .updateP {
@@ -657,6 +661,7 @@ bs-calltoaction {
 	color:  #fcb12f;
 	padding-bottom: 20px;
 	border: 2px solid black;
+	border-radius: 15px;
 	background-color: rgba(33, 7, 79, 0.7);
 	
 }

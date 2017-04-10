@@ -3,6 +3,7 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 <center>
 <div class="searchpage">
+	<br><br><br>
 	<div class="searchbynamecontainer">
 		<c:url var="searchAction" value="/search" />
 		<form action="${searchAction}" method="GET" id="searchForm">
@@ -16,14 +17,16 @@
 		<c:url var="searchAction" value="/search" />
 		<form action="${searchAction}" method="GET" id="searchForm">
 			<h3>Search by Proximity</h3>
-			<input type="text" name="cityName" id="cityName" placeholder="City" /><br>
+			<input type="text" name="cityName" id="cityName" placeholder="City" /><br><br>
 			<input type="text" name="stateName" id="stateName"
-				placeholder="State" /><br> <input type="text" name="radius"
-				id="radius" placeholder="Radius" /><br>
+				placeholder="State" /><br> <br>
+				<input type="text" name="radius"
+				id="radius" placeholder="Radius in Miles" /><br>
 			<button type="submit"
 				class="btn btn-md btn-block btn-search sButton" id="searchLink">Search!</button>
 		</form>
 	</div>
+	<br><br><br>	
 </div>
 </center>
 <c:import url="/WEB-INF/jsp/footer.jsp" />
