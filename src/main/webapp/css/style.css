@@ -650,19 +650,17 @@ bs-calltoaction {
 	background-repeat: no-repeat;
 }
 
-.searchbynamecontainer {
-	width: 300px;
+.col-sm-3 {
+
 	margin: 0 auto;
-	position: relative;
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
 	font-weight: 100;
 	font-size: 12px;
 	line-height: 30px;
 	color:  #fcb12f;
 	padding-bottom: 20px;
-	border: 2px solid black;
+	border: 3px solid #fcb12f;
 	border-radius: 15px;
+	margin-bottom: 50px;
 	background-color: rgba(33, 7, 79, 0.7);
-	
 }
-
