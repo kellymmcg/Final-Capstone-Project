@@ -15,6 +15,6 @@ public interface ItineraryDAO {
 	
 	public void editItinerary(Itinerary itinerary);
 	
-	public void deleteItinerary(Itinerary itinerary);
+	public void deleteItinerary(String itineraryName, String userName);
 
 }

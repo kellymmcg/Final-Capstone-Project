@@ -47,4 +47,12 @@ public class ItineraryController {
 			model.put("landmarks", landDAO.getLandmarksByItineraryId(id.get()));
 			return "itineraryPage";
 		}
+		
+		@RequestMapping(path="/manageItinerary", method=RequestMethod.POST)
+		public String deleteItinerary(@RequestParam String name, 
+									  @RequestParam String userName, 
+									  ModelMap model) {
+			itineraryDAO.deleteItinerary(name, userName);
+			return "redirect:/manageItinerary";
+		}
 }

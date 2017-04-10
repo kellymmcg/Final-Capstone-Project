@@ -10,11 +10,11 @@
 			<div class="panel-heading">
 				<div class="row">
 					<div class="col col-xs-6">
-						<h3 class="panel-title">Your Itineraries</h3>
+						<p class="panel-title">Your Itineraries</p>
 					</div>
 					<div class="col col-xs-6 text-right">
-						<button type="button" class="btn btn-sm btn-primary btn-create iButton"><span class="glyphicon glyphicon-plus"></span>Create</button>
-						<button type="button" class="btn btn-sm btn-primary btn-create iButton">Explore Locations</button>
+						<button type="button" class="btn btn-sm btn-primary btn-create iButton create"><span class="glyphicon glyphicon-plus"></span> Create</button>
+						<button type="button" class="btn btn-sm btn-primary btn-create iButton explore"><span class="glyphicon glyphicon-search"></span> Explore Locations</button>
 					</div>
 				</div>
 			</div>
@@ -26,21 +26,30 @@
 							<th class="hidden-xs">Date Created</th>
 							<th>Name</th>
 							<th>Description</th>
+							<th align="center" class="aLine">Actions</th>
 						</tr>
 					</thead>
 					<tbody>
 					<c:forEach items="${itineraries}" var="itinerary">
 						<tr>
-							<td align="center">
+							<td align="center" class="view">
 							<c:url var="itineraryAction" value="/manageItinerary"/>
-							<form action="${itineraryAction}" method="GET" id="detailForm">
+							<form action="${itineraryAction}" method="GET" id="itineraryForm">
 								<input type="hidden" name="id" value="<c:out value='${itinerary.id}'/>"/>
-								<span><button class="btn btn-default eButton" type="submit"><i class="glyphicon glyphicon-open-file"></i> View</button></span> 
+								<span><button class="btn btn-default eButton" type="submit"><i class="glyphicon glyphicon-eye-open"></i> View</button></span> 
 							</form>	
 							<td class="hidden-xs">${itinerary.dateCreated}</td>
 							<td>${itinerary.name}</td>
 							<td>${itinerary.description}</td>
-							<td class="hidden-xs"><span><button class="btn btn-default eButton" type="submit"><i class="glyphicon glyphicon-trash"></i>Delete</button></span></td>
+							<c:url var="itineraryAction" value="/manageItinerary"/>
+							<td align="center" class="action">
+							<form action="${itineraryAction}" method="POST" id="postItineraryForm">
+								<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
+								<input type="hidden" name="userName" value="<c:out value='${itinerary.userName}'/>"/>
+								<input type="hidden" name="name" value="<c:out value='${itinerary.name}'/>"/>
+								<span><button class="btn btn-default dButton" type="submit"><i class="glyphicon glyphicon-trash"></i></button></span>
+							</form>	
+							</td>
 						</tr>
 	
 							

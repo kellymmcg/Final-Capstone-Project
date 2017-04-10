@@ -52,25 +52,54 @@ used to vertically center elements, may need modification if you're not using de
 }
 
 .eButton {
+	border: 1px solid black;
+	background-color: white;
 	padding: 5px;
 	color: #9a9b9d;
 }
 
 .eButton:hover {
-	border-color: green;
-	color: green;
+	border-color: black;
+	background-color: #3ba448;
+	color: white;
 }
 
 .dButton {
+	border: 1px solid black;
+	background-color: white;
+	font-size: 20px;
 	padding: 3px;
-	color: #9a9b9d;
+	color: black;
 }
 
 .dButton:hover {
-	color: yellow;
+	border: 1px solid black;
+	color: white;
+	opacity: 1;
+	background-color: #ad0106;
+}
+
+.action {
+	background-color: #7a7b7f;
+}
+
+.view {
+	background-color: #7a7b7f;
+}
+
+.aLine {
+	text-align: center;
 }
 
 .iButton {
 	color: black;
 	border-color: black;
+}
+
+.create:hover {
+	background-color: green;
+}
+
+.explore:hover {
+	background-color: orange;
 }

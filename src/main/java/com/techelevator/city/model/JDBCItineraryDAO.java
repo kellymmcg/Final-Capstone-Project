@@ -50,7 +50,7 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 		String sqlInsertItinerary = "INSERT INTO itinerary("
 				+"app_user_id, landmark_id, name, date_started, description"
 				+"VALUES(?,?,?,?,?)";
-		jdbcTemplate.update(sqlInsertItinerary, itinerary.getUser(), itinerary.getLandmark(),
+		jdbcTemplate.update(sqlInsertItinerary, itinerary.getUserName(), itinerary.getLandmark(),
 				itinerary.getName(), itinerary.getDateCreated(), itinerary.getDescription());
 	}
 	@Override
@@ -58,16 +58,16 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 		String sqlUpdateItinerary = "UPDATE itinerary"
 				+"SET app_user_id = ?, landmark_id = ?, name = ?, description= ?"
 				+"WHERE id= ?";
-		jdbcTemplate.update(sqlUpdateItinerary, itinerary.getUser(), itinerary.getLandmark(),
+		jdbcTemplate.update(sqlUpdateItinerary, itinerary.getUserName(), itinerary.getLandmark(),
 				itinerary.getName(), itinerary.getDescription(), itinerary.getId());
 	}
 	
 	@Override
-	public void deleteItinerary(Itinerary itinerary) {
-		String sqlDeleteItinerary = "DELETE itinerary"
-				+"WHERE name = ?"
+	public void deleteItinerary(String itineraryName, String userName) {
+		String sqlDeleteItinerary = "DELETE FROM itinerary "
+				+"WHERE name = ? "
 				+ "AND user_name = ?";
-		jdbcTemplate.update(sqlDeleteItinerary, itinerary.getName());
+		jdbcTemplate.update(sqlDeleteItinerary, itineraryName, userName);
 	}
 	
 	@Override
@@ -81,7 +81,7 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 	private Itinerary mapRowToItinerary(SqlRowSet results) {
 		Itinerary itinerary = new Itinerary();
 		itinerary.setId(results.getInt("itineraryId"));
-		itinerary.setUser(results.getString("user_name"));
+		itinerary.setUserName(results.getString("user_name"));
 		itinerary.setLandmark(results.getInt("landmarkId"));
 		itinerary.setName(results.getString("name"));
 		itinerary.setDateCreated(results.getDate("date_started"));
