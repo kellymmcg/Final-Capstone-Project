@@ -15,6 +15,7 @@
 <c:url var="footerStyleHref" value="css/footerStyle.css" />
 <c:url var="homePageHref" value="css/homePage.css" />
 <c:url var="manageHref" value="css/manageItinerary.css" />
+<c:url var="w3schoolHref" value="css/w3school.css" />
 
 <!-- LISTS OF SCRIPTS AND CSS FILES -->
 
@@ -30,6 +31,10 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <link rel="stylesheet" type="text/css" href="${cssHref}">
 <link rel="stylesheet" type="text/css" href="${loginPageHref}">
 <link rel="stylesheet" type="text/css" href="${addLandmarkHref}">
@@ -39,6 +44,7 @@
 <link rel="stylesheet" type="text/css" href="${footerStyleHref}">
 <link rel="stylesheet" type="text/css" href="${homePageHref}">
 <link rel="stylesheet" type="text/css" href="${manageHref}">
+<link rel="stylesheet" type="text/css" href="${w3schoolHref}">
 
 
 </head>

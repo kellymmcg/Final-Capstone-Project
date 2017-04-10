@@ -1,0 +1,19 @@
+.hBox {
+	color: red;
+}
+
+.tBox {
+	color: white;
+	padding: 100px;
+	background-color: #21074F;
+}
+
+.homeimg {
+	position: relative;
+	bottom: 2px;
+	background-size: 100% 100%;
+}
+
+.buttoncolor {
+	background-color: #OOA531;
+}
