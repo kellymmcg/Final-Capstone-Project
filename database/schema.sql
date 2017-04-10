@@ -14,6 +14,8 @@ DROP SEQUENCE IF EXISTS seq_itinerary_id;
 
 
 
+
+
 CREATE SEQUENCE seq_app_user_id;
 
 CREATE TABLE app_user (
