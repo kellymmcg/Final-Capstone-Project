@@ -69,3 +69,8 @@ used to vertically center elements, may need modification if you're not using de
 .dButton:hover {
 	color: yellow;
 }
+
+.iButton {
+	color: black;
+	border-color: black;
+}

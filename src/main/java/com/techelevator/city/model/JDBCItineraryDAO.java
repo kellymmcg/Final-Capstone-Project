@@ -65,7 +65,8 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 	@Override
 	public void deleteItinerary(Itinerary itinerary) {
 		String sqlDeleteItinerary = "DELETE itinerary"
-				+"WHERE name = ?";
+				+"WHERE name = ?"
+				+ "AND user_name = ?";
 		jdbcTemplate.update(sqlDeleteItinerary, itinerary.getName());
 	}
 	
