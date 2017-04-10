@@ -167,48 +167,49 @@
 		</div>
 	</c:when>
 	<c:otherwise>
-	<c:url var="registration" value="/registration" />
-	<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
-    
-    <div class="w3-third  w3-margin-bottom">
-      <ul class="w3-ul w3-border w3-hover-shadow">
-        <li class="tBox">
-          <p class="w3-xlarge">Search Landmarks</p>
-        </li>
-        <img src="img/wine.jpg" class="img-responsive homeimg" alt="Create" >
-        <li class="w3-theme-l5 w3-padding-24">
-          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
-        </li>
-      </ul>
-    </div>
+	<c:url var="searchLandmarksHref" value="/search" />
+	<c:url var="createItineraryHref" value="/createItinerary" />
+	<c:url var="manageItineraryHref" value="/manageItinerary" />
+		<div class="w3-row-padding w3-center w3-padding-64" id="pricing">
 
-    <div class="w3-third w3-margin-bottom">
-      <ul class="w3-ul w3-border w3-hover-shadow">
-        <li class="tBox">
-          <p class="w3-xlarge">Create Itinerary</p>
-        </li>
-        <img src="img/homecreate.jpg" class="img-responsive"homeimg" alt="Create">
-        <li class="w3-theme-l5 w3-padding-24">
-          <button class="w3-button w3-teal w3-padding-large"><i class="fa fa-check"></i> Sign Up</button>
-        </li>
-      </ul>
-    </div>
+			<div class="w3-third  w3-margin-bottom">
+				<ul class="w3-ul w3-border w3-hover-shadow">
+					<li class="tBox">
+						<p class="hBox">Search Landmarks</p>
+					</li>
+					<li><img src="img/wine.jpg" class="img-responsive homeimg" alt="Search"></li>
+					<li class="w3-theme-l5 w3-padding-24">
+						<a href="${searchLandmarksHref}" class="btn btn-info w3-button w3-teal w3-padding-large" role="button">Search</a>
+					</li>
+				</ul>
+			</div>
 
-    <div class="w3-third w3-margin-bottom">
-      <ul class="w3-ul w3-border w3-hover-shadow">
-        <li class="tBox">
-          <p class="w3-xlarge">Manage Itinerary</p>
-        </li>
-        <img src="img/homemanagement.jpg" class="img-responsive homeimg" alt="Create" >
-        <li class="w3-theme-l5 w3-padding-24">
-       	 <form action="${registration}">
-          <button class="w3-button w3-teal w3-padding-large"></button>
-          </form>
-        </li>
-      </ul>
-    </div>
-</div>
-		
+			<div class="w3-third w3-margin-bottom">
+				<ul class="w3-ul w3-border w3-hover-shadow">
+					<li class="tBox">
+						<p class="hBox">Create Itinerary</p>
+					</li>
+					<li><img src="img/homecreate.jpg" class="img-responsive homeimg" alt="Create"></li>
+					<li class="w3-theme-l5 w3-padding-24">
+						<a href="${createItineraryHref}" class="btn btn-info w3-button w3-teal w3-padding-large" role="button">Create</a>					
+					</li>
+				</ul>
+			</div>
+
+			<div class="w3-third w3-margin-bottom">
+				<ul class="w3-ul w3-border w3-hover-shadow">
+					<li class="tBox">
+						<p class="hBox">Manage Itinerary</p>
+					</li>
+					<li><img src="img/homemanagement.jpg" class="img-responsive homeimg" alt="Manage"></li>
+					<li class="w3-theme-l5 w3-padding-24">
+						<a href="${manageItineraryHref}" class="btn btn-info w3-button w3-teal w3-padding-large" role="button">Manage</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
 	</c:otherwise>
 
 </c:choose>

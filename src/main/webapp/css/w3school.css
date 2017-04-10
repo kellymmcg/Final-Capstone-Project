@@ -1,5 +1,7 @@
 .hBox {
-	color: red;
+	color: white;
+	font-size: 38px;
+	padding: 15px;
 }
 
 .tBox {
@@ -12,8 +14,15 @@
 	position: relative;
 	bottom: 2px;
 	background-size: 100% 100%;
+	overflow: hidden;
 }
 
 .buttoncolor {
 	background-color: #OOA531;
+	
+}
+
+.w3-ul li{
+	margin: 0;
+	padding:0;
 }
