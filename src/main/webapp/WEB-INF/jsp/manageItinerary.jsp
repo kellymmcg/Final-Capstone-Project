@@ -13,8 +13,8 @@
 						<h3 class="panel-title">Your Itineraries</h3>
 					</div>
 					<div class="col col-xs-6 text-right">
-						<button type="button" class="btn btn-sm btn-primary btn-create">Create
-							New</button>
+						<button type="button" class="btn btn-sm btn-primary btn-create iButton"><span class="glyphicon glyphicon-plus"></span>Create</button>
+						<button type="button" class="btn btn-sm btn-primary btn-create iButton">Explore Locations</button>
 					</div>
 				</div>
 			</div>
@@ -23,7 +23,7 @@
 					<thead>
 						<tr>
 							<th><em class="fa fa-cog"></em></th>
-							<th class="hidden-xs">ID</th>
+							<th class="hidden-xs">Date Created</th>
 							<th>Name</th>
 							<th>Description</th>
 						</tr>
@@ -35,12 +35,16 @@
 							<c:url var="itineraryAction" value="/manageItinerary"/>
 							<form action="${itineraryAction}" method="GET" id="detailForm">
 								<input type="hidden" name="id" value="<c:out value='${itinerary.id}'/>"/>
-								<span><button class="btn btn-default eButton" type="submit"><i class="glyphicon glyphicon-open-file"> View</i></button></span> 
+								<span><button class="btn btn-default eButton" type="submit"><i class="glyphicon glyphicon-open-file"></i> View</button></span> 
 							</form>	
-							<td class="hidden-xs">${itinerary.id}</td>
+							<td class="hidden-xs">${itinerary.dateCreated}</td>
 							<td>${itinerary.name}</td>
 							<td>${itinerary.description}</td>
+							<td class="hidden-xs"><span><button class="btn btn-default eButton" type="submit"><i class="glyphicon glyphicon-trash"></i>Delete</button></span></td>
 						</tr>
+	
+							
+					
 					</c:forEach>	
 					</tbody>
 				</table>
