@@ -34,6 +34,11 @@ import com.techelevator.city.model.UserDAO;
 			return "loginPage";
 		}
 		
+		@RequestMapping(path="/loginPage", method=RequestMethod.POST)
+		public String userLogin() {
+			return "loginPage";
+		}
+		
 		@RequestMapping(path="/login", method=RequestMethod.POST)
 		public String loginUser(@RequestParam String userName, @RequestParam String password, RedirectAttributes redir) {
 			userDAO.saveUser(userName, password);
