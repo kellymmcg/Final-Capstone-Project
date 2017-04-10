@@ -1,5 +1,8 @@
 package com.techelevator.city.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,14 +21,16 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 	}
 
 	@Override
-	public Itinerary findItineraryByUser(int user) {
-		Itinerary itinerary = null;
+	public List<Itinerary> findItineraryByUser(int user) {
+		List<Itinerary> itineraries = new ArrayList<>();
 		String sqlSelectItineraryByUser = "SELECT * FROM itinerary WHERE app_user_id = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectItineraryByUser, user);
 		if(results.next()) {
+			Itinerary itinerary = new Itinerary();
 			itinerary = mapRowToItinerary(results);
+			itineraries.add(itinerary);
 		}
-		return null;
+		return itineraries;
 	}
 	@Override
 	public void createItinerary(Itinerary itinerary) {
@@ -57,7 +62,7 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 		itinerary.setUser(results.getInt("app_user_id"));
 		itinerary.setLandmark(results.getInt("landmark_id"));
 		itinerary.setName(results.getString("name"));
-		itinerary.setDateCreated(results.getTimestamp("date_started"));
+		itinerary.setDateCreated(results.getDate("date_started"));
 		itinerary.setDescription(results.getString("description"));
 		return itinerary;
 	}

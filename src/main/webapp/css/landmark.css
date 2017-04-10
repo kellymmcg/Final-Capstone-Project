@@ -173,3 +173,8 @@ hgroup h2.lead {
 #dAddress {
 	font-size: 20px;
 }
+
+html {
+	margin: 0;
+	padding: 0;
+}

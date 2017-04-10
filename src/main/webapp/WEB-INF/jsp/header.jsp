@@ -14,6 +14,7 @@
 <c:url var="contactCardHref" value="css/contactCard.css" />
 <c:url var="footerStyleHref" value="css/footerStyle.css" />
 <c:url var="homePageHref" value="css/homePage.css" />
+<c:url var="manageHref" value="css/manageItinerary.css" />
 
 <!-- LISTS OF SCRIPTS AND CSS FILES -->
 
@@ -37,6 +38,7 @@
 <link rel="stylesheet" type="text/css" href="${contactCardHref}">
 <link rel="stylesheet" type="text/css" href="${footerStyleHref}">
 <link rel="stylesheet" type="text/css" href="${homePageHref}">
+<link rel="stylesheet" type="text/css" href="${manageHref}">
 
 
 </head>
@@ -71,6 +73,7 @@
 					<c:url var="addLandmarkAction" value="/addLandmark" />
 					<c:url var="changePassAction" value="/changePassword" />
 					<c:url var="logoutAction" value="/logout" />
+					<c:url var="manageItineraries" value="/manageItinerary" />
 					<ul class="nav navbar-nav navbar-right">
 						<c:choose>
 							<c:when test="${not empty currentUser}">
@@ -83,7 +86,7 @@
 														<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 													</form>
 													<li><a href="${suggestions}" class="" data-wow-delay="0.7s"><span class="glyphicon glyphicon-search"></span> Search</a></li>
-													<li><a href="#" id="manageItinerary"><span class="glyphicon glyphicon-folder-open"></span> Manage Itineraries</a></li>
+													<li><a href="${manageItineraries}" id="manageItinerary"><span class="glyphicon glyphicon-folder-open"></span> Manage Itineraries</a></li>
 													<li><a href="${changePassAction}" id="changePassLink"><span class="glyphicon glyphicon-lock"></span> Change Password</a></li>
 													<li><a href="#" id="logoutLink"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
 													

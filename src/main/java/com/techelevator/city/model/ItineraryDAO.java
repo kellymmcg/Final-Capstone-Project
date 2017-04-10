@@ -1,8 +1,10 @@
 package com.techelevator.city.model;
 
+import java.util.List;
+
 public interface ItineraryDAO {
 	
-	public Itinerary findItineraryByUser(int user);
+	public List<Itinerary> findItineraryByUser(int user);
 	
 	public void createItinerary(Itinerary itinerary);
 	

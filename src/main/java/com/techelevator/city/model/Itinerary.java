@@ -1,6 +1,7 @@
 package com.techelevator.city.model;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 public class Itinerary {
 
@@ -9,7 +10,7 @@ public class Itinerary {
 	private int landmark;
 	private String name;
 	private String description;
-	private Timestamp dateCreated;
+	private Date dateCreated;
 
 	public int getItineraryId() {
 		return itineraryId;
@@ -51,11 +52,11 @@ public class Itinerary {
 		this.description = description;
 	}
 
-	public Timestamp getDateCreated() {
+	public Date getDateCreated() {
 		return dateCreated;
 	}
 
-	public void setDateCreated(Timestamp dateCreated) {
+	public void setDateCreated(Date dateCreated) {
 		this.dateCreated = dateCreated;
 	}
 
