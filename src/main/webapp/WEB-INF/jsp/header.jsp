@@ -17,7 +17,6 @@
 <c:url var="manageHref" value="css/manageItinerary.css" />
 <c:url var="w3schoolHref" value="css/w3school.css" />
 <c:url var="proximityHref" value="css/proximitySearch.css" />
-<c:url var="proximityHref" value="js/proximity.js" />
 
 
 <!-- LISTS OF SCRIPTS AND CSS FILES -->
@@ -28,7 +27,6 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="${jsHref}"></script>
 <script src="${hpjsHref}"></script>
-<script src="${proximityHref}"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
