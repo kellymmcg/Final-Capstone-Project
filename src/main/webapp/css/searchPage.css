@@ -1,3 +1,9 @@
+.searchpage {
+	background-image: url("../img/searchbackground.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
 .panel-table .panel-body{
   padding:0;
 }
@@ -80,11 +86,11 @@ used to vertically center elements, may need modification if you're not using de
 }
 
 .action {
-	background-color: #7a7b7f;
+	background-color: red;
 }
 
 .view {
-	background-color: #7a7b7f;
+	background-color: blue;
 }
 
 .aLine {
@@ -97,9 +103,11 @@ used to vertically center elements, may need modification if you're not using de
 }
 
 .create:hover {
-	background-color: green;
+	background-color: red;
 }
 
 .explore:hover {
 	background-color: orange;
 }
+
+

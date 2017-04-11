@@ -9,18 +9,17 @@ body, html {
 }
 
 #updatePasswordContainer {
-
-	width: 300px;
 	margin: 0 auto;
-	position: relative;
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
-	font-weight: 100;
+	font-weight: 200;
 	font-size: 12px;
 	line-height: 30px;
-	color: #777;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	
+	color:  #fcb12f;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: rgba(33, 7, 79, 0.4);
+	border: 3px solid #fcb12f;
+	border-radius: 14px;
 }
 
 .updateP {
@@ -651,16 +650,29 @@ bs-calltoaction {
 }
 
 .col-sm-3 {
-
 	margin: 0 auto;
 	font-family: "Roboto", Helvetica, Arial, sans-serif;
-	font-weight: 100;
+	font-weight: 500;
 	font-size: 12px;
 	line-height: 30px;
 	color:  #fcb12f;
+	padding-top: 20px;
 	padding-bottom: 20px;
+}
+.namesearch {
+	margin: 0 auto;
+	font-family: "Roboto", Helvetica, Arial, sans-serif;
+	font-weight: 200;
+	font-size: 12px;
+	line-height: 30px;
+	color:  #fcb12f;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: rgba(33, 7, 79, 0.4);
 	border: 3px solid #fcb12f;
-	border-radius: 15px;
-	margin-bottom: 50px;
-	background-color: rgba(33, 7, 79, 0.7);
+	border-radius: 14px;
+}
+.col-md-2 {
+	width: 10%;
+	
 }
