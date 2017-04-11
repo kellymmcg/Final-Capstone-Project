@@ -7,18 +7,7 @@
 		<div class="row">
 			<div class="col-sm-2"></div>
 			<div class="col-sm-3" style="background-color: #21074f;">
-				<h2>Search by Name</h2>
-			</div>
-			<div class="col-sm-2"></div>
-			<div class="col-sm-3" style="background-color: #21074f;">
-				<h2>Search by Proximity</h2>
-			</div>
-			
-			<div class="col-sm-2"></div>
-		</div>
-		<div class="row">
-			<div class="col-sm-2"></div>
-			<div class="col-sm-3" style="background-color: rgba(33, 7, 79, 0.7);">
+				<h2>Search by Name</h2><br>
 				<c:url var="searchAction" value="/search" />
 				<form action="${searchAction}" method="GET" id="searchForm">
 					<input type="text" name="name" id="name"
@@ -29,21 +18,28 @@
 					<br>
 				</form>
 			</div>
-		<div class="col-sm-2"></div>
-		<div class="col-sm-3" style="background-color: rgba(33, 7, 79, 0.7);">
-			<c:url var="searchAction" value="/search" />
-			<form action="${searchAction}" method="GET" id="searchForm">
-				<input type="text" name="cityName" id="cityName" placeholder="City" /><br>
-				<br> <input type="text" name="stateName" id="stateName"
-					placeholder="State" /><br> <br> <input type="text"
-					name="radius" id="radius" placeholder="Radius" /><br>
-				<button type="submit"
-					class="btn btn-md btn-block btn-primary sButton" id="searchLink">Search!</button>
-			</form>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-3" style="background-color: #21074f;">
+				<h2>Search by Proximity</h2><br>
+				<c:url var="searchAction" value="/search" />
+				<form action="${searchAction}" method="GET" id="searchForm">
+					<input type="text" name="cityName" id="cityName" placeholder="City" /><br>
+					<br> <input type="text" name="stateName" id="stateName"
+						placeholder="State" /><br> <br> <input type="text"
+						name="radius" id="radius" placeholder="Radius" /><br>
+					<button type="submit"
+						class="btn btn-md btn-block btn-primary sButton" id="searchLink">Search!</button>
+				</form>
 			</div>
-		<div class="col-sm-2"></div>
+			
+			<div class="col-sm-2"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+		</div>
+
+
 	</div>
-	<br><br><br>
+	<br>
+	<br>
+	<br>
 </center>
 
 
