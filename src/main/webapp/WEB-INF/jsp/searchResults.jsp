@@ -30,7 +30,7 @@ $("#detailLink").click(function(event){
 				<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
 					<c:url var="detailAction" value="/searchResults"/>
 					<form action="${detailAction}" method="GET" id="detailForm">
-						<h3><a href="#" id="detailLink">${landmark.name}</a></h3>
+						<h2><a href="#" id="detailLink">${landmark.name}</a></h2>
 						<p>${landmark.description}</p>
 						<input type="hidden" name="id" value="<c:out value='${landmark.id}'/>"/>
 	                	<span class="plus"><button type="submit"><i class="glyphicon glyphicon-plus"></i></button></span>
