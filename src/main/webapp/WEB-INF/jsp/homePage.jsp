@@ -4,7 +4,8 @@
 
 <c:choose>
 	<c:when test="${empty currentUser}">
-
+		<c:url var="registration" value="/registration" />
+		<c:url var="search" value="/search" />
 		<div id="bootstrap-touch-slider"
 			class="carousel bs-slider fade  control-round indicators-line"
 			data-ride="carousel" data-pause="hover" data-interval="5000">
@@ -22,11 +23,11 @@
 			<c:url var="registration" value="/registration" />
 			<div class="carousel-inner" role="listbox">
 
-				<!-- Third Slide -->
+				<!-- First Slide -->
 				<div class="item active">
 
 					<!-- Slide Background -->
-					<img src="img/homepageonere.jpg" alt="" class="slide-image" />
+					<img src="img/subway.jpg" alt="" class="slide-image" />
 					<div class="bs-slider-overlay"></div>
 
 					<div class="container">
@@ -37,9 +38,9 @@
 									city!</h1>
 								<p data-animation="animated fadeInLeft">Explore the historic
 									landmarks your city has to offer.</p>
-								<a href="${formAction}" class="btn btn-default lBut"
+								<a href="${formAction}" class="btn btn-default"
 									data-animation="animated fadeInLeft">Login</a> <a
-									href="${registration}" class="btn btn-primary"
+									href="${registration}" class="btn btn-primary rBut"
 									data-animation="animated fadeInRight">Join Us</a>
 							</div>
 						</div>
@@ -61,7 +62,7 @@
 							location.</p>
 						<a href="${formAction}" class="btn btn-default"
 							data-animation="animated fadeInUp">Login</a> <a
-							href="${registration}" class="btn btn-primary"
+							href="${registration}" class="btn btn-primary rBut"
 							data-animation="animated fadeInDown">Join Us</a>
 					</div>
 				</div>
@@ -82,7 +83,7 @@
 							perfect itinerary.</p>
 						<a href="${formAction}" class="btn btn-default"
 							data-animation="animated fadeInLeft">Login</a> <a
-							href="${registration}" class="btn btn-primary"
+							href="${registration}" class="btn btn-primary rBut"
 							data-animation="animated fadeInRight">Join Us</a>
 					</div>
 				</div>
@@ -109,13 +110,16 @@
 
 		<!-- SECTION 2 -->
 		<br>
-		<br>
-		<br>
 
-		<div style="background: transparent !important" class="jumbotron">
+		<div class="jumbotron jumbocode">
+			<br>
+			<br>
 			<div class="container">
-				<div class="row">
-					<div class="col-sm-4">
+				<h1 id="centertext">Create the perfect travel itinerary!</h1>
+			</div>
+			<div class="container circlecontainer">
+				<div class="row circlerow">
+					<div class="col-sm-4 circlepic">
 						<img src="img/planning.jpg" class="img-circle person" alt="Search"
 							width="255" height="255">
 						<h3>Search</h3>
@@ -124,7 +128,7 @@
 						<p>Just search by your city by name or zipcode to see all of
 							the nearby landmarks!</p>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-4 circlepic">
 						<img src="img/explore.jpg" class="img-circle person"
 							alt="Discover" width="255" height="255">
 						<h3>Discover</h3>
@@ -132,7 +136,7 @@
 							of the hidden gems your city has to offer.</p>
 						<p>Experience your own city in a new way!</p>
 					</div>
-					<div class="col-sm-4">
+					<div class="col-sm-4 circlepic">
 						<img src="img/planner.jpg" class="img-circle person" alt="Plan"
 							width="255" height="255">
 						<h3>Plan</h3>
@@ -145,32 +149,46 @@
 			</div>
 		</div>
 
+		<!--SECTION 3-->
 
-		<div class="jumbotron" id="jumbotronText">
-			<div class="container">
-				<h1>Map your route...</h1>
-				<p>Add screenshot of routed itinerary on google map...</p>
+		<div class="container-fluid jumbocontainer">
+			<div class="row rowclass">
+				<div class="col-md-7 columnBoxes" id="home-map">
+					<img src="img/suedomap.png" class="img-responsive"  alt="Map">
+				</div>
+				<div class="col-md-5 mapcontent columnBoxes">
+						<h1 id="firstH1">Search your location.</h1>
+						<h1>View surrounding landmarks.</h1>
+						<h1>Map your route.</h1>
+						<br>
+						<form action="${search}" method="GET">
+							<button type="submit" class="active searchButton">Search a Landmark</button>
+						</form>
+				</div>
 			</div>
 		</div>
 
-
+		
+		
 		<div
-			style="text-align: center; margin-top: 150px; margin-bottom: 100px">
-			<h3>Create your itinerary today!</h3>
-			<form action="#">
-				<button type="button" class="active getStartedButton">Get
+			style="text-align: center; margin-top: 100px; margin-bottom: 100px" id="getStartedDiv">
+			<h3>Sign up for a <b>free</b> account! Create your itinerary today!</h3>
+			<form action="${registration}" method="GET">
+				<button type="submit" class="active getStartedButton">Get
 					Started</button>
 			</form>
 		</div>
 	</c:when>
 	<c:otherwise>
-		
+
 		<c:url var="searchLandmarksHref" value="/search" />
 		<c:url var="createItineraryHref" value="/createItinerary" />
 		<c:url var="manageItineraryHref" value="/manageItinerary" />
-		
+
 		<div class="homepagelayer">
-			<div class="w3-row-padding w3-center w3-padding-64 homepagebackground" id="pricing">
+			<div
+				class="w3-row-padding w3-center w3-padding-64 homepagebackground"
+				id="pricing">
 				<div class="w3-third  w3-margin-bottom">
 					<ul class="w3-ul w3-border w3-hover-shadow">
 						<li class="tBox">
@@ -215,7 +233,6 @@
 			</div>
 		</div>
 	</c:otherwise>
-
 </c:choose>
 
 
