@@ -67,13 +67,18 @@ CREATE TABLE review (
 	id INTEGER PRIMARY KEY DEFAULT NEXTVAL('seq_review_id'),
 	landmarkId INTEGER NOT NULL,
 	user_name VARCHAR(64) NOT NULL,
-	title VARCHAR(32) NOT NULL,
-	review VARCHAR(254) NOT NULL,
+	title VARCHAR(120) NOT NULL,
+	review VARCHAR(800) NOT NULL,
 	stars INTEGER NOT NULL,
 	
 	CONSTRAINT fk_review_app_user FOREIGN KEY (user_name) REFERENCES app_user(user_name),
 	CONSTRAINT fk_review_landmark FOREIGN KEY (landmarkId) REFERENCES landmark(landmarkId)
 );
+
+
+
+
+
 CREATE SEQUENCE seq_suggestion_id;
 
 CREATE TABLE suggestion (
@@ -224,8 +229,87 @@ INSERT INTO itinerary(itineraryId, user_name, landmarkId, name, date_started, de
 
 INSERT INTO city(name, latitude, longitude) VALUES ('Cleveland', '41.4993', '-81.6944');
 
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'1', 'KellyM', 'This place is nice', 'The food court is good if you want to grab some quick food before going to an event at Gateway.  Lot''s of places to shop.  It''s really nice during Christmas time when the entire place is decorated', '4');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'2', 'KellyM', 'A fun way to lose money', 'Slots upon slots upon slots here.  Also, they have a ton of different table games.  It can get cramped on the weekends but otherwise it''s a fun little excursion if you know when to walk away.  The buffet has a decent seletion of food', '4');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'3', 'KellyM', 'A nice monument', 'Beautiful both outside and inside.  If you are into history swing by here', '5' );
 
-
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'4', 'KellyM', 'The Q', 'Whether it is a Cavs, Monsters, or Gladiators game, a concert, or monster truck rally, the Q always does a great job hosting events.', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'5', 'KellyM', 'It''s still the Jake to me', 'Besides seeing America''s past time they also do a great job with fan interaction during the game and the food choices are excellent.  Now we just need for the tribe to win a World Series', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'6', 'KellyM', 'A massive museum that is also free!?  SHUT UP AN DON''T TAKE MY MONEY!', 'What more could you want, a large museum you can walk through and it is also free (they do take donations via donation boxes in the lobby).  You have to pay for special exhibits but it''s not going to break the bank.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'7', 'KellyM', 'Dead people, some of them are famous as well!', 'This places is pretty awesome to wander around.  Notable deceased include: John D. Rockefeller, President James Garfield, Ray Chapman the only baseball player to ever be killed in a game, as well as a plethora of others.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'8', 'KellyM', 'A Zoo and a Rainforest', 'The zoo is pretty awesome and massive. You''ll definitely get a good workout walking around.  I highly recommend taking extra time to go to the Rainforest and watch the Otters frolick.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'9', 'KellyM', 'An awesome selection of food', 'If you need something for cooking a great meal, a West Side Market vendor probably carries it and it''s probably waaaay cheaper than some dumb chain grocery store.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'10', 'KellyM', 'Cool Art', 'The Free Stamp is basically a giant stamp that says free on it (hence the name).  It sounds dumb but is kinda'' cool', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'11', 'KellyM', 'Broadway comes to Cleveland', 'This place is beautiful inside and is an absolute treasure to the city.  They also have super cheap nosebleed seats for all of the hottest Broadway Musicals that come through town.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'12', 'KellyM', 'Maam, please get off the Dinosaur', 'Apparently, they have age restrictions (THAT AREN''T POSTED MIGHT I ADD) on the dinosaur "Steggy" outside the museum.  That''s why they are getting 4 stars instead of 5.  Other than the facist age restrictions, this place is pretty awesome and great for people of any age.', '4');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'13', 'KellyM', 'Cleveland: We like large things', 'Did you go visit our Free Stamp?  Then go see the largest outdoor Chandelier located in Playhouse Square.  It looks awesome at night when it is lit up.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'14', 'KellyM', 'It''s an odd shaped building', 'But it has a lot of cool art.  Most of which I do not understand because I am not smart.  But it looks cool so it''s got that going for it, which is nice.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'15', 'KellyM', 'EVEN KIDS GET THEIR OWN MUSEUM IN CLEVELAND!', 'Do you have children and want them to learn but also have fun so you don''t have to listen to them complain?  Take them here', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'16', 'KellyM', 'Hello, Cleveland!', 'See a guitar Kurt Cobain played or something Janis Joplin wore on stage?  Yeah, this place is awesome.  The gift shop is over priced for the most part, but if you are a fan of Rock and Roll this place is for you.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'17', 'KellyM', 'This place is fun', 'If you want your kid to learn and have fun so you don''t have to listen to them complain, this is the place to take them', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'18', 'KellyM', 'You''ll shoot your eye out!', 'Okay, no you won''t but this place is a must see if you are a fan of the movie.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'19', 'KellyM', 'The first line of defense for when Canada invades', 'This place is full of history and is a must see for those who are fans of military history', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'20', 'KellyM', 'One Fish, Two Fish, Red Fish, Blue Fish', 'Do you like looking at sea life?  This place is great for you.  It''s a bit on the small side but it still is pretty cool.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'21', 'KellyM', 'The Factory of Sadness', 'It''d be nice if the Browns could not suck, but this place isn''t too bad since they did the renovations.', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'22', 'KellyM', 'A suburban mall', 'You can probably guess all the stores that are in this mall if you have ever visited a mall in the suburbs of America', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'23', 'KellyM', 'A fancy suburban mall', 'This is differs from most other malls because most of the stores are higher end.  Think Nordstrom, Saks 5th Ave, etc.', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'24', 'KellyM', 'How is this mall still open?', 'They have a food court, movie theatre, a planet fitness and a bunch of random different stores.', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'25', 'KellyM', 'Not Cooperstown', 'This place is pretty neat and if you are a fan of baseball it is definitely a must see.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'26', 'KellyM', 'Nature not far from the city', 'The entire Shaker Lakes area is very beautiful and contains an abundunce of wildlife.  The nature center has a lot of information on the area and wildlife.', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'27', 'KellyM', 'It''s like the Q''s younger sibling', 'A mid-sized arena that has some great concerts and is also home to the Cleveland State Men and Women''s basketball teams.  I wish they would bring back indoor soccer', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'28', 'KellyM', 'Take your allergy pills before you visit', 'This place is pretty and a great way to see some beautiful flowers in the middle of winter', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'29', 'KellyM', 'Space ladies!', 'A cool museum that is dedicated to the women who have made aviation and space history.', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'30', 'KellyM', 'A world class orchestra in Cleveland!', 'Their home venue of Severance Hall is an absolute gem and the Cleveland Orchestra is just phenomenal', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'31', 'KellyM', 'We have lots of parks', 'Garfield Park Reservation is a great way to get into the great outdoors and out of the hustle and bustle of the city', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'32', 'KellyM', 'A pretty lakefront park', 'Absolutely breath taking views of the lake, especially at sunset.  A great place to hold a BBQ.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'33', 'KellyM', 'A nice park to explore or even just drive through!', 'Like my title says it''s a wonderful park to drive through and it''s even better if you get out and explore it!', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'34', 'KellyM', 'A park AND a golf course', 'The park is great and is a testament that the Cleveland Metroparks take care of all of their parks.  They also have a nice par 3 golf course for those who like to play the game.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'35', 'KellyM', 'A small park', 'It''s a nice park but it is a tad on the small side compared to other parks in the Metroparks system.', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'36', 'KellyM', 'A beautiful lakefront park', 'If you like to fish, head here.  There always seem to be people fishing all along here.  They also have a really nice paved trail that you can walk, jog, or ride your bike on.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'37', 'KellyM', 'Go inside and see how pretty it is', 'The outside looks pretty cool but inside the architecture is nothing short of beautiful', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'38', 'KellyM', 'Mmmm...Italian Food', 'Do you like authentic Italian food?  This is the place you need to visit.', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'39', 'KellyM', 'Cars and Planes!', 'This is part of the Western Reserve Historical Society.  They have tons of cool autombile and aviation related things.  A must see if you are into cars or aviation', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'40', 'KellyM', 'No video games here!', 'However, it is loaded with many shops, a hotel, and some beautiful architecture.', '5');
 
 
 
