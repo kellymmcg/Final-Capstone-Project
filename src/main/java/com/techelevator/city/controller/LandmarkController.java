@@ -53,7 +53,7 @@ public class LandmarkController {
 	}
 	
 	@RequestMapping(path="/searchResults", method=RequestMethod.GET)
-	public String showSearchResults(@RequestParam Optional<Long> id, @RequestParam String name, ModelMap model){
+	public String showSearchResults(@RequestParam Optional<Long> id, ModelMap model){
 		if(! id.isPresent()){
 			return "searchResults";
 		}
@@ -82,7 +82,9 @@ public class LandmarkController {
 	}
 	
 	@RequestMapping(path="/proximitySearch", method=RequestMethod.GET)
-	public String getPage(){
+	public String displaySearchResults(@RequestParam int radius, 
+									   @RequestParam String city, 
+									   ModelMap model){
 		return "proximitySearch";
 	}
 	
