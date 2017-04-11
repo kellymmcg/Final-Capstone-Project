@@ -37,8 +37,7 @@
 									city!</h1>
 								<p data-animation="animated fadeInLeft">Explore the historic
 									landmarks your city has to offer.</p>
-								<a href="${formAction}" 
-									class="btn btn-default lBut"
+								<a href="${formAction}" class="btn btn-default lBut"
 									data-animation="animated fadeInLeft">Login</a> <a
 									href="${registration}" class="btn btn-primary"
 									data-animation="animated fadeInRight">Join Us</a>
@@ -60,11 +59,10 @@
 							landmarks to visit!</h1>
 						<p data-animation="animated lightSpeedIn">Find details on each
 							location.</p>
-						<a href="${formAction}" 
-							class="btn btn-default" data-animation="animated fadeInUp">Login</a>
-						<a href="${registration}" 
-							class="btn btn-primary" data-animation="animated fadeInDown">Join
-							Us</a>
+						<a href="${formAction}" class="btn btn-default"
+							data-animation="animated fadeInUp">Login</a> <a
+							href="${registration}" class="btn btn-primary"
+							data-animation="animated fadeInDown">Join Us</a>
 					</div>
 				</div>
 				<!-- End of Slide -->
@@ -82,11 +80,10 @@
 						<p data-animation="animated fadeInRight">Just choose the
 							landmarks you want to visit and Tour du City will create your
 							perfect itinerary.</p>
-						<a href="${formAction}"
-							class="btn btn-default" data-animation="animated fadeInLeft">Login</a>
-						<a href="${registration}"
-							class="btn btn-primary" data-animation="animated fadeInRight">Join
-							Us</a>
+						<a href="${formAction}" class="btn btn-default"
+							data-animation="animated fadeInLeft">Login</a> <a
+							href="${registration}" class="btn btn-primary"
+							data-animation="animated fadeInRight">Join Us</a>
 					</div>
 				</div>
 				<!-- End of Slide -->
@@ -167,49 +164,56 @@
 		</div>
 	</c:when>
 	<c:otherwise>
-	<c:url var="searchLandmarksHref" value="/search" />
-	<c:url var="createItineraryHref" value="/createItinerary" />
-	<c:url var="manageItineraryHref" value="/manageItinerary" />
-		<div class="w3-row-padding w3-center w3-padding-64 homepageboxes" id="pricing">
+		
+		<c:url var="searchLandmarksHref" value="/search" />
+		<c:url var="createItineraryHref" value="/createItinerary" />
+		<c:url var="manageItineraryHref" value="/manageItinerary" />
+		
+		<div class="homepagelayer">
+			<div class="w3-row-padding w3-center w3-padding-64 homepagebackground" id="pricing">
+				<div class="w3-third  w3-margin-bottom">
+					<ul class="w3-ul w3-border w3-hover-shadow">
+						<li class="tBox">
+							<p class="hBox">Search Landmarks</p>
+						</li>
+						<li><img src="img/computersearch.jpg"
+							class="img-responsive homeimg" alt="Search"></li>
+						<li class="w3-theme-l5 w3-padding-24"><a
+							href="${searchLandmarksHref}"
+							class="btn btn-info w3-button w3-teal w3-padding-large"
+							role="button">Search</a></li>
+					</ul>
+				</div>
 
-			<div class="w3-third  w3-margin-bottom">
-				<ul class="w3-ul w3-border w3-hover-shadow">
-					<li class="tBox">
-						<p class="hBox">Search Landmarks</p>
-					</li>
-					<li><img src="img/computersearch.jpg" class="img-responsive homeimg" alt="Search"></li>
-					<li class="w3-theme-l5 w3-padding-24">
-						<a href="${searchLandmarksHref}" class="btn btn-info w3-button w3-teal w3-padding-large" role="button">Search</a>
-					</li>
-				</ul>
-			</div>
+				<div class="w3-third w3-margin-bottom">
+					<ul class="w3-ul w3-border w3-hover-shadow">
+						<li class="tBox">
+							<p class="hBox">Create Itinerary</p>
+						</li>
+						<li><img src="img/plane.jpg" class="img-responsive homeimg"
+							alt="Create"></li>
+						<li class="w3-theme-l5 w3-padding-24"><a
+							href="${createItineraryHref}"
+							class="btn btn-info w3-button w3-teal w3-padding-large"
+							role="button">Create</a></li>
+					</ul>
+				</div>
 
-			<div class="w3-third w3-margin-bottom">
-				<ul class="w3-ul w3-border w3-hover-shadow">
-					<li class="tBox">
-						<p class="hBox">Create Itinerary</p>
-					</li>
-					<li><img src="img/plane.jpg" class="img-responsive homeimg" alt="Create"></li>
-					<li class="w3-theme-l5 w3-padding-24">
-						<a href="${createItineraryHref}" class="btn btn-info w3-button w3-teal w3-padding-large" role="button">Create</a>					
-					</li>
-				</ul>
-			</div>
-
-			<div class="w3-third w3-margin-bottom">
-				<ul class="w3-ul w3-border w3-hover-shadow">
-					<li class="tBox">
-						<p class="hBox">Manage Itinerary</p>
-					</li>
-					<li><img src="img/manageit.jpg" class="img-responsive homeimg" alt="Manage"></li>
-					<li class="w3-theme-l5 w3-padding-24">
-						<a href="${manageItineraryHref}" class="btn btn-info w3-button w3-teal w3-padding-large" role="button">Manage</a>
-					</li>
-				</ul>
-
+				<div class="w3-third w3-margin-bottom">
+					<ul class="w3-ul w3-border w3-hover-shadow">
+						<li class="tBox">
+							<p class="hBox">Manage Itinerary</p>
+						</li>
+						<li><img src="img/manageit.jpg"
+							class="img-responsive homeimg" alt="Manage"></li>
+						<li class="w3-theme-l5 w3-padding-24"><a
+							href="${manageItineraryHref}"
+							class="btn btn-info w3-button w3-teal w3-padding-large"
+							role="button">Manage</a></li>
+					</ul>
+				</div>
 			</div>
 		</div>
-
 	</c:otherwise>
 
 </c:choose>

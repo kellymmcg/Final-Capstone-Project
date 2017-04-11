@@ -27,8 +27,10 @@
 	padding:0;
 }
 
-.homepageboxes {
-	/* background-image: url("../img/subway.jpg");
+.homepagebackground {
+	background-image: url("../img/background.jpg");
 	background-size: 100% 100%;
-	background-position: center; */
+	background-position: center;
+	
 }
+
