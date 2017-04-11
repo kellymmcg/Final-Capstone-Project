@@ -1,6 +1,5 @@
 package com.techelevator.city.controller;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -9,11 +8,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.techelevator.city.model.ItineraryDAO;
 import com.techelevator.city.model.Landmark;
 import com.techelevator.city.model.LandmarkDAO;
@@ -50,7 +53,7 @@ public class LandmarkController {
 	}
 	
 	@RequestMapping(path="/searchResults", method=RequestMethod.GET)
-	public String showSearchResults(@RequestParam Optional<Long> id, ModelMap model){
+	public String showSearchResults(@RequestParam Optional<Long> id, @RequestParam String name, ModelMap model){
 		if(! id.isPresent()){
 			return "searchResults";
 		}
@@ -76,6 +79,19 @@ public class LandmarkController {
 		itineraryDAO.addLandmarkToItinerary(2, user, landmarkId, name, date, description); // CURRENTLY HARDCODED
 		return "redirect:/manageItinerary";
 		
+	}
+	
+	@RequestMapping(path="/proximitySearch", method=RequestMethod.GET)
+	public String getPage(){
+		return "proximitySearch";
+	}
+	
+	@ResponseBody
+	@RequestMapping(path="/testPage", method=RequestMethod.GET)
+	public String displayTestPage(@RequestParam String name, ModelMap model) throws JsonProcessingException {
+		ObjectMapper mapper = new ObjectMapper();
+		List<Landmark> landmarks = landDAO.searchLandmarksByName(name);
+		return mapper.writeValueAsString(landmarks);
 	}
 
 }
