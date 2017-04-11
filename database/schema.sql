@@ -85,13 +85,14 @@ description VARCHAR(254) NOT NULL
 
 );
 
-CREATE TABLE city {
+CREATE TABLE city (
 name VARCHAR(64) NOT NULL,
 latitude FLOAT NOT NULL,
 longitude FLOAT NOT NULL,
 
-CONSTRAINT pk_review PRIMARY KEY (name, latitude, longitude)
-}
+CONSTRAINT pk_city PRIMARY KEY (name, latitude, longitude)
+
+);
 
 INSERT INTO app_user(user_name, password, salt) VALUES ('KevinC', 'Z+6dbfgKW9yOzFOoTOkL2A==', 'o7BHFhCTGHVmsaQ/aV/eMtPLAKwjny7PfHNHYxNurH8jNTB98T6GXTKttD2Q/Oqkpp++6kqt0x1wwtk/dhYHslKuROy4z3exR3uKDEHXW+SYNXlGLpW5niA56ej2Jc/yCR5liYjKko8U3cGNuUFp/jp5bpfiLC1qif55iji0qZc=');
 INSERT INTO app_user(user_name, password, salt) VALUES ('AlexisT', 'ur6k/xfmGaYHjehKRyHM7w==', 'VZnfAUcRVK1W+5d62n6EBtmjN5o8VcdaeKSKiyJ/ufiWi4zcWlAP+4OqWjwViZCWUWTVETdz0RCaEXeYBFtVpcAFqCslnPPpETsIvdHl+Vf1pSudvqOl47y++QwQ0KAJa/DILzgqxe1mLoMfYwE0X8BEKgRzHAaBFBwXHE+uUTs=');
