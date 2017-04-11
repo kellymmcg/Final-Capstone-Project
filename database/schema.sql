@@ -64,13 +64,13 @@ CREATE TABLE itinerary (
 CREATE SEQUENCE seq_review_id;
 
 CREATE TABLE review (
-	id INTEGER NOT NULL,
+	id INTEGER PRIMARY KEY DEFAULT NEXTVAL('seq_review_id'),
 	landmarkId INTEGER NOT NULL,
 	user_name VARCHAR(64) NOT NULL,
+	title VARCHAR(32) NOT NULL,
 	review VARCHAR(254) NOT NULL,
 	stars INTEGER NOT NULL,
 	
-	CONSTRAINT pk_review PRIMARY KEY (id, landmarkId, user_name),
 	CONSTRAINT fk_review_app_user FOREIGN KEY (user_name) REFERENCES app_user(user_name),
 	CONSTRAINT fk_review_landmark FOREIGN KEY (landmarkId) REFERENCES landmark(landmarkId)
 );

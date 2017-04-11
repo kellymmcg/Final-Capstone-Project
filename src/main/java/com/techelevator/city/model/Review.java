@@ -5,8 +5,17 @@ public class Review {
 	private int id;
 	private int landmarkId;
 	private String userName;
+	private String title;
 	private String review;
 	private int stars;
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
 	public int getId() {
 		return id;
