@@ -3,25 +3,19 @@
 <c:import url="/WEB-INF/jsp/header.jsp" />
 <div class = "suggestlandmark">
 
+	<c:url var="submitSuggestion" value="/suggestions" />
+
+
 	<h3>Suggest a Landmark!</h3>
-	<form action= "submitSuggestion" method="POST">
+	<form action= "${submitSuggestion}" method="POST">
+	<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 		<label for="Name">Name </label>
-		<input type="text" name="landmarkName" id="landmarkName" /><br/>
-		<label for="Longitude">Longitude </label>
-		<input type="text" name="landmarkLong" id="landmarkLong" /><br/>
-		<label for="Latitude">Latitude </label>
-		<input type="text" name="landmarkLat" id="landmarkLat" /><br/>
+		<input type="text" name="name" id="name" /><br/>
 		<label for ="address">Address</label>
-		<input type="text" name="landmarkAddress" id="landmarkAddress"/><br/>
-		<label for ="openTime">Open From</label>
-		<input type="text" name="landmarkOpenTime" id="landmarkOpenTime"/>
-		<label for ="closeTime">to</label>
-		<input type="text" name="landmarkCloseTime" id="landmarkCloseTime"/><br/>
-		<label for ="phone">Phone</label>
-		<input type="text" name="landmarkPhone" id="landmarkPhone"/><br/>
-		<label for ="review">ReviewId</label>
-		<input type="text" name="landmarkReview" id="landmarkReview"/><br/>
-		<textarea rows="5" cols="20">Describe your experience</textarea><br/>
+		<input type="text" name="address" id="address"/><br/>
+		<label for ="Description"> Description</label>
+		<textarea rows="5" cols="20" name="description" id="description">Describe your experience</textarea><br/>
+		<input type="hidden" name="user" value="${currentUser}" />
 		<input type="submit" value="Submit"/>
 		
 	</form>

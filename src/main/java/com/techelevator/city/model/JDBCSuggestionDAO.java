@@ -22,12 +22,12 @@ public class JDBCSuggestionDAO implements SuggestionDAO {
 	}
 	
 	@Override
-	public void submitSuggestion(Suggestion suggestion) {
+	public void submitSuggestion(String userName, String name, String address, String description) {
 		String sqlInsertSuggestion = "INSERT INTO suggestion("
-				+"user_name, name, address, description"
+				+"user_name, name, address, description) "
 				+"VALUES(?,?,?,?)";
-		jdbcTemplate.update(sqlInsertSuggestion, suggestion.getUserName(), 
-				suggestion.getName(), suggestion.getAddress(), suggestion.getDescription());
+		jdbcTemplate.update(sqlInsertSuggestion, userName, 
+				name, address, description);
 	}
 
 	@Override

@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface SuggestionDAO {
 	
-	public void submitSuggestion(Suggestion suggestion);
+	public void submitSuggestion(String user, String name, String Address, String Description);
 	public List<Suggestion> displayAllSuggestions();
 	public void removeSuggestion(int id);
 }
