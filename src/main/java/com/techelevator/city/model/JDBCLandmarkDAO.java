@@ -37,6 +37,27 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 				newLandmark.addKidFriendly(), newLandmark.addWater(), newLandmark.addRestroom(), newLandmark.getDescription());
 	}
 	
+	@Override 
+	public List<Landmark> searchLandmarksByProximity(float latitude, float longitude, double radius){
+		List<Landmark> landmarks = new ArrayList<>();
+		double degrees = radius/69;
+		float latUpper = (float)(latitude + degrees);
+		float latLower = (float)(latitude - degrees);
+		float longUpper = (float)(longitude + degrees);
+		float longLower = (float)(longitude - degrees);
+		
+		String sqlSearchByProximity = "SELECT * "
+									+ "FROM landmark "
+									+ "WHERE longitude < ? AND longitude > ? AND latitude < ? AND latitude > ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchByProximity, longUpper, longLower, latUpper, latLower);
+		while(results.next()){
+			Landmark landmark = mapRowToLandmark(results);
+			landmarks.add(landmark);
+		}
+		
+		return landmarks;
+	}
+	
 	@Override
 	public List<Landmark> getLandmarksByItineraryId(int id) {
 		List<Landmark> landmarks = new ArrayList<>();

@@ -11,7 +11,7 @@
 <c:url var="proximityHref" value="js/proximity.js" />
 <script src="${proximityHref}"></script>
 
-<div style="width:1000px;height:300px;" id="mapT"></div>
+<div style="width:500px;height:400px;" id="mapT"></div>
 
 
 <c:import url="/WEB-INF/jsp/footer.jsp" />

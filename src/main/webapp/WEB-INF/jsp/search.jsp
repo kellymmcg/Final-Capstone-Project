@@ -21,12 +21,15 @@
 			<div class="col-sm-2"></div>
 			<div class="col-sm-3" style="background-color: #21074f;">
 				<h2>Search by Proximity</h2><br>
-				<c:url var="searchAction" value="/search" />
+				<c:url var="searchAction" value="/proximitySearch" />
 				<form action="${searchAction}" method="GET" id="searchForm">
-					<input type="text" name="cityName" id="cityName" placeholder="City" /><br>
-					<br> <input type="text" name="stateName" id="stateName"
-						placeholder="State" /><br> <br> <input type="text"
-						name="radius" id="radius" placeholder="Radius" /><br>
+					<input type="text" name="city" id="city" placeholder="City" /><br>
+					<br> 
+					<input type="radio" name="radius" value="1"> 1 Miles <br>
+					<input type="radio" name="radius" value="3"> 3 Miles <br>
+					<input type="radio" name="radius" value="5"> 5 Miles <br>
+					<input type="radio" name="radius" value="10"> 10 Miles <br>
+					<input type="radio" name="radius" value="15"> 15 Miles <br>
 					<button type="submit"
 						class="btn btn-md btn-block btn-primary sButton" id="searchLink">Search!</button>
 				</form>

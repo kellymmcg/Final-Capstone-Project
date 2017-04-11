@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +16,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.techelevator.city.model.City;
+import com.techelevator.city.model.CityDAO;
 import com.techelevator.city.model.ItineraryDAO;
 import com.techelevator.city.model.Landmark;
 import com.techelevator.city.model.LandmarkDAO;
@@ -30,12 +31,14 @@ public class LandmarkController {
 	private UserDAO userDAO;
 	private LandmarkDAO landDAO;
 	private ItineraryDAO itineraryDAO;
+	private CityDAO cityDAO;
 	
 	@Autowired
-	public LandmarkController(UserDAO userDAO, LandmarkDAO landDAO, ItineraryDAO itineraryDAO) {
+	public LandmarkController(UserDAO userDAO, LandmarkDAO landDAO, ItineraryDAO itineraryDAO, CityDAO cityDAO) {
 		this.userDAO = userDAO;
 		this.landDAO = landDAO;
 		this.itineraryDAO = itineraryDAO;
+		this.cityDAO = cityDAO;
 	}
 	
 	@RequestMapping(path="/search", method=RequestMethod.GET)
@@ -82,17 +85,27 @@ public class LandmarkController {
 	}
 	
 	@RequestMapping(path="/proximitySearch", method=RequestMethod.GET)
-	public String displaySearchResults(@RequestParam int radius, 
-									   @RequestParam String city, 
-									   ModelMap model){
+	public String displaySearchResults(@RequestParam double radius, 
+			   						   @RequestParam String city,
+			   						   @RequestParam Optional<Long> id,
+			   						   ModelMap model){
+		
+		if(! id.isPresent()){
+			return "proximitySearch";
+		}
+		
 		return "proximitySearch";
 	}
 	
 	@ResponseBody
-	@RequestMapping(path="/testPage", method=RequestMethod.GET)
-	public String displayTestPage(@RequestParam String name, ModelMap model) throws JsonProcessingException {
+	@RequestMapping(path="/jsonLandmarks", method=RequestMethod.GET)
+	public String generateJsonLandmarks(@RequestParam double radius, 
+			  					  		@RequestParam String city, 
+			  					  		ModelMap model) throws JsonProcessingException {
+
 		ObjectMapper mapper = new ObjectMapper();
-		List<Landmark> landmarks = landDAO.searchLandmarksByName(name);
+		City sCity = cityDAO.getCityByName(city);
+		List<Landmark> landmarks = landDAO.searchLandmarksByProximity(sCity.getLatitude(), sCity.getLongitude(), radius);
 		return mapper.writeValueAsString(landmarks);
 	}
 
