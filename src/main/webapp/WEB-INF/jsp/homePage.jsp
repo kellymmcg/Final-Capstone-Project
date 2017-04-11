@@ -151,10 +151,10 @@
 
 		<!--SECTION 3-->
 
-		<div class="container-fluid jumbocontainer">
+		<div class="container jumbocontainer">
 			<div class="row rowclass">
 				<div class="col-md-7 columnBoxes" id="home-map">
-					<img src="img/suedomap.png" class="img-responsive"  alt="Map">
+					<img src="img/suedomap.png" class="img-responsive imghomepage" alt="Map">
 				</div>
 				<div class="col-md-5 mapcontent columnBoxes">
 						<h1 id="firstH1">Search your location.</h1>
