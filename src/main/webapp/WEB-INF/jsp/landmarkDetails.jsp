@@ -58,8 +58,8 @@
 					<script>
 					function initMap() {
 						var location = {
-							lat : ${landmark.longitude},
-							lng : ${landmark.latitude}
+							lat : ${landmark.latitude},
+							lng : ${landmark.longitude}
 						};
 						var map = new google.maps.Map(document.getElementById('mapD'), {
 							zoom : 16,
