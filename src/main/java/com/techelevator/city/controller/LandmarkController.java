@@ -88,6 +88,18 @@ public class LandmarkController {
 		
 	}
 	
+	@RequestMapping(path="/landmarkReviewSubmitted", method=RequestMethod.POST)
+	public String addReview(@RequestParam String user,@RequestParam String title, @RequestParam String review, @RequestParam int stars, @RequestParam int landmarkId ) {
+		Review r = new Review();
+		r.setLandmarkId(landmarkId);
+		r.setReview(review);
+		r.setStars(stars);
+		r.setTitle(title);
+		r.setUserName(user);
+		reviewDAO.submitAReview(r);
+		return "redirect:/searchResults?id="+landmarkId;
+	}
+	
 	@RequestMapping(path="/proximitySearch", method=RequestMethod.GET)
 	public String displaySearchResults(@RequestParam double radius, 
 			   						   @RequestParam String city,

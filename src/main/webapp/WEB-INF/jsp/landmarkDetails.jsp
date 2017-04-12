@@ -176,6 +176,24 @@
 					</div>
 				</div>
 			</div>
+			<c:url var="submitReview" value="/landmarkReviewSubmitted" />
+			<form action="${submitReview}" method="POST">
+				<input type="hidden" name="CSRF_TOKEN"
+					value="<c:out value='${CSRF_TOKEN}' />" />
+				<input type="text" name="title" id="title" placeholder="Give your review a title!" /><br />
+				<textarea rows="4" cols="10 " name="review" id="review" placeholder="Leave a review!"
+					style="width: 100%"></textarea>
+				<input type="hidden" name="user" value="${currentUser}" /> <input
+					type="hidden" name="landmarkId" value="${landmark.id}" /> <select
+					name="stars">
+					<option value="1">1 Star</option>
+					<option value="2">2 Star</option>
+					<option value="3">3 Star</option>
+					<option value="4">4 Star</option>
+					<option value="5">5 Star</option>
+				</select> <input type="submit" value="Submit" />
+
+			</form>
 		</div>
 	</div>
 </div>
