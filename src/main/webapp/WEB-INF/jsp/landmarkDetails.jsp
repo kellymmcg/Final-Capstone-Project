@@ -46,8 +46,12 @@
 					<p class="dIcon c${landmark.kidFriendly}">
 						<span class="fa fa-users"></span> Kid Friendly
 					</p>
-					<p><strong>Phone:</strong> ${landmark.phone}</p>
-					<p><strong>Website:</strong> ${landmark.website}</p>
+					<p>
+						<strong>Phone:</strong> ${landmark.phone}
+					</p>
+					<p>
+						<strong>Website:</strong> ${landmark.website}
+					</p>
 				</div>
 			</div>
 
@@ -79,54 +83,102 @@
 						<div class="col-md-3">
 							<div class="action">
 								<c:url var="formAction" value="/landmarkDetails" />
-								
-								<form id="contact" class="itineraryForm" action='${formAction}' method="POST">
+
+								<form id="contact" class="itineraryForm" action='${formAction}'
+									method="POST">
 									<p class="iAdd">Create and add to a new Itinerary</p>
-									<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
-									<input type="hidden" name="user" value="${currentUser}" />
-									<input type="hidden" name="landmarkId" value="${landmark.id}" />
-									<input type="text" name="name" placeholder="New Itinerary Name"/>
-									<input type="text" name="description" placeholder="Give a short description about it!"/>
-									<button class="add-to-cart btn btn-default" type="submit">Add to Itinerary</button>
-									
+									<input type="hidden" name="CSRF_TOKEN"
+										value="<c:out value='${CSRF_TOKEN}' />" /> <input
+										type="hidden" name="user" value="${currentUser}" /> <input
+										type="hidden" name="landmarkId" value="${landmark.id}" /> <input
+										type="text" name="name" placeholder="New Itinerary Name" /> <input
+										type="text" name="description"
+										placeholder="Give a short description about it!" />
+									<button class="add-to-cart btn btn-default" type="submit">Add
+										to Itinerary</button>
+
 								</form>
 							</div>
 						</div>
-					
+
 						<div class="col-md-3">
 							<div class="action">
 								<c:url var="formAction" value="/addToItinerary" />
-								<form id="contact" class="itineraryForm" action='${formAction}' method="POST">
+								<form id="contact" class="itineraryForm" action='${formAction}'
+									method="POST">
 									<p class="iAdd">Add to an existing Itinerary</p>
-									<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
-									<input type="hidden" name="landmarkId" value="${landmark.id}" />
-									<select name="id" class="iSelect">
+									<input type="hidden" name="CSRF_TOKEN"
+										value="<c:out value='${CSRF_TOKEN}' />" /> <input
+										type="hidden" name="landmarkId" value="${landmark.id}" /> <select
+										name="id" class="iSelect">
 										<c:forEach items="${itineraries}" var="itinerary">
 											<option value="${itinerary.id}">${itinerary.name}</option>
 										</c:forEach>
 									</select>
-									<button class="add-to-cart btn btn-default" type="submit">Add to Itinerary</button>
-									
+									<button class="add-to-cart btn btn-default" type="submit">Add
+										to Itinerary</button>
+
 								</form>
 							</div>
 						</div>
 					</c:when>
 				</c:choose>
-				</div>
-			
-				
-				<!--  REVIEWS GO HERE -->
-				
-				<div class="row">
-					<div class="col-md-12">
-						<h1>REVIEWS</h1>
-						<h3>Reviews can go here!</h3>
+			</div>
+
+
+			<!--  REVIEWS GO HERE -->
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default panel-table">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col col-xs-6">
+									<p class="iTitle">Reviews</p>
+								</div>
+								<div class="panel-body">
+									<table class="table table-striped table-bordered table-list">
+										<tr>
+											<th>User Name</th>
+											<th>Title</th>
+											<th>Review</th>
+											<th class="col-md-3" align="center">Stars</th>
+										</tr>
+										<c:forEach items="${reviews}" var="review">
+											<tr>
+												<td>${review.userName}</td>
+												<td>${review.title}</td>
+												<td>${review.review}</td>
+												<td><c:choose>
+														<c:when test="${review.stars} == 5">
+
+															<c:forEach begin="1" end="5">
+																<img src="img/star.png">
+															</c:forEach>
+
+														</c:when>
+														<c:otherwise>
+															<c:forEach begin="1" end="${review.stars}">
+																<img src="img/star.png">
+															</c:forEach>
+															<c:forEach begin="1" end="${5-review.stars}">
+																<img src="img/emptystar.png">
+															</c:forEach>
+														</c:otherwise>
+													</c:choose></td>
+
+											</tr>
+										</c:forEach>
+									</table>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
+			</div>
 		</div>
 	</div>
 </div>
-
 
 
 

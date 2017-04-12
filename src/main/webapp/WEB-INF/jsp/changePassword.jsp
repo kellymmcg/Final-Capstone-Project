@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/header.jsp" />
 
-<div class = "changepassword">
+<div class="changepasswordpage">
 
 <c:url var="pwValidationSrc" value="js/password.js" />
 <script src="${pwValidationSrc}"></script>
@@ -44,7 +44,7 @@
 
 <div class="container" id="updatePasswordContainer">
 	<c:url var="updatePasswordHref" value="/changePassword"/>
-	<form id="contact" action="${updatePasswordHref}" method="POST">
+	<form id="contact" class="updatepwdform" action="${updatePasswordHref}" method="POST">
 		<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 		<input type="hidden" name="userName" value="${currentUser}" />
 		

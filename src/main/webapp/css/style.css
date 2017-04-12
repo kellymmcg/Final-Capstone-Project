@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+
 body, html {
 	width: 100%;
 	height: 100%;
@@ -9,17 +11,15 @@ body, html {
 }
 
 #updatePasswordContainer {
-	margin: 0 auto;
-	font-family: "Roboto", Helvetica, Arial, sans-serif;
-	font-weight: 200;
-	font-size: 12px;
-	line-height: 30px;
-	color:  #fcb12f;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	background-color: rgba(33, 7, 79, 0.4);
-	border: 3px solid #fcb12f;
-	border-radius: 14px;
+	width: 100%;
+	height: 1000px;
+  	margin: 0 auto;
+  	position: relative;
+  	font-family: "Roboto", Helvetica, Arial, sans-serif;
+  	font-weight: 100;
+  	font-size: 12px;
+  	line-height: 30px;
+  	color: #777;
 }
 
 .updateP {
@@ -27,8 +27,16 @@ body, html {
 	border-radius: 13px;
 }
 
-.changepassword {
-	background-image: url("../img/changepasswordbackground.jpg");
+.updatepwdform {
+	width: 400px;
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.changepasswordpage {
+	background-image: url("../img/wine.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }

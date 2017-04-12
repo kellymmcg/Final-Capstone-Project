@@ -12,10 +12,6 @@
   	color: #777;  
 } 
 
-#registrationcontainer b {
-	font-size: 18px;
-}
-
 .regform {
 	width: 400px;
 	position: absolute;
@@ -28,4 +24,8 @@
 .registrationpage {
 	background-image: url("../img/purplecity.jpg");
 	background-position: center; 
+}
+
+.centerRegisterRedirectLink {
+	text-align: center;
 }
