@@ -15,13 +15,20 @@ $(document).ready(function() {
 	    type: 'GET',
 	    dataType: "json",
 	    success: function (data) {
+	    	
 	    	for(var i = 0;i < data.length;i++){
 	    		var marker = new google.maps.Marker({
 	    			position: {lat: data[i].latitude, lng: data[i].longitude},
 	    			map: map,
+	    			title: data[i].name
 	    			
 	    		});
 	    		
+	    		google.maps.event.addListener(marker, "click", function(){
+	    			new google.maps.InfoWindow({
+	    				content: this.title
+	    			}).open(map, this);
+	    		})
 	    		
 	    	}
 	    },

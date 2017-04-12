@@ -1,5 +1,6 @@
 package com.techelevator.city.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.techelevator.city.model.City;
 import com.techelevator.city.model.Itinerary;
 import com.techelevator.city.model.ItineraryDAO;
+import com.techelevator.city.model.Landmark;
 import com.techelevator.city.model.LandmarkDAO;
 import com.techelevator.city.model.UserDAO;
 
@@ -96,6 +101,21 @@ public class ItineraryController {
 			itineraryDAO.createItinerary((String)model.get("currentUser"), name, description);
 			model.put("notice", "You've successfully created a new Itinerary!");
 			return "redirect:/manageItinerary";
+		}
+		
+		@RequestMapping(path="generatedRoute", method=RequestMethod.GET)
+		public String displayGeneratedRoute() {
+			return "generatedRoute";
+		}
+		
+		@ResponseBody
+		@RequestMapping(path="/jsonRoute", method=RequestMethod.GET)
+		public String generateJsonLandmarks(ModelMap model) throws JsonProcessingException {
+
+			ObjectMapper mapper = new ObjectMapper();
+			
+			List<Landmark> landmarks = landDAO.getLandmarksByItineraryId(1, "AdamG");
+			return mapper.writeValueAsString(landmarks);
 		}
 		
 }
