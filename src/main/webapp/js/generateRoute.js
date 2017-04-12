@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	
-	var jsonURL = url_base + "jsonRoute";
+	var searchId = new URLSearchParams(window.location.search).get('id');
+	var jsonURL = url_base + "jsonRoute?id=" + searchId;
 	
 	var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;

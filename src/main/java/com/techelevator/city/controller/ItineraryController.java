@@ -120,11 +120,11 @@ public class ItineraryController {
 		
 		@ResponseBody
 		@RequestMapping(path="/jsonRoute", method=RequestMethod.GET)
-		public String generateJsonLandmarks(ModelMap model) throws JsonProcessingException {
+		public String generateJsonLandmarks(@RequestParam int id, ModelMap model) throws JsonProcessingException {
 
 			ObjectMapper mapper = new ObjectMapper();
 			
-			List<Landmark> landmarks = landDAO.getLandmarksByItineraryId(1, "AdamG");
+			List<Landmark> landmarks = landDAO.getLandmarksByItineraryId(id, (String)model.get("currentUser"));
 			return mapper.writeValueAsString(landmarks);
 		}
 		

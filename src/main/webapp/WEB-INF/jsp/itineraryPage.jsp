@@ -44,6 +44,7 @@
                         <div class="col-md-4 col-md-offset-8">
                         	<c:url var="formAction" value="/generatedRoute" />
                         	<form id="contact" class="itineraryForm" action='${formAction}' method="GET">
+                        		<input type="hidden" name="id" value="${itinerary.id}" />
                             	<button type="submit" class="btn btn-md btn-block btn-primary sButton" id="searchLink">Generate my Route!</button>
                             </form>
                         </div>
