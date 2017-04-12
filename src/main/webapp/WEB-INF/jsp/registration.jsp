@@ -54,6 +54,7 @@
 
 	<div class="container" id="registrationcontainer">
 		<c:url var="formAction" value="/registration" />
+		<c:url var="loginHref" value="/loginPage" />
 		<form id="contact" class="regform" action='${formAction}'
 			method="POST">
 			<input type="hidden" name="CSRF_TOKEN"
@@ -85,13 +86,8 @@
 				<button name="submit" type="submit" id="contact-submit"
 					data-submit="...Sending">Register</button>
 			</fieldset>
-			<fieldset>
-				<center>
-				<b>Already a member?<br> 
-				<a href = "http://localhost:8080/capstone/loginPage">
-				 Click here to login!</b></a>
-				</center>
-			</fieldset>
+			
+			<p class="centerRegisterRedirectLink">Already a member? <a href ="${loginHref}"><b>Login</b></a></p>
 		</form>
 	</div>
 </div>
