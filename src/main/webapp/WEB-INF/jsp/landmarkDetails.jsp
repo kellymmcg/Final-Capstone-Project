@@ -130,58 +130,56 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<h1>REVIEWS</h1>
-					<h3>Reviews can go here!</h3>
-							<div class="panel panel-default panel-table">
-								<div class="panel-heading">
-									<div class="row">
-										<div class="col col-xs-6">
-											<p class="iTitle">Reviews</p>
-										</div>
-										<div class="panel-body">
-											<table class="table table-striped table-bordered table-list">
-												<tr>
-													<th>User Name</th>
-													<th>Title</th>
-													<th>Review</th>
-													<th class="col-md-3" align="center">Stars</th>
-												</tr>
-												<c:forEach items="${reviews}" var="review">
-													<tr>
-														<td>${review.userName}</td>
-														<td>${review.title}</td>
-														<td>${review.review}</td>
-														<td><c:choose>
-																<c:when test="${review.stars} == 5">
+					<div class="panel panel-default panel-table">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col col-xs-6">
+									<p class="iTitle">Reviews</p>
+								</div>
+								<div class="panel-body">
+									<table class="table table-striped table-bordered table-list">
+										<tr>
+											<th>User Name</th>
+											<th>Title</th>
+											<th>Review</th>
+											<th class="col-md-3" align="center">Stars</th>
+										</tr>
+										<c:forEach items="${reviews}" var="review">
+											<tr>
+												<td>${review.userName}</td>
+												<td>${review.title}</td>
+												<td>${review.review}</td>
+												<td><c:choose>
+														<c:when test="${review.stars} == 5">
 
-																	<c:forEach begin="1" end="5">
-																		<img src="img/star.png">
-																	</c:forEach>
+															<c:forEach begin="1" end="5">
+																<img src="img/star.png">
+															</c:forEach>
 
-																</c:when>
-																<c:otherwise>
-																	<c:forEach begin="1" end="${review.stars}">
-																		<img src="img/star.png">
-																	</c:forEach>
-																	<c:forEach begin="1" end="${5-review.stars}">
-																		<img src="img/emptystar.png">
-																	</c:forEach>
-																</c:otherwise>
-															</c:choose></td>
+														</c:when>
+														<c:otherwise>
+															<c:forEach begin="1" end="${review.stars}">
+																<img src="img/star.png">
+															</c:forEach>
+															<c:forEach begin="1" end="${5-review.stars}">
+																<img src="img/emptystar.png">
+															</c:forEach>
+														</c:otherwise>
+													</c:choose></td>
 
-													</tr>
-												</c:forEach>
-											</table>
-										</div>
-									</div>
+											</tr>
+										</c:forEach>
+									</table>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>		
+				</div>
+			</div>
+		</div>
 	</div>
-</div>			
+</div>
 
 
 
-						<c:import url="/WEB-INF/jsp/footer.jsp" />
+<c:import url="/WEB-INF/jsp/footer.jsp" />
