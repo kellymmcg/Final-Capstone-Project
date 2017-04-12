@@ -41,10 +41,34 @@ body, html {
 	background-size: 100% 100%;
 }
 
-.suggestlandmark {
-	background-image: url("../img/addlandmarkbackground.jpg");
+.suggestlandmarkpage {
+	background-image: url("../img/palmtrees.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
+}
+
+.suggestlandmarkcontainer {
+	width: 300px;
+	height: 1000px;
+  	margin: 0 auto;
+  	position: relative;
+  	font-family: "Roboto", Helvetica, Arial, sans-serif;
+  	font-weight: 100;
+  	font-size: 12px;
+  	line-height: 30px;
+  	color: #777; 
+}
+
+.suggestform {
+	width: 500px;
+	position: absolute;
+    top: 35%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color: white;
+	background: rgba(14, 15, 16, 0.7) !important;	
+	border-radius: 10px;
 }
 
 .mNav {

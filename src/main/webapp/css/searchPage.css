@@ -18,7 +18,7 @@
 
 .searchrow{
 	position: relative;
-	top: 325px;
+	top: 200px;
 	width: 100%;
 	margin: 0px;
 }
@@ -29,7 +29,7 @@
 	
 }
 #search-radio-btn {
-	padding-left: 30%;
+	padding-left: 15%;
 }
 #search-radio-btn input{
 	padding-rigth: 10px;
