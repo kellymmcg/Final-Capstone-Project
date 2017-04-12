@@ -1,4 +1,11 @@
 #mapT {
-	width: 500px;
+	width: 100%;
+	height: 400px;
+}
+
+.tester {
+	padding: 20px;
+	border: 1px solid black;
+	overflow-y: scroll;
 	height: 400px;
 }

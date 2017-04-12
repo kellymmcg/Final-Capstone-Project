@@ -11,6 +11,15 @@ public class Itinerary {
 	private String name;
 	private String description;
 	private Date dateCreated;
+	private boolean completed;
+
+	public boolean isCompleted() {
+		return completed;
+	}
+
+	public void setCompleted(boolean completed) {
+		this.completed = completed;
+	}
 
 	public int getId() {
 		return id;

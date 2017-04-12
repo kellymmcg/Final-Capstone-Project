@@ -49,12 +49,13 @@ CREATE SEQUENCE seq_itinerary_id;
 
 CREATE TABLE itinerary (
 	
-	itineraryId INTEGER NOT NULL,
+	itineraryId INTEGER NOT NULL DEFAULT NEXTVAL('seq_itinerary_id'),
 	user_name VARCHAR(64) NOT NULL,
 	landmarkId INTEGER NOT NULL,
 	name VARCHAR(64) NOT NULL,
 	date_started DATE,
 	description VARCHAR(256),
+	completed BOOLEAN DEFAULT FALSE,
 	
 	CONSTRAINT pk_itinerary PRIMARY KEY (itineraryId, landmarkId, user_name),
 	CONSTRAINT fk_itinerary_app_user FOREIGN KEY (user_name) REFERENCES app_user(user_name),
@@ -109,13 +110,13 @@ VALUES ('Tower City','41.4972', '-81.6940', '230 W Huron Rd, Cleveland, OH 44113
 
 
 INSERT INTO landmark(name, latitude, longitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom, description)
-VALUES ('Jack Casino','41.498630', '-81.693118', '100 Public Square, Cleveland, OH 44113','jackentertainment.com/', '0', '23', '(216) 297-4777','http://rs346.pbsrc.com/albums/p411/kevincrumedy/Jack-Casino_zpseyfpss0u.jpg?w=280&h=210&fit=crop', '0', 'TRUE', 'TRUE', 'FALSE', 'TRUE','TRUE', 'Jack Cleveland Casino is located in the former Higbee Building at Tower City Center in downtown Cleveland. The casino has 1,609 slot machines, 119 table games, and 35 electronic table games.' );
+VALUES ('Jack Casino','41.498630', '-81.693118', '100 Public Square, Cleveland, OH 44113','jackentertainment.com/', '0', '23', '(216) 297-4777','http://media.cleveland.com/plain_dealer_metro/photo/16284146-standard.jpg', '0', 'TRUE', 'TRUE', 'FALSE', 'TRUE','TRUE', 'Jack Cleveland Casino is located in the former Higbee Building at Tower City Center in downtown Cleveland. The casino has 1,609 slot machines, 119 table games, and 35 electronic table games.' );
 
 INSERT INTO landmark(name, latitude, longitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom, description)
 VALUES ('Soldiers and Sailors Monument','41.499482', '-81.692742', '3 Public Square, Cleveland, OH 44114','soldiersandsailors.com', '10', '18', '(216) 621-3710', 'http://cdn.c.photoshelter.com/img-get2/I0000AhZyQyunf70/fit=1000x750/Ohio-Cleveland-The-Advance-Guard-Soldiers-and-Sailors-Monument.jpg', '0', 'TRUE', 'FALSE', 'TRUE', 'FALSE', 'FALSE','Located in the southeast quadrant of Public Square in downtown Cleveland, it opened July 4, 1894. F.F. Schnitzer was the supervising architect who oversaw the creation of the structure. The monument is regularly open to the public free of charge.');
 
 INSERT INTO landmark(name, latitude, longitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom, description)
-VALUES ('Quicken Loans Arena','41.496559', '-81.688126', '1 Center Ct, Cleveland, OH 44115','theqarena.com', '88', '88', ' (216) 420-2000', 'http://www.nbabasketballarenas.com/images/Quicken-Loans-Arena.jpg', '808', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE','The building is the home of the Cleveland Cavaliers of the National Basketball Association (NBA), the Cleveland Monsters of the American Hockey League, and the Cleveland Gladiators of the Arena Football League. The arena opened in October 1994 as part of the Gateway Sports and Entertainment Complex with adjacent Progressive Field, which opened in April of that year.');
+VALUES ('Quicken Loans Arena','41.496559', '-81.688126', '1 Center Ct, Cleveland, OH 44115','theqarena.com', '88', '88', ' (216) 420-2000', 'http://www.nbabasketballarenas.com/images/Quicken-Loans-Arena.jpg', '808', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE','The building is the home of the Cleveland Cavaliers of the National Basketball Association (NBA), the Cleveland Monsters of the American Hockey League, and the Cleveland Gladiators of the Arena Football League.');
 
 INSERT INTO landmark(name, latitude, longitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom, description)
 VALUES ('Progressive Field','41.496177','-81.684649', '2401 Ontario St, Cleveland, OH 44115','cleveland.indians.mlb.com', '88', '88', ' (216) 420-4487', 'http://www.theballparkguide.com/graphics/cleveland-indians/progressive-field-sign.jpg', '808', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE','Progressive Field is a baseball park located in the downtown area of Cleveland, Ohio, United States. It is the home field of the Cleveland Indians of Major League Baseball and, together with Quicken Loans Arena, is part of the Gateway Sports and Entertainment Complex.');
@@ -163,7 +164,7 @@ INSERT INTO landmark(name, latitude, longitude, address, website, open_time, clo
 VALUES ('USS Cod Submarine Memorial','41.510090','-81.691571', '1201 N Marginal Rd, Cleveland, OH 44114', 'usscod.org' , '10', '17', '(216) 566-8770', 'https://static.spplus.com/pictures/uss-cod-small.jpg', '1200', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE','USS Cod (SS/AGSS/IXSS-224) is a Gato-class submarine, the only vessel of the United States Navy to be named for the cod, named after the worlds most important food fish of the North Atlantic and North Pacific.');
 
 INSERT INTO landmark(name, latitude, longitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom, description)
-VALUES ('Aquarium','41.496538', '-81.703793', '2000 Sycamore St, Cleveland, OH 44113', 'greaterclevelandaquarium.com' , '10', '17', '(216) 862-8803', 'http://inacents.com/wp-content/uploads/2013/09/130804-Greater-Cleveland-Aquarium-2.jpg', '2000', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE','The Greater Cleveland Aquarium is an aquarium in Cleveland, Ohio, USA. Occupying the historic FirstEnergy Powerhouse building located on the west bank of the Cuyahoga River in the citys Flats district, the aquarium which opened in January 2012 consists of approximately 70,000 square feet (6,500 m2) of exhibition space and features exhibits representing both local and exotic species of fish.');
+VALUES ('Aquarium','41.496538', '-81.703793', '2000 Sycamore St, Cleveland, OH 44113', 'greaterclevelandaquarium.com' , '10', '17', '(216) 862-8803', 'http://inacents.com/wp-content/uploads/2013/09/130804-Greater-Cleveland-Aquarium-2.jpg', '2000', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE','The Greater Cleveland Aquarium is an aquarium in Cleveland, Ohio, USA. Occupying the historic FirstEnergy Powerhouse building located on the west bank of the Cuyahoga River in the citys Flats district.');
 
 INSERT INTO landmark(name, latitude, longitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom, description)
 VALUES ('Browns Stadium','41.506062', '-81.699570', '100 Alfred Lerner Way, Cleveland, OH 44114','firstenergystadium.com' , '88', '88', '(440) 891-5001', 'https://www.theclio.com/web/ul/25060.55019.jpg', '808', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE','First Energy Stadium is the home field of the Cleveland Browns of the National Football League (NFL), and serves as a venue for other events such as college and high school football, soccer, and concerts.');
@@ -225,7 +226,7 @@ VALUES ('Crawford Auto-Aviation Museum','41.513415', '-81.610981', '10825 East B
 INSERT INTO landmark(name, latitude, longitude, address, website, open_time, close_time, phone, image, admission, handicap_accessible, consession, kid_friendly, water, restroom, description)
 VALUES ('Cleveland Arcade','41.500041', '-81.690333', '401 Euclid Ave, Cleveland, OH 44114', 'theclevelandarcade.com' , '88', '88', '(216) 696-1408', 'http://www.theclevelandarcade.com/files/1949/gallery-arcade-interior-2.jpg', '808', 'TRUE', 'TRUE', 'TRUE', 'TRUE', 'TRUE','The Arcade in downtown Cleveland, Ohio, is a Victorian-era structure of two nine-story buildings, joined by a five-story arcade with a glass skylight spanning over 300 feet (91 m), along the four balconies.');
 
-INSERT INTO itinerary(itineraryId, user_name, landmarkId, name, date_started, description) VALUES (1, 'AdamG', 3, 'Test Itinerary','2017-04-09','This is my first itinerary!');
+INSERT INTO itinerary(user_name, landmarkId, name, date_started, description) VALUES ('AdamG', 3, 'Test Itinerary','2017-04-09','This is my first itinerary!');
 
 INSERT INTO city(name, latitude, longitude) VALUES ('Cleveland', '41.4993', '-81.6944');
 

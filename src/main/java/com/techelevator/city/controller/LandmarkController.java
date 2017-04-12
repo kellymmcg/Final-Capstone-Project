@@ -18,6 +18,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.techelevator.city.model.City;
 import com.techelevator.city.model.CityDAO;
+import com.techelevator.city.model.Itinerary;
 import com.techelevator.city.model.ItineraryDAO;
 import com.techelevator.city.model.Landmark;
 import com.techelevator.city.model.LandmarkDAO;
@@ -43,9 +44,6 @@ public class LandmarkController {
 	
 	@RequestMapping(path="/search", method=RequestMethod.GET)
 	public String submitLandmarkSearch(@RequestParam Optional<String> name, ModelMap model) {
-		if(model.get("currentUser") == null){
-			return "redirect:/loginPage";
-		}
 		if(! name.isPresent()){
 			return "search";
 		}
@@ -61,14 +59,14 @@ public class LandmarkController {
 			return "searchResults";
 		}
 		Landmark landmark = landDAO.searchLandmarkById(id.get());
+		List<Itinerary> itineraries = itineraryDAO.findCurrentItineraryByUser((String)model.get("currentUser"));
+		model.put("itineraries", itineraries);
 		model.addAttribute(landmark);
 		return "landmarkDetails";
 	}
 	
 	@RequestMapping(path="/landmarkDetails", method=RequestMethod.GET)
 	public String displaySearchResults(ModelMap model) {
-		String userName = (String) model.get("currentUser");
-		model.put("itineraries", itineraryDAO.findItineraryByUser(userName));
 		return "landmarkDetails";
 	}
 	
@@ -79,7 +77,7 @@ public class LandmarkController {
 										 @RequestParam int landmarkId, 
 										 ModelMap model) {
 		Date date = new Date();
-		itineraryDAO.addLandmarkToItinerary(2, user, landmarkId, name, date, description); // CURRENTLY HARDCODED
+		itineraryDAO.addLandmarkAndCreateNewItinerary(user, landmarkId, name, date, description); // CURRENTLY HARDCODED
 		return "redirect:/manageItinerary";
 		
 	}
@@ -91,9 +89,14 @@ public class LandmarkController {
 			   						   ModelMap model){
 		
 		if(! id.isPresent()){
+			City sCity = cityDAO.getCityByName(city);
+			List<Landmark> landmarks = landDAO.searchLandmarksByProximity(sCity.getLatitude(), sCity.getLongitude(), radius);
+			model.put("landmarks", landmarks);
+			model.put("radius", radius);
+			model.put("city", city);
 			return "proximitySearch";
 		}
-		
+
 		return "proximitySearch";
 	}
 	

@@ -5,13 +5,21 @@ import java.util.List;
 
 public interface ItineraryDAO {
 	
-	public List<Itinerary> findItineraryByUser(String currentUser);
+	public List<Itinerary> findCurrentItineraryByUser(String currentUser);
+	
+	public List<Itinerary> findCompletedItineraryByUser(String currentUser);
 	
 	public Itinerary findItineraryById(int id);
 	
-	public void addLandmarkToItinerary(int itineraryId, String user, int landmarkId, String name, Date date, String description);
+	public void markItineraryAsCompleted(int id);
 	
-	public void createItinerary(Itinerary itinerary);
+	public void markItineraryAsIncompleted(int id);
+	
+	public void addLandmarkAndCreateNewItinerary(String user, int landmarkId, String name, Date date, String description);
+	
+	public void createItinerary(String user, String name, String description);
+	
+	public void addLandmarkToItinerary(Itinerary itinerary);
 	
 	public void editItinerary(Itinerary itinerary);
 	

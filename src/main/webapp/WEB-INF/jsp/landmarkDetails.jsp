@@ -74,38 +74,55 @@
 					<script async defer
 						src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5Cyxiz7vexNLr_2SLi_HoFXh4-xC31T8&callback=initMap"></script>
 				</div>
+				<c:choose>
+					<c:when test="${not empty currentUser}">
+						<div class="col-md-3">
+							<div class="action">
+								<c:url var="formAction" value="/landmarkDetails" />
+								
+								<form id="contact" class="itineraryForm" action='${formAction}' method="POST">
+									<p class="iAdd">Create and add to a new Itinerary</p>
+									<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
+									<input type="hidden" name="user" value="${currentUser}" />
+									<input type="hidden" name="landmarkId" value="${landmark.id}" />
+									<input type="text" name="name" placeholder="New Itinerary Name"/>
+									<input type="text" name="description" placeholder="Give a short description about it!"/>
+									<button class="add-to-cart btn btn-default" type="submit">Add to Itinerary</button>
+									
+								</form>
+							</div>
+						</div>
+					
+						<div class="col-md-3">
+							<div class="action">
+								<c:url var="formAction" value="/addToItinerary" />
+								<form id="contact" class="itineraryForm" action='${formAction}' method="POST">
+									<p class="iAdd">Add to an existing Itinerary</p>
+									<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
+									<input type="hidden" name="landmarkId" value="${landmark.id}" />
+									<select name="id" class="iSelect">
+										<c:forEach items="${itineraries}" var="itinerary">
+											<option value="${itinerary.id}">${itinerary.name}</option>
+										</c:forEach>
+									</select>
+									<button class="add-to-cart btn btn-default" type="submit">Add to Itinerary</button>
+									
+								</form>
+							</div>
+						</div>
+					</c:when>
+				</c:choose>
+				</div>
 			
-					<div class="col-md-3">
-						<div class="action">
-							<c:url var="formAction" value="/landmarkDetails" />
-							
-							<form id="contact" class="itineraryForm" action='${formAction}' method="POST">
-								<p class="iAdd">Create and add to a new Itinerary</p>
-								<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
-								<input type="hidden" name="user" value="${currentUser}" />
-								<input type="hidden" name="landmarkId" value="${landmark.id}" />
-								<input type="text" name="name" placeholder="New Itinerary Name"/>
-								<input type="text" name="description" placeholder="Give a short description about it!"/>
-								<button class="add-to-cart btn btn-default" type="submit">Add to Itinerary</button>
-								
-							</form>
-						</div>
-					</div>
 				
-					<div class="col-md-3">
-						<div class="action">
-							<c:url var="formAction" value="/landmarkDetails" />
-							<form id="contact" class="itineraryForm" action='${formAction}' method="POST">
-								<p class="iAdd">Add to an existing Itinerary</p>
-								<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
-								<select name="itinerariesA" class="iSelect">
-									<option value="#">Coming soon</option>
-								</select>
-								<button class="add-to-cart btn btn-default" type="submit">Add to Itinerary</button>
-								
-							</form>
-						</div>
+				<!--  REVIEWS GO HERE -->
+				
+				<div class="row">
+					<div class="col-md-12">
+						<h1>REVIEWS</h1>
+						<h3>Reviews can go here!</h3>
 					</div>
+				</div>
 		</div>
 	</div>
 </div>

@@ -22,10 +22,27 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 	}
 
 	@Override
-	public List<Itinerary> findItineraryByUser(String currentUser) {
+	public List<Itinerary> findCurrentItineraryByUser(String currentUser) {
+		boolean status = false;
 		List<Itinerary> itineraries = new ArrayList<>();
-		String sqlSelectItineraryByUser = "SELECT * FROM itinerary WHERE user_name = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectItineraryByUser, currentUser);
+		String sqlSelectItineraryByUser = "SELECT DISTINCT itineraryId, user_name, name, date_started, "
+									    + "description, completed FROM itinerary WHERE user_name = ? AND completed = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectItineraryByUser, currentUser, status);
+		while(results.next()) {
+			Itinerary itinerary = new Itinerary();
+			itinerary = mapRowToItinerary(results);
+			itineraries.add(itinerary);
+		}
+		return itineraries;
+	}
+	
+	@Override
+	public List<Itinerary> findCompletedItineraryByUser(String currentUser) {
+		boolean status = true;
+		List<Itinerary> itineraries = new ArrayList<>();
+		String sqlSelectItineraryByUser = "SELECT DISTINCT itineraryId, user_name, name, date_started, "
+									    + "description, completed FROM itinerary WHERE user_name = ? AND completed = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectItineraryByUser, currentUser, status);
 		while(results.next()) {
 			Itinerary itinerary = new Itinerary();
 			itinerary = mapRowToItinerary(results);
@@ -46,13 +63,14 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 	}
 	
 	@Override
-	public void createItinerary(Itinerary itinerary) {
+	public void createItinerary(String user, String name, String description) {
+		Date date = new Date();
 		String sqlInsertItinerary = "INSERT INTO itinerary("
-				+"app_user_id, landmark_id, name, date_started, description"
-				+"VALUES(?,?,?,?,?)";
-		jdbcTemplate.update(sqlInsertItinerary, itinerary.getUserName(), itinerary.getLandmark(),
-				itinerary.getName(), itinerary.getDateCreated(), itinerary.getDescription());
+				+"user_name, name, date_started, description) "
+				+"VALUES(?,?,?,?)";
+		jdbcTemplate.update(sqlInsertItinerary, user, name, date, description);
 	}
+	
 	@Override
 	public void editItinerary(Itinerary itinerary) {
 		String sqlUpdateItinerary = "UPDATE itinerary"
@@ -71,21 +89,51 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 	}
 	
 	@Override
-	public void addLandmarkToItinerary(int itineraryId, String user, int landmarkId, String name, Date date, String description) {
-		String sqlInsertNewLandmarkToItinerary = "INSERT INTO itinerary(itineraryId, user_name, landmarkId, name, date_started, description) "
-				+ "VALUES (?, ?, ?, ?, ?, ?);";
-		jdbcTemplate.update(sqlInsertNewLandmarkToItinerary, itineraryId, user, landmarkId, name, date, description);
+	public void addLandmarkAndCreateNewItinerary(String user, int landmarkId, String name, Date date, String description) {
+		String sqlInsertNewLandmarkToItinerary = "INSERT INTO itinerary(user_name, landmarkId, name, date_started, description) "
+				+ "VALUES (?, ?, ?, ?, ?);";
+		jdbcTemplate.update(sqlInsertNewLandmarkToItinerary, user, landmarkId, name, date, description);
 		
 	}
+	
+	@Override
+	public void addLandmarkToItinerary(Itinerary itinerary) {
+		String sqlInsertNewLandmarkToItinerary = "INSERT INTO itinerary(itineraryId, user_name, landmarkId, name, date_started, description) "
+				+ "VALUES (?, ?, ?, ?, ?, ?);";
+		jdbcTemplate.update(sqlInsertNewLandmarkToItinerary, itinerary.getId(), itinerary.getUserName(), itinerary.getLandmark(), itinerary.getName(), itinerary.getDateCreated(), itinerary.getDescription());
+		
+	}
+	
+	@Override
+	public void markItineraryAsCompleted(int id) {
+		boolean completed = true;
+		String sqlMarkItineraryAsCompleted = "UPDATE itinerary SET completed = ? WHERE itineraryId = ?";
+		jdbcTemplate.update(sqlMarkItineraryAsCompleted, completed, id);
+		
+	}
+	
+	@Override
+	public void markItineraryAsIncompleted(int id) {
+		boolean completed = false;
+		String sqlMarkItineraryAsCompleted = "UPDATE itinerary SET completed = ? WHERE itineraryId = ?";
+		jdbcTemplate.update(sqlMarkItineraryAsCompleted, completed, id);
+		
+	}
+	
 	
 	private Itinerary mapRowToItinerary(SqlRowSet results) {
 		Itinerary itinerary = new Itinerary();
 		itinerary.setId(results.getInt("itineraryId"));
 		itinerary.setUserName(results.getString("user_name"));
-		itinerary.setLandmark(results.getInt("landmarkId"));
+		try{
+			itinerary.setLandmark(results.getInt("landmarkId"));
+		}catch (Exception e){
+			// ONLY HAPPENS WHEN DISPLAYING UNIQUE ITINERARIES 
+		}
 		itinerary.setName(results.getString("name"));
 		itinerary.setDateCreated(results.getDate("date_started"));
 		itinerary.setDescription(results.getString("description"));
+		itinerary.setCompleted(results.getBoolean("completed"));
 		return itinerary;
 	}
 

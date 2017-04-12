@@ -76,7 +76,76 @@ used to vertically center elements, may need modification if you're not using de
 	border: 1px solid black;
 	color: white;
 	opacity: 1;
-	background-color: red;
+	background-color: #9c0105;
+}
+
+.inButton {
+	border: 1px solid black;
+	background-color: white;
+	font-size: 20px;
+	padding: 3px;
+	color: black;
+}
+
+.inButton:hover {
+	border: 1px solid black;
+	color: white;
+	opacity: 1;
+	background-color: #c4750b;
+}
+
+.cButton {
+	border: 1px solid black;
+	background-color: white;
+	font-size: 20px;
+	padding: 3px;
+	color: black;
+}
+
+.cButton:hover {
+	border: 1px solid black;
+	color: white;
+	opacity: 1;
+	background-color: #3ba448;
+}
+
+#newItinerary {
+	width: 300px;
+	height: 400px;
+  	margin: 0 auto;
+  	margin-top: 45px;
+  	position: relative;
+  	font-family: "Roboto", Helvetica, Arial, sans-serif;
+  	font-weight: 100;
+  	font-size: 12px;
+  	line-height: 30px;
+  	color: #777;  
+} 
+
+.createItineraryPage {
+	background-image: url("../img/citystreet.jpg");
+	background-position: center; 
+}
+
+.exLink {
+	text-decoration: none;
+}
+
+.currentRow {
+	margin-top: 75px;
+}
+
+.completedRow {
+	margin-top: 75px;
+}
+
+.exLink:hover {
+	text-decoration: none;
+	color: orange;
+}
+
+.aForm {
+	display: inline-block;
 }
 
 .action {
@@ -94,6 +163,12 @@ used to vertically center elements, may need modification if you're not using de
 .iButton {
 	color: black;
 	border-color: black;
+}
+
+.iTitle {
+	color: #d78c21;
+	font-size: 22px;
+	font-weight: bold;
 }
 
 .create:hover {

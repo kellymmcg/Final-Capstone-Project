@@ -7,7 +7,7 @@ $(document).ready(function() {
 	
 	var map = new google.maps.Map(document.getElementById('mapT'), {
 	    zoom: 14,
-	    center: {lat: 41.4993, lng: -81.6944}
+	    center: {lat: 41.5030, lng: -81.6911}
 	});
 	
 	$.ajax({

@@ -1,5 +1,6 @@
 package com.techelevator.city.controller;
 
+import java.util.Date;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.techelevator.city.model.Itinerary;
 import com.techelevator.city.model.ItineraryDAO;
 import com.techelevator.city.model.LandmarkDAO;
 import com.techelevator.city.model.UserDAO;
@@ -40,7 +42,8 @@ public class ItineraryController {
 		public String displayManageItineraryPage(@RequestParam Optional<Integer> id, ModelMap model) {
 			if(! id.isPresent()){
 				String userName = (String) model.get("currentUser");
-				model.put("itineraries", itineraryDAO.findItineraryByUser(userName));
+				model.put("cItineraries", itineraryDAO.findCurrentItineraryByUser(userName));
+				model.put("pItineraries", itineraryDAO.findCompletedItineraryByUser(userName));
 				return "manageItinerary";
 			}
 			model.put("itinerary", itineraryDAO.findItineraryById(id.get()));
@@ -53,6 +56,39 @@ public class ItineraryController {
 									  @RequestParam String userName, 
 									  ModelMap model) {
 			itineraryDAO.deleteItinerary(name, userName);
+			return "redirect:/manageItinerary";
+		}
+		
+		@RequestMapping(path="/addToItinerary", method=RequestMethod.POST)
+		public String addLandmarkToItinerary(@RequestParam int id, 
+											 @RequestParam int landmarkId, 
+											 ModelMap model) {
+			
+			Itinerary itinerary = itineraryDAO.findItineraryById(id);
+			itinerary.setLandmark(landmarkId);
+			itineraryDAO.addLandmarkToItinerary(itinerary);
+			return "redirect:/manageItinerary";
+		}
+		
+		@RequestMapping (path="/completeItinerary", method=RequestMethod.POST)
+		public String markItineraryAsComplete(@RequestParam int id) {
+			itineraryDAO.markItineraryAsCompleted(id);
+			return "redirect:/manageItinerary";
+		}
+		
+		@RequestMapping (path="/incompleteItinerary", method=RequestMethod.POST)
+		public String markItineraryAsIncompleted(@RequestParam int id) {
+			itineraryDAO.markItineraryAsIncompleted(id);
+			return "redirect:/manageItinerary";
+		}
+		
+		@RequestMapping (path="/createNewItinerary", method=RequestMethod.POST)
+		public String createNewItinerary(@RequestParam String name,
+										 @RequestParam String description,
+										 ModelMap model){
+			
+			itineraryDAO.createItinerary((String)model.get("currentUser"), name, description);
+			model.put("notice", "You've successfully created a new Itinerary!");
 			return "redirect:/manageItinerary";
 		}
 }
