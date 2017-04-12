@@ -12,7 +12,7 @@
 	color:  #fcb12f;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	background-color: rgba(33, 7, 79, 0.4);
+	background-color: #21074F;
 	border: 3px solid #fcb12f;
 	border-radius: 14px;
 	margin-bottom: 30px;
