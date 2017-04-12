@@ -192,7 +192,7 @@
 				<div class="w3-third  w3-margin-bottom">
 					<ul class="w3-ul w3-border w3-hover-shadow">
 						<li class="tBox">
-							<p class="hBox">Search Landmarks</p>
+							<p class="hBox">Search Landmark</p>
 						</li>
 						<li><img src="img/computersearch.jpg"
 							class="img-responsive homeimg" alt="Search"></li>

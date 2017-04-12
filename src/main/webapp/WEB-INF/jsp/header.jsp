@@ -17,6 +17,7 @@
 <c:url var="manageHref" value="css/manageItinerary.css" />
 <c:url var="w3schoolHref" value="css/w3school.css" />
 <c:url var="proximityHref" value="css/proximitySearch.css" />
+<c:url var="searchHref" value="css/searchPage.css" />
 
 
 <!-- LISTS OF SCRIPTS AND CSS FILES -->
@@ -48,6 +49,7 @@
 <link rel="stylesheet" type="text/css" href="${manageHref}">
 <link rel="stylesheet" type="text/css" href="${w3schoolHref}">
 <link rel="stylesheet" type="text/css" href="${proximityHref}">
+<link rel="stylesheet" type="text/css" href="${searchHref}">
 
 
 </head>

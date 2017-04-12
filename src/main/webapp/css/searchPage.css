@@ -1,7 +1,41 @@
-.searchpage {
-	background-image: url("../img/searchbackground.jpg");
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+
+.searchlandmarkpage {
+	background-image: url("../img/sunrise.jpg");
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
+	height: 1100px;
+}
+.searchcontainer {
+  	margin: 0 auto;
+  	position: relative;
+  	font-family: "Roboto", Helvetica, Arial, sans-serif;
+  	font-weight: 100;
+  	font-size: 12px;
+  	line-height: 30px;
+  	color: #777; 
+}
+
+.searchrow{
+	position: relative;
+	top: 325px;
+	width: 100%;
+	margin: 0px;
+}
+.searchForm {
+	color: white;
+	background: rgba(5, 4, 5, 0.5) !important;	
+	border-radius: 10px;
+	
+}
+#search-radio-btn {
+	padding-left: 30%;
+}
+#search-radio-btn input{
+	padding-rigth: 10px;
+}
+.blankbox {
+	background: transparent;
 }
 
 .panel-table .panel-body{
