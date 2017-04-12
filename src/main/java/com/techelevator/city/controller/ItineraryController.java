@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.techelevator.city.model.Itinerary;
 import com.techelevator.city.model.ItineraryDAO;
 import com.techelevator.city.model.LandmarkDAO;
+import com.techelevator.city.model.ResourceNotFoundException;
 import com.techelevator.city.model.UserDAO;
 
 @Transactional
@@ -52,10 +53,19 @@ public class ItineraryController {
 			model.put("itinerary", itineraryDAO.findItineraryById(id.get(), (String)model.get("currentUser")));
 			model.put("landmarks", landDAO.getLandmarksByItineraryId(id.get(), (String)model.get("currentUser")));
 			if(model.get("itinerary") == null){
-				// THROW EXCEPTION HERE?
+				throw new ResourceNotFoundException();
 			}
 			return "itineraryPage";
 		}
+		
+		@ExceptionHandler(ResourceNotFoundException.class)
+		@ResponseStatus(HttpStatus.NOT_FOUND)
+		@RequestMapping(path="/notfound", method=RequestMethod.GET)
+	    public String handleResourceNotFoundException() {
+	        return "notfound";
+	    }
+	        
+		
 		
 		@RequestMapping(path="/manageItinerary", method=RequestMethod.POST)
 		public String deleteItinerary(@RequestParam String name, 
