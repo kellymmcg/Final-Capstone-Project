@@ -62,7 +62,7 @@
 	<p>The page you are looking for is not available.</p>
 	<iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allowfullscreen>
 	</iframe><br><br>
-	<p>Be like the .Net instructor Josh Tucholski and don't give up on Tour du City</p>
+	<p>Be like the .Net instructor Josh Tucholski and don't give up on Tour du City!</p>
 	<a href="/capstone" class="button1">Click here to go home!</a>
 	</div>
 	<div class="col-md-3"></div>
