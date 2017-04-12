@@ -47,12 +47,13 @@ public class JDBCSuggestionDAO implements SuggestionDAO {
 	@Override
 	public void removeSuggestion(int id) {
 		String sqlDeleteSuggestion = "DELETE FROM suggestion"
-				+"WHERE id = ?";
+				+" WHERE id = ?";
 		jdbcTemplate.update(sqlDeleteSuggestion, id);
 	}
 	
 	private Suggestion mapRowToSuggestion(SqlRowSet results) {
 		Suggestion suggestion = new Suggestion();
+		suggestion.setId(results.getInt("id"));
 		suggestion.setUserName(results.getString("user_name"));
 		suggestion.setName(results.getString("name"));
 		suggestion.setAddress(results.getString("address"));

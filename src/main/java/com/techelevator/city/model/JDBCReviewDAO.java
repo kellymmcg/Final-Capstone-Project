@@ -31,7 +31,7 @@ public class JDBCReviewDAO implements ReviewDAO {
 	}
 
 	@Override
-	public List<Review> displayReviewByLandmark(int landmarkId) {
+	public List<Review> displayReviewByLandmark(long landmarkId) {
 		List<Review> reviews = new ArrayList<>();
 		String sqlSelectReviewByLandmark="SELECT * FROM review WHERE landmarkId = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectReviewByLandmark, landmarkId);

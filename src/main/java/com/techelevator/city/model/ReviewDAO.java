@@ -5,6 +5,6 @@ import java.util.List;
 public interface ReviewDAO {
 	
 	public void submitAReview(Review review);
-	public List<Review> displayReviewByLandmark(int landmarkId);
+	public List<Review> displayReviewByLandmark(long landmarkId);
 
 }

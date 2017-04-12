@@ -22,6 +22,8 @@ import com.techelevator.city.model.Itinerary;
 import com.techelevator.city.model.ItineraryDAO;
 import com.techelevator.city.model.Landmark;
 import com.techelevator.city.model.LandmarkDAO;
+import com.techelevator.city.model.Review;
+import com.techelevator.city.model.ReviewDAO;
 import com.techelevator.city.model.UserDAO;
 
 @Transactional
@@ -33,13 +35,15 @@ public class LandmarkController {
 	private LandmarkDAO landDAO;
 	private ItineraryDAO itineraryDAO;
 	private CityDAO cityDAO;
+	private ReviewDAO reviewDAO;
 	
 	@Autowired
-	public LandmarkController(UserDAO userDAO, LandmarkDAO landDAO, ItineraryDAO itineraryDAO, CityDAO cityDAO) {
+	public LandmarkController(UserDAO userDAO, LandmarkDAO landDAO, ItineraryDAO itineraryDAO, CityDAO cityDAO, ReviewDAO reviewDAO) {
 		this.userDAO = userDAO;
 		this.landDAO = landDAO;
 		this.itineraryDAO = itineraryDAO;
 		this.cityDAO = cityDAO;
+		this.reviewDAO = reviewDAO;
 	}
 	
 	@RequestMapping(path="/search", method=RequestMethod.GET)
@@ -59,9 +63,11 @@ public class LandmarkController {
 			return "searchResults";
 		}
 		Landmark landmark = landDAO.searchLandmarkById(id.get());
+		List<Review> reviews = reviewDAO.displayReviewByLandmark(id.get());
 		List<Itinerary> itineraries = itineraryDAO.findCurrentItineraryByUser((String)model.get("currentUser"));
 		model.put("itineraries", itineraries);
 		model.addAttribute(landmark);
+		model.put("reviews", reviews);
 		return "landmarkDetails";
 	}
 	
