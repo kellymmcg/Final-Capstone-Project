@@ -178,3 +178,13 @@ used to vertically center elements, may need modification if you're not using de
 .explore:hover {
 	background-color: orange;
 }
+
+#mapG {
+	width: 500px;
+	height: 500px;
+}
+
+.rHead {
+	font-size: 20px;
+	color: #d78c21;
+}

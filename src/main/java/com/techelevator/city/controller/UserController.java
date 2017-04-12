@@ -68,4 +68,5 @@ public class UserController {
 		suggestionDAO.submitSuggestion(user, name, address, description);
 		return "redirect:/";
 	}
+	
 }

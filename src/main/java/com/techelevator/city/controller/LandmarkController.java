@@ -129,5 +129,6 @@ public class LandmarkController {
 		List<Landmark> landmarks = landDAO.searchLandmarksByProximity(sCity.getLatitude(), sCity.getLongitude(), radius);
 		return mapper.writeValueAsString(landmarks);
 	}
+	
 
 }
