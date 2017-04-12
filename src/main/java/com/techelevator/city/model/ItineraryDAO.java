@@ -9,7 +9,7 @@ public interface ItineraryDAO {
 	
 	public List<Itinerary> findCompletedItineraryByUser(String currentUser);
 	
-	public Itinerary findItineraryById(int id);
+	public Itinerary findItineraryById(int id, String user);
 	
 	public void markItineraryAsCompleted(int id);
 	

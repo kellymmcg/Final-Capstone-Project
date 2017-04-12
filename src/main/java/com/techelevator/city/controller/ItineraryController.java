@@ -1,15 +1,18 @@
 package com.techelevator.city.controller;
 
-import java.util.Date;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.techelevator.city.model.Itinerary;
@@ -46,8 +49,11 @@ public class ItineraryController {
 				model.put("pItineraries", itineraryDAO.findCompletedItineraryByUser(userName));
 				return "manageItinerary";
 			}
-			model.put("itinerary", itineraryDAO.findItineraryById(id.get()));
-			model.put("landmarks", landDAO.getLandmarksByItineraryId(id.get()));
+			model.put("itinerary", itineraryDAO.findItineraryById(id.get(), (String)model.get("currentUser")));
+			model.put("landmarks", landDAO.getLandmarksByItineraryId(id.get(), (String)model.get("currentUser")));
+			if(model.get("itinerary") == null){
+				// THROW EXCEPTION HERE?
+			}
 			return "itineraryPage";
 		}
 		
@@ -64,7 +70,7 @@ public class ItineraryController {
 											 @RequestParam int landmarkId, 
 											 ModelMap model) {
 			
-			Itinerary itinerary = itineraryDAO.findItineraryById(id);
+			Itinerary itinerary = itineraryDAO.findItineraryById(id, (String)model.get("currentUser"));
 			itinerary.setLandmark(landmarkId);
 			itineraryDAO.addLandmarkToItinerary(itinerary);
 			return "redirect:/manageItinerary";
@@ -91,4 +97,5 @@ public class ItineraryController {
 			model.put("notice", "You've successfully created a new Itinerary!");
 			return "redirect:/manageItinerary";
 		}
+		
 }

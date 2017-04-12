@@ -83,6 +83,7 @@
 					<c:url var="changePassAction" value="/changePassword" />
 					<c:url var="logoutAction" value="/logout" />
 					<c:url var="manageItineraries" value="/manageItinerary" />
+					<c:url var="viewSuggestionsAction" value="/viewSuggestions" />
 					<ul class="nav navbar-nav navbar-right">
 						<c:choose>
 							<c:when test="${not empty currentUser}">
@@ -101,6 +102,7 @@
 													
 													<p id="adminControls">Admin Controls</p>
 													<li><a href="${addLandmarkAction}" id="addLandmark"><span class="glyphicon glyphicon-plus-sign"></span> Add Landmark</a></li>
+													<li><a href="${viewSuggestionsAction}" id="viewSuggestions"><span class="glyphicon glyphicon-eye-open"></span> View Suggestions</a></li>
 												</div>
 											</div>
 										</li>	

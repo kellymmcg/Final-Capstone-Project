@@ -12,7 +12,7 @@ public interface LandmarkDAO {
 	
 	public List<Landmark> searchLandmarksByAddress(String landmarkAddress);
 	
-	public List<Landmark> getLandmarksByItineraryId (int id);
+	public List<Landmark> getLandmarksByItineraryId (int id, String user);
 
 	List<Landmark> searchLandmarksByProximity(float latitude, float longitude, double radius);
 	

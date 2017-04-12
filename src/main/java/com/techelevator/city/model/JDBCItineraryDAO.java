@@ -52,10 +52,10 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 	}
 	
 	@Override
-	public Itinerary findItineraryById(int id) {
+	public Itinerary findItineraryById(int id, String user) {
 		Itinerary itinerary = null;
-		String sqlSelectItineraryById = "SELECT * FROM itinerary WHERE itineraryId = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectItineraryById, id);
+		String sqlSelectItineraryById = "SELECT * FROM itinerary WHERE itineraryId = ? AND user_name = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectItineraryById, id, user);
 		while(results.next()) {
 			itinerary = mapRowToItinerary(results);
 		}

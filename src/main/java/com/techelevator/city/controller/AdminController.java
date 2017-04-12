@@ -36,4 +36,9 @@ private LandmarkDAO landDAO;
 		landDAO.addLandmark(landmark);
 		return "successfulLandmarkAddition";
 	}
+	
+	@RequestMapping(path="/viewSuggestions", method=RequestMethod.GET)
+	public String showUserSuggestions(){
+		return "viewSuggestions";
+	}
 }

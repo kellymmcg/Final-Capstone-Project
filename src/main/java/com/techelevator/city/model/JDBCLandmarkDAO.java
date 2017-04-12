@@ -59,11 +59,11 @@ public class JDBCLandmarkDAO implements LandmarkDAO {
 	}
 	
 	@Override
-	public List<Landmark> getLandmarksByItineraryId(int id) {
+	public List<Landmark> getLandmarksByItineraryId(int id, String user) {
 		List<Landmark> landmarks = new ArrayList<>();
 		String sqlGetLandmarksByItineraryId = "SELECT * FROM landmark JOIN itinerary ON itinerary.landmarkId = landmark.landmarkId "
-											+ "WHERE itineraryId = ?;";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetLandmarksByItineraryId, id);
+											+ "WHERE itineraryId = ? AND user_name = ?;";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetLandmarksByItineraryId, id, user);
 		while(results.next()){
 			Landmark landmark = null;
 			landmark = mapRowToLandmark(results);
