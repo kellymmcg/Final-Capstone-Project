@@ -13,7 +13,6 @@
                             <tr>
                                 <th class="text-center">Number</th>
                                 <th>Landmark Name</th>
-                                <th>???</th>
                                 <th class="text-center">Admission</th>
                                 <th class="text-center">Action</th>
                             </tr>
@@ -24,7 +23,6 @@
                             <tr>
                                 <td class="col-md-1 text-center">${count.count}</td>
                                 <td class="col-md-3">${landmark.name}</td>
-                                <td class="col-md-3" style="text-align: center"></td>
                                 <td class="col-md-2 text-center"><strong>${landmark.admission}</strong></td>
                                 <td class="col-md-1 text-center">
                                 <form action="${deleteLandmark}" method="POST" id="removeItineraryForm" class="aForm">
@@ -41,8 +39,7 @@
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td class="text-right"><h5>???</h5></td>
-                                <td class="text-center"><h5><strong>???</strong></h5></td>
+                                <td class="text-center"></td>
                             </tr>
                            
                         </tbody>
