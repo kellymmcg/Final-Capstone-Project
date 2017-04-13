@@ -1,5 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 
+.homepagelayer {
+	background-image: url("../img/palmtrees.jpg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 800px;
+}
+.boxforhomepage {
+	margin-top: 75px;
+	
+}
 .searchlandmarkpage {
 	background-image: url("../img/sunrise.jpg");
 	background-size: 100% 100%;
@@ -18,7 +28,7 @@
 
 .searchrow{
 	position: relative;
-	top: 200px;
+	top: 130px;
 	width: 100%;
 	margin: 0px;
 }
@@ -26,7 +36,6 @@
 	color: white;
 	background: rgba(5, 4, 5, 0.5) !important;	
 	border-radius: 10px;
-	
 }
 #search-radio-btn {
 	padding-left: 15%;

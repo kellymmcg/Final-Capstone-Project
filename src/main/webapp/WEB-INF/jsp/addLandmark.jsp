@@ -4,7 +4,7 @@
 <div class="addlandmark">
 	<div class="container-fluid" id="landmarkcontainer">
 		<c:url var="addLandmarkHref" value="/addLandmark"/>
-		<form id="contact" action="${addLandmarkHref}" method="POST">
+		<form id="contact" class="addlandmarkform" action="${addLandmarkHref}" method="POST">
 			<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 			
 			<h3>Add a new Landmark</h3>

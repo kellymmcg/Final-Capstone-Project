@@ -112,8 +112,7 @@
 		<br>
 
 		<div class="jumbotron jumbocode">
-			<br>
-			<br>
+			<br> <br>
 			<div class="container">
 				<h1 id="centertext">Create the perfect travel itinerary!</h1>
 			</div>
@@ -154,25 +153,30 @@
 		<div class="container jumbocontainer">
 			<div class="row rowclass">
 				<div class="col-md-7 columnBoxes" id="home-map">
-					<img src="img/suedomap.png" class="img-responsive imghomepage" alt="Map">
+					<img src="img/suedomap.png" class="img-responsive imghomepage"
+						alt="Map">
 				</div>
 				<div class="col-md-5 mapcontent columnBoxes">
-						<h1 id="firstH1">Search your location.</h1>
-						<h1>View surrounding landmarks.</h1>
-						<h1>Map your route.</h1>
-						<br>
-						<form action="${search}" method="GET">
-							<button type="submit" class="active searchButton">Search a Landmark</button>
-						</form>
+					<h1 id="firstH1">Search your location.</h1>
+					<h1>View surrounding landmarks.</h1>
+					<h1>Map your route.</h1>
+					<br>
+					<form action="${search}" method="GET">
+						<button type="submit" class="active searchButton">Search
+							a Landmark</button>
+					</form>
 				</div>
 			</div>
 		</div>
 
-		
-		
+
+
 		<div
-			style="text-align: center; margin-top: 100px; margin-bottom: 100px" id="getStartedDiv">
-			<h3>Sign up for a <b>free</b> account! Create your itinerary today!</h3>
+			style="text-align: center; margin-top: 100px; margin-bottom: 100px"
+			id="getStartedDiv">
+			<h3>
+				Sign up for a <b>free</b> account! Create your itinerary today!
+			</h3>
 			<form action="${registration}" method="GET">
 				<button type="submit" class="active getStartedButton">Get
 					Started</button>
@@ -181,35 +185,20 @@
 	</c:when>
 	<c:otherwise>
 
-		<c:url var="searchLandmarksHref" value="/search" />
-		<c:url var="createItineraryHref" value="/createItinerary" />
+		<c:url var="createItineraryHref" value="/search" />
+		<c:url var="suggestLandmarkHref" value="/suggestions" />
 		<c:url var="manageItineraryHref" value="/manageItinerary" />
 
 		<div class="homepagelayer">
-			<div
-				class="w3-row-padding w3-center w3-padding-64 homepagebackground"
+			<div class="w3-row-padding w3-center w3-padding-64 homepagebackground"
 				id="pricing">
-				<div class="w3-third  w3-margin-bottom">
-					<ul class="w3-ul w3-border w3-hover-shadow">
-						<li class="tBox">
-							<p class="hBox">Search Landmark</p>
-						</li>
-						<li><img src="img/computersearch.jpg"
-							class="img-responsive homeimg" alt="Search"></li>
-						<li class="w3-theme-l5 w3-padding-24"><a
-							href="${searchLandmarksHref}"
-							class="btn btn-info w3-button w3-teal w3-padding-large"
-							role="button">Search</a></li>
-					</ul>
-				</div>
-
-				<div class="w3-third w3-margin-bottom">
+				<div class="w3-third  w3-margin-bottom boxforhomepage">
 					<ul class="w3-ul w3-border w3-hover-shadow">
 						<li class="tBox">
 							<p class="hBox">Create Itinerary</p>
 						</li>
-						<li><img src="img/plane.jpg" class="img-responsive homeimg"
-							alt="Create"></li>
+						<li><img src="img/computersearch.jpg"
+							class="img-responsive homeimg" alt="Search"></li>
 						<li class="w3-theme-l5 w3-padding-24"><a
 							href="${createItineraryHref}"
 							class="btn btn-info w3-button w3-teal w3-padding-large"
@@ -217,7 +206,21 @@
 					</ul>
 				</div>
 
-				<div class="w3-third w3-margin-bottom">
+				<div class="w3-third w3-margin-bottom boxforhomepage">
+					<ul class="w3-ul w3-border w3-hover-shadow">
+						<li class="tBox">
+							<p class="hBox">Suggest Landmarks</p>
+						</li>
+						<li><img src="img/plane.jpg" class="img-responsive homeimg"
+							alt="Create"></li>
+						<li class="w3-theme-l5 w3-padding-24"><a
+							href="${suggestLandmarkHref}"
+							class="btn btn-info w3-button w3-teal w3-padding-large"
+							role="button">Suggest</a></li>
+					</ul>
+				</div>
+
+				<div class="w3-third w3-margin-bottom boxforhomepage">
 					<ul class="w3-ul w3-border w3-hover-shadow">
 						<li class="tBox">
 							<p class="hBox">Manage Itinerary</p>

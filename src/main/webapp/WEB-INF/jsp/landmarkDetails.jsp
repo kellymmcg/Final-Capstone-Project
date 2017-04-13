@@ -138,6 +138,10 @@
 								</div>
 								<div class="panel-body">
 									<table class="table table-striped table-bordered table-list">
+										<col width="80">
+  										<col width="130">
+  										<col width="270">
+  										<col width="80">
 										<tr>
 											<th>User Name</th>
 											<th>Title</th>
@@ -180,9 +184,10 @@
 			<form action="${submitReview}" method="POST">
 				<input type="hidden" name="CSRF_TOKEN"
 					value="<c:out value='${CSRF_TOKEN}' />" />
-				<input type="text" name="title" id="title" placeholder="Give your review a title!" /><br />
-				<textarea rows="4" cols="10 " name="review" id="review" placeholder="Leave a review!"
-					style="width: 100%"></textarea>
+				<h5>Leave a review!</h5>
+				<input type="text" name="title" id="title" placeholder="Title"/><br><br>
+				<textarea rows="4" cols="10 " name="review" id="review" placeholder="Write your review here..."
+					style="width: 100%"></textarea><br>
 				<input type="hidden" name="user" value="${currentUser}" /> <input
 					type="hidden" name="landmarkId" value="${landmark.id}" /> <select
 					name="stars">
