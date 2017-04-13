@@ -66,9 +66,12 @@ body, html {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: black;
 	background: rgba(14, 15, 16, 0.7) !important;	
 	border-radius: 10px;
+}
+.suggestform  h3{
+	color: white;
 }
 
 .mNav {
