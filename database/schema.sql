@@ -396,4 +396,104 @@ INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
 '39', 'AlexisT', 'Cool Museum!', 'They have a huuuuuuuuge collection of aviation and automotive stuff.  A must see!', '5');
 
 
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'1', 'Homer', 'They have many things here', 'Including a Dunkin'' Donuts...mmmmmm...Donuts.', '5');
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'2', 'Homer', 'Gambling is boring', 'I hate losing money but I like eating lot''s of food.  Just like the Frying Dutchman I was kicked out of this buffet for nearly bankrupting the place from all the food I was able to eat.', '1');
+
+
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'5', 'Homer', 'ISOTOPES RULE, INDIANS DROOL!', 'No donuts but lots of other food and beer.  Go ''TOPES!', '1' );
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'5', 'Steggy', 'More food options', 'More veggie options and less kids trying to climb on me, please!', '3');
+
+
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'6', 'Homer', 'Free but I have to pay money?', 'The signs clearly state it is free but my wife Marge made me put money in the donation box.', '1' );
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'7', 'Homer', 'A cemetary?', 'Apparently there''s a bunch of famous people buried here and historical stuff.  BO-O-O-O-RING!', '1' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'7', 'Steggy', 'Very Quiet', 'Lot''s of vegetation to eat and I am left alone.', '5' );
+
+
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'8', 'Steggy', 'A great place to visit!', 'Tons of my friends live here so I try and visit them often.', '5' );
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'9', 'Homer', 'Lot''s of food', 'They have vegetables which my hippie kid likes, but they also have meat and donuts...mmmmm....donuts.  No beer though :(', '4');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'9', 'Steggy', 'VEGGIES!', 'Lot''s of vegetables for me to eat and no one jumping on my back...so far.', '5');
+
+
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'10', 'Homer', '"Art"', 'I thought this was boring and you people have horrible taste in "Art".', '2');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'10', 'Steggy', 'Something that''s bigger than me!', 'I saw people climbing on this and I felt the Free Stamps'' pain.  Hang in there brother, they can''t climb on you all the time!', '5' );
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'12', 'Steggy', 'Please stop climbing on me!', 'I don''t care how old you are, please stop!', '5');
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'12', 'Homer', 'SIR, YOU''RE MAKING A SCENE', 'My smart kid dragged me here.  I want to echo KellyM''s review and say that if they didn''t want adults on the dinosaur out front they should have a sign posted.  Just once I want someone to call me sir with out adding "your making a scene!"', '5' );
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'13', 'Homer', 'Sia can swing from a chandelier but I do it and the cops get called.', '1' );
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'14', 'Homer', 'More dumb art', 'BORING!', '1' );
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'15', 'Homer', 'I had other plans', 'The kids enjoyed it while I took a nap in the car.', '5');
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'15', 'Steggy', 'Go Here!', 'And climb on this dinosaur''s back, not mine.', '5' );
+
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'18', 'Homer', 'I shot my eye out', 'Apparently, the "prop" was more realistic than we thought once the boy loaded bbs into it.', '2' );
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'19', 'Homer', 'THIS WAS NOT A SANDWICH', 'As my wife and kids had led me to believe.', '1' );
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'20', 'Homer', 'Lot''s of Fish...', 'However, you are not allowed to fish.  They need signs for this!', '1' );
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'21', 'Homer', 'Football', 'My good friend Gerald Ford would like to eat nachos here with me while watching football', '3');
+
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'26', 'Homer', 'Nature Crap', 'We lost the boy but unfortunately he reappeared.  My hippie daughter, Lisa, liked this place.', '2');
+
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'28', 'Homer', 'More of getting told what to do!', 'Homer, stop eating the flowers!', '1' );
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'31', 'Homer', 'A Park', 'That''s it a park.  BORING!', '1');
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'32', 'Homer', 'Car was stolen', 'This park is really nice and my family and I had a really good time.  When we got back to where we had parked our car was gone.  The police later found our car, the culprit was The Lake Erie Monster (not the hockey team)...stupid monster from Lake Erie', '1' );
+
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'33', 'Homer', 'You people love your parks', 'We drove through it and I almost took out bambi...stupid deer.', '1');
+
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'36', 'Homer', 'Fishing!', 'Na na na na na na na na Batman! Na na na na na na na na Batman! Batman! Batman! Batman!', '5' );
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'38', 'Homer', 'Mmmm...Italian Food', 'Not one but TWO bakeries within a block of each other!', '5');
+
+
+INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
+'40', 'Homer', 'No video games here!?', 'I had to listen to the boy complain about their being no video games.  THANKS A LOT "ARCADE"!.', '1');
+
+
 COMMIT;
