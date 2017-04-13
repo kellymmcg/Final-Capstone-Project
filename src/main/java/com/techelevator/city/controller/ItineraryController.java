@@ -118,6 +118,13 @@ public class ItineraryController {
 			return "generatedRoute";
 		}
 		
+		@RequestMapping(path="/itineraryPage", method=RequestMethod.POST)
+		public String removeLandmarkFromItinerary(@RequestParam String user, @RequestParam int id, ModelMap model){
+			itineraryDAO.removeLandmarkFromItinerary(id, user);
+			model.put("notice", "You've successfully removed a landmark from your itinerary!");
+			return "redirect:/manageItinerary";
+		}
+		
 		@ResponseBody
 		@RequestMapping(path="/jsonRoute", method=RequestMethod.GET)
 		public String generateJsonLandmarks(@RequestParam int id, ModelMap model) throws JsonProcessingException {

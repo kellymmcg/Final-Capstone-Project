@@ -148,12 +148,8 @@ used to vertically center elements, may need modification if you're not using de
 	display: inline-block;
 }
 
-.action {
-	background-color: #7a7b7f;
-}
-
-.view {
-	background-color: #7a7b7f;
+.actionM {
+	background-color: #a6a9b0;
 }
 
 .aLine {
@@ -180,11 +176,40 @@ used to vertically center elements, may need modification if you're not using de
 }
 
 #mapG {
-	width: 500px;
+	margin-top: 20px;
+	width: auto;
 	height: 500px;
+	border: 1px solid black;
 }
 
 .rHead {
 	font-size: 20px;
 	color: #d78c21;
+}
+
+.mapG {
+	border: 1px solid black;
+}
+
+.routeMap {
+	border: 1px solid border;
+}
+
+.routeDescription {
+	margin-top: 20px;
+	border: 1px solid black;
+	padding-top: 15px;
+	height: 500px;
+	padding-bottom: 10px;
+	overflow-y: scroll;
+	background: #e7e5e9;
+}
+
+.rFooter {
+	margin-top: 20px;
+}
+
+.rFooterButton{
+	
+	margin-top: 20px;
 }

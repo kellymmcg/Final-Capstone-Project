@@ -32,7 +32,7 @@
 					<tbody>
 					<c:forEach items="${cItineraries}" var="itinerary">
 						<tr>
-							<td align="center" class="view">
+							<td align="center" class="viewM">
 							<c:url var="itineraryAction" value="/manageItinerary"/>
 							<form action="${itineraryAction}" method="GET" id="itineraryForm">
 								<input type="hidden" name="id" value="<c:out value='${itinerary.id}'/>"/>
@@ -43,7 +43,7 @@
 							<td>${itinerary.description}</td>
 							<c:url var="deleteAction" value="/manageItinerary"/>
 							<c:url var="completeAction" value="/completeItinerary"/>
-							<td align="center" class="action">
+							<td align="center" class="actionM">
 							<form action="${deleteAction}" method="POST" id="postItineraryForm" class="aForm">
 								<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 								<input type="hidden" name="userName" value="<c:out value='${itinerary.userName}'/>"/>
@@ -102,7 +102,7 @@
 					<tbody>
 					<c:forEach items="${pItineraries}" var="itinerary">
 						<tr>
-							<td align="center" class="view">
+							<td align="center" class="viewM">
 							<c:url var="itineraryAction" value="/manageItinerary"/>
 							<form action="${itineraryAction}" method="GET" id="itineraryForm">
 								<input type="hidden" name="id" value="<c:out value='${itinerary.id}'/>"/>
@@ -113,7 +113,7 @@
 							<td>${itinerary.description}</td>
 							<c:url var="deleteAction" value="/manageItinerary"/>
 							<c:url var="incompleteAction" value="/incompleteItinerary"/>
-							<td align="center" class="action">
+							<td align="center" class="actionM">
 							<form action="${deleteAction}" method="POST" id="postItineraryForm" class="aForm">
 								<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 								<input type="hidden" name="userName" value="<c:out value='${itinerary.userName}'/>"/>

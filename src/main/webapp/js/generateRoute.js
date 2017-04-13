@@ -30,7 +30,7 @@ $(document).ready(function() {
 	            origin: data[0].address,
 	            destination: data[data.length-1].address,
 	            waypoints: waypts,
-	            optimizeWaypoints: false,
+	            optimizeWaypoints: true,
 	            travelMode: 'DRIVING'
 	    	}, function(response, status) {
 	            if (status === 'OK') {
@@ -43,7 +43,7 @@ $(document).ready(function() {
 	                    summaryPanel.innerHTML += '<p class=rHead> Stop #' + routeSegment +'</p>';
 	                    summaryPanel.innerHTML += '<p class=tFrom><b>From:</b> ' + data[i].name  + '</p>';
 	                    summaryPanel.innerHTML += '<p class=tTo><b>To:</b> ' + data[i+1].name + '</p>';
-	                    summaryPanel.innerHTML += '<p class=tTime>' +route.legs[i].distance.text +" | "+ route.legs[i].duration.text + '</td></tr>';
+	                    summaryPanel.innerHTML += '<p class=tTime> <i class="glyphicon glyphicon-map-marker"></i> ' +route.legs[i].distance.text +" &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;  <i class=\"glyphicon glyphicon-time\"></i> "+ route.legs[i].duration.text + '</td></tr><br><br>';
 	                  }
 	                } else {
 	                  window.alert('Directions request failed due to ' + status);

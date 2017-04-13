@@ -80,12 +80,13 @@
 					</ul>
 					
 					<!-- RIGHT SIDE OF THE NAVIGATION BAR  -->
-					<c:url var="suggestions" value="/search"/>
+					<c:url var="searchAction" value="/search"/>
 					<c:url var="addLandmarkAction" value="/addLandmark" />
 					<c:url var="changePassAction" value="/changePassword" />
 					<c:url var="logoutAction" value="/logout" />
 					<c:url var="manageItineraries" value="/manageItinerary" />
 					<c:url var="viewSuggestionsAction" value="/viewSuggestions" />
+					<c:url var="suggestLandmark" value="/suggestions" />
 					<ul class="nav navbar-nav navbar-right">
 						<c:choose>
 							<c:when test="${not empty currentUser}">
@@ -97,7 +98,8 @@
 													<form id="logoutForm" action="${logoutAction}" method="POST">
 														<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
 													</form>
-													<li><a href="${suggestions}" class="" data-wow-delay="0.7s"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+													<li><a href="${searchAction}" class="" data-wow-delay="0.7s"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+													<li><a href="${suggestLandmark}" id="changePassLink"><span class="glyphicon glyphicon-pencil"></span> Suggest Landmark</a></li>
 													<li><a href="${manageItineraries}" id="manageItinerary"><span class="glyphicon glyphicon-folder-open"></span> Manage Itineraries</a></li>
 													<li><a href="${changePassAction}" id="changePassLink"><span class="glyphicon glyphicon-lock"></span> Change Password</a></li>
 													<li><a href="#" id="logoutLink"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>

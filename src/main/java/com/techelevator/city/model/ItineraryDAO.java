@@ -23,6 +23,8 @@ public interface ItineraryDAO {
 	
 	public void editItinerary(Itinerary itinerary);
 	
+	public void removeLandmarkFromItinerary(int landmarkId, String user);
+	
 	public void deleteItinerary(String itineraryName, String userName);
 
 }

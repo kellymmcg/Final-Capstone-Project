@@ -80,26 +80,6 @@
 				</div>
 				<c:choose>
 					<c:when test="${not empty currentUser}">
-						<div class="col-md-3">
-							<div class="action">
-								<c:url var="formAction" value="/landmarkDetails" />
-
-								<form id="contact" class="itineraryForm" action='${formAction}'
-									method="POST">
-									<p class="iAdd">Create and add to a new Itinerary</p>
-									<input type="hidden" name="CSRF_TOKEN"
-										value="<c:out value='${CSRF_TOKEN}' />" /> <input
-										type="hidden" name="user" value="${currentUser}" /> <input
-										type="hidden" name="landmarkId" value="${landmark.id}" /> <input
-										type="text" name="name" placeholder="New Itinerary Name" /> <input
-										type="text" name="description"
-										placeholder="Give a short description about it!" />
-									<button class="add-to-cart btn btn-default" type="submit">Add
-										to Itinerary</button>
-
-								</form>
-							</div>
-						</div>
 
 						<div class="col-md-3">
 							<div class="action">
@@ -115,9 +95,25 @@
 											<option value="${itinerary.id}">${itinerary.name}</option>
 										</c:forEach>
 									</select>
-									<button class="add-to-cart btn btn-default" type="submit">Add
-										to Itinerary</button>
+									<button class="add-to-cart btn btn-default" type="submit">Add to Itinerary</button>
+								</form>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="action">
+								<c:url var="formAction" value="/landmarkDetails" />
 
+								<form id="contact" class="itineraryForm" action='${formAction}'
+									method="POST">
+									<p class="iAdd">Create and add to a new Itinerary</p>
+									<input type="hidden" name="CSRF_TOKEN"
+										value="<c:out value='${CSRF_TOKEN}' />" /> <input
+										type="hidden" name="user" value="${currentUser}" /> <input
+										type="hidden" name="landmarkId" value="${landmark.id}" /> <input
+										type="text" name="name" placeholder="New Itinerary Name" /> <input
+										type="text" name="description"
+										placeholder="Give a short description about it!" />
+									<button class="add-to-cart btn btn-default" type="submit">Add to Itinerary</button>
 								</form>
 							</div>
 						</div>

@@ -19,14 +19,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                        	<c:url var="deleteLandmark" value="/itineraryPage"/>
                         	<c:forEach items="${landmarks}" var="landmark" varStatus="count">
                             <tr>
                                 <td class="col-md-1 text-center">${count.count}</td>
                                 <td class="col-md-3">${landmark.name}</td>
                                 <td class="col-md-3" style="text-align: center"></td>
                                 <td class="col-md-2 text-center"><strong>${landmark.admission}</strong></td>
-                                <td class="col-md-1 text-center"><strong><i class="glyphicon glyphicon-remove"></i></strong></td>
-                                
+                                <td class="col-md-1 text-center">
+                                <form action="${deleteLandmark}" method="POST" id="removeItineraryForm" class="aForm">
+									<input type="hidden" name="CSRF_TOKEN" value="<c:out value='${CSRF_TOKEN}' />" />
+									<input type="hidden" name="user" value="<c:out value='${itinerary.userName}'/>"/>
+									<input type="hidden" name="id" value="<c:out value='${landmark.id}'/>"/>
+									<span><button class="btn btn-default dButton" type="submit"><i class="glyphicon glyphicon-trash"></i></button></span>
+								</form>	
+								</td>     
                             </tr>
                             </c:forEach> 
                            

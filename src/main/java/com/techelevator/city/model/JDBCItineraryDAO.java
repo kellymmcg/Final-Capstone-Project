@@ -120,6 +120,12 @@ public class JDBCItineraryDAO implements ItineraryDAO {
 		
 	}
 	
+	@Override
+	public void removeLandmarkFromItinerary(int landmarkId, String user) {
+		String sqlRemoveLandmarkFromItinerary = "DELETE FROM itinerary WHERE landmarkid = ? AND user_name = ?";
+		jdbcTemplate.update(sqlRemoveLandmarkFromItinerary, landmarkId, user);
+	}
+	
 	
 	private Itinerary mapRowToItinerary(SqlRowSet results) {
 		Itinerary itinerary = new Itinerary();
