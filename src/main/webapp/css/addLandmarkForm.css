@@ -6,10 +6,15 @@
 	background-size: 100% 100%;
 }
 .addlandmarkform {
-	color: white;
+	color: black;
 	background: rgba(45, 3, 144, 0.5) !important;	
 	border-radius: 10px;
 }
+
+.addlandmarkform h3 {
+	color: white;
+}
+
 #landmarkcontainer {
   margin: 0;
   padding: 40px;

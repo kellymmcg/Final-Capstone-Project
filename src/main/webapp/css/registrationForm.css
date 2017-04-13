@@ -12,6 +12,10 @@
   	color: #777;  
 } 
 
+.regform h3 {
+	color: white;
+}
+
 .regform {
 	width: 400px;
 	position: absolute;
