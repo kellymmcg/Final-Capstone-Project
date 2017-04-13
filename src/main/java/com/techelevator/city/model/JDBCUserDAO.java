@@ -55,4 +55,15 @@ import com.techelevator.security.PasswordHasher;
 			jdbcTemplate.update("UPDATE app_user SET password = ?, salt = ? WHERE user_name = ?", hashedPassword, saltString, userName);
 		}
 
+		@Override
+		public boolean isUserAdmin(String userName) {
+			String sqlIsAdmin = "SELECT * FROM app_user WHERE UPPER(user_name) = ?";
+			SqlRowSet results = jdbcTemplate.queryForRowSet(sqlIsAdmin, userName.toUpperCase());
+			if(results.next()) {
+			
+			return (results.getBoolean("is_admin") == true);
+			}
+			return false;
+		}
+
 	}

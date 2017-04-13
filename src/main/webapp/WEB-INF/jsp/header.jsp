@@ -103,10 +103,13 @@
 													<li><a href="${manageItineraries}" id="manageItinerary"><span class="glyphicon glyphicon-folder-open"></span> Manage Itineraries</a></li>
 													<li><a href="${changePassAction}" id="changePassLink"><span class="glyphicon glyphicon-lock"></span> Change Password</a></li>
 													<li><a href="#" id="logoutLink"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
-													
+													<c:choose>
+													<c:when test="${isAdmin == 'true'}" >
 													<p id="adminControls">Admin Controls</p>
 													<li><a href="${addLandmarkAction}" id="addLandmark"><span class="glyphicon glyphicon-plus-sign"></span> Add Landmark</a></li>
 													<li><a href="${viewSuggestionsAction}" id="viewSuggestions"><span class="glyphicon glyphicon-eye-open"></span> View Suggestions</a></li>
+													</c:when>
+													</c:choose>
 												</div>
 											</div>
 										</li>	

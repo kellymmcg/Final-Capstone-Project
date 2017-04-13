@@ -16,7 +16,7 @@ import com.techelevator.city.model.UserDAO;
 
 	@Transactional
 	@Controller
-	@SessionAttributes("currentUser")
+	@SessionAttributes({"currentUser", "isAdmin"})
 	public class AuthenticationController {
 		
 		private UserDAO userDAO;
@@ -37,7 +37,11 @@ import com.techelevator.city.model.UserDAO;
 	        if(userDAO.searchForUsernameAndPassword(userName, password)) {
 	            session.invalidate();
 	            model.put("currentUser", userName);
-	            
+	            if(userDAO.isUserAdmin(userName)) {
+	            	model.put("isAdmin", "true");
+	            }else{
+	            	model.put("isAdmin", "false");
+	            }
 	            if(destinationIsValid(destination)) {
 	                return "redirect:"+destination;
 	            } else {
