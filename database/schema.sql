@@ -442,7 +442,7 @@ INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
 '12', 'Homer', 'SIR, YOU''RE MAKING A SCENE', 'My smart kid dragged me here.  I want to echo KellyM''s review and say that if they didn''t want adults on the dinosaur out front they should have a sign posted.  Just once I want someone to call me sir with out adding "your making a scene!"', '5' );
 
 INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
-'13', 'Homer', 'Sia can swing from a chandelier but I do it and the cops get called.', '1' );
+'13', 'Homer', 'THIS PLACE SUCKS', 'Sia can swing from a chandelier but I do it and the cops get called.', '1' );
 
 INSERT INTO review (landmarkId, user_name, title, review, stars) VALUES(
 '14', 'Homer', 'More dumb art', 'BORING!', '1' );
