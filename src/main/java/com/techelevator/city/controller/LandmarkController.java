@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -49,6 +50,7 @@ public class LandmarkController {
 	@RequestMapping(path="/search", method=RequestMethod.GET)
 	public String submitLandmarkSearch(@RequestParam Optional<String> name, ModelMap model) {
 		if(! name.isPresent()){
+			model.put("notice", "Creating a new itinerary?  Let's search for a landmark to place into it first!");
 			return "search";
 		}
 		List<Landmark> landmarks = landDAO.searchLandmarksByName(name.get());
@@ -89,7 +91,13 @@ public class LandmarkController {
 	}
 	
 	@RequestMapping(path="/landmarkReviewSubmitted", method=RequestMethod.POST)
-	public String addReview(@RequestParam String user,@RequestParam String title, @RequestParam String review, @RequestParam int stars, @RequestParam int landmarkId ) {
+	public String addReview(@RequestParam String user, 
+							@RequestParam String title, 
+							@RequestParam String review, 
+							@RequestParam int stars, 
+							@RequestParam int landmarkId, 
+							RedirectAttributes redir ) {
+		
 		Review r = new Review();
 		r.setLandmarkId(landmarkId);
 		r.setReview(review);
@@ -97,6 +105,7 @@ public class LandmarkController {
 		r.setTitle(title);
 		r.setUserName(user);
 		reviewDAO.submitAReview(r);
+		redir.addFlashAttribute("notice", "Thank you for your review!");
 		return "redirect:/searchResults?id="+landmarkId;
 	}
 	

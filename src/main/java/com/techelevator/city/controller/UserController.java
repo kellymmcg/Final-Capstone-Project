@@ -41,7 +41,8 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/users/{userName}", method=RequestMethod.GET)
-	public String displayUserDashboard() {
+	public String displayUserDashboard(RedirectAttributes redir, ModelMap model) {
+		redir.addFlashAttribute("notice", "Welcome, "+ model.get("currentUser") +"!");
 		return "redirect:/";
 	}
 	
@@ -63,8 +64,12 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/suggestions", method=RequestMethod.POST)
-	public String submitALandmark(@RequestParam String user, @RequestParam String name, @RequestParam String address,
-														@RequestParam String description) {
+	public String submitALandmark(@RequestParam String user, 
+							      @RequestParam String name, 
+							      @RequestParam String address,
+								  @RequestParam String description,
+								  RedirectAttributes redir) {
+		redir.addFlashAttribute("notice", "Thank you for your suggestion!  Our Admins will review it soon.");
 		suggestionDAO.submitSuggestion(user, name, address, description);
 		return "redirect:/";
 	}

@@ -24,7 +24,6 @@
 								class="fa fa-star checked"></span> <span class="fa fa-star"></span>
 							<span class="fa fa-star"></span>
 						</div>
-						<span class="review-no">0 Reviews</span>
 					</div>
 					<br>
 					<p class="product-description">${landmark.description}</p>
@@ -38,7 +37,6 @@
 					<p class="dIcon c${landmark.consession}">
 						<span class="fa fa-cutlery"></span> Concession
 					</p>
-					<br>
 					<p class="dIcon c${landmark.restroom}">
 						<span class="fa fa-male"></span><span class="fa fa-female"></span>
 						Restrooms

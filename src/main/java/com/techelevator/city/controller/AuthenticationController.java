@@ -44,7 +44,7 @@ import com.techelevator.city.model.UserDAO;
 	                return "redirect:/users/"+userName;
 	            }
 	        } else {
-	        	redir.addFlashAttribute("loginFailure", "Incorrect username or password!");
+	        	redir.addFlashAttribute("notice", "Incorrect username or password!");
 	            return "redirect:/";
 	        }                                                                
 	    }

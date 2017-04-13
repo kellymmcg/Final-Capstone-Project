@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -75,31 +76,37 @@ public class ItineraryController {
 		@RequestMapping(path="/manageItinerary", method=RequestMethod.POST)
 		public String deleteItinerary(@RequestParam String name, 
 									  @RequestParam String userName, 
+									  RedirectAttributes redir,
 									  ModelMap model) {
 			itineraryDAO.deleteItinerary(name, userName);
+			redir.addFlashAttribute("notice", "You've succesfully deleted the itinerary!");
 			return "redirect:/manageItinerary";
 		}
 		
 		@RequestMapping(path="/addToItinerary", method=RequestMethod.POST)
 		public String addLandmarkToItinerary(@RequestParam int id, 
 											 @RequestParam int landmarkId, 
+											 RedirectAttributes redir,
 											 ModelMap model) {
 			
 			Itinerary itinerary = itineraryDAO.findItineraryById(id, (String)model.get("currentUser"));
 			itinerary.setLandmark(landmarkId);
 			itineraryDAO.addLandmarkToItinerary(itinerary);
+			redir.addFlashAttribute("notice", "Your landmark was succesfully added!");
 			return "redirect:/manageItinerary";
 		}
 		
 		@RequestMapping (path="/completeItinerary", method=RequestMethod.POST)
-		public String markItineraryAsComplete(@RequestParam int id) {
+		public String markItineraryAsComplete(@RequestParam int id, RedirectAttributes redir) {
 			itineraryDAO.markItineraryAsCompleted(id);
+			redir.addFlashAttribute("notice", "The itinerary was marked as 'Completed'.");
 			return "redirect:/manageItinerary";
 		}
 		
 		@RequestMapping (path="/incompleteItinerary", method=RequestMethod.POST)
-		public String markItineraryAsIncompleted(@RequestParam int id) {
+		public String markItineraryAsIncompleted(@RequestParam int id, RedirectAttributes redir) {
 			itineraryDAO.markItineraryAsIncompleted(id);
+			redir.addFlashAttribute("notice", "The itinerary was marked as 'Incomplete'.");
 			return "redirect:/manageItinerary";
 		}
 		
@@ -119,9 +126,9 @@ public class ItineraryController {
 		}
 		
 		@RequestMapping(path="/itineraryPage", method=RequestMethod.POST)
-		public String removeLandmarkFromItinerary(@RequestParam String user, @RequestParam int id, ModelMap model){
+		public String removeLandmarkFromItinerary(@RequestParam String user, @RequestParam int id, @RequestParam int iId, RedirectAttributes redir){
 			itineraryDAO.removeLandmarkFromItinerary(id, user);
-			model.put("notice", "You've successfully removed a landmark from your itinerary!");
+			redir.addFlashAttribute("notice", "You've removed the landmark from the itinerary!");
 			return "redirect:/manageItinerary";
 		}
 		

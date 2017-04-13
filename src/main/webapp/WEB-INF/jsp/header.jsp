@@ -152,8 +152,8 @@
 			<!--  NOTICE BAR UNDERNEATHE THE NAVIGATION BAR  -->
 			<div id="noticeBar">
 			<c:choose>
-				<c:when test="${not empty currentUser}">
-					<p> <!-- Something could go here eventually... maybe... --></p>
+				<c:when test="${not empty notice}">
+					<p id="fHeader">${notice}</p>
 				</c:when>
 				<c:otherwise>
 					<p id="fHeader">${notice}</p>
