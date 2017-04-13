@@ -16,7 +16,8 @@
 	background-repeat: no-repeat;
 	height: 1100px;
 }
-.searchcontainer {
+
+.searchconatiner {
   	margin: 0 auto;
   	position: relative;
   	font-family: "Roboto", Helvetica, Arial, sans-serif;
@@ -24,6 +25,7 @@
   	font-size: 12px;
   	line-height: 30px;
   	color: #777; 
+  	
 }
 
 .searchForm #search-radio-btn {
@@ -45,6 +47,7 @@
 	background: rgba(5, 4, 5, 0.5) !important;	
 	border-radius: 10px;
 }
+
 #search-radio-btn {
 	padding-left: 15%;
 }
