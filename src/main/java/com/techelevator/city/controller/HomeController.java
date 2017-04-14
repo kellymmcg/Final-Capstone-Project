@@ -12,9 +12,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.jna.platform.win32.Netapi32Util.User;
 import com.techelevator.city.model.Landmark;
-import com.techelevator.city.model.UserDAO;
+import com.techelevator.city.model.*;
 
 	@Transactional
 	@Controller
